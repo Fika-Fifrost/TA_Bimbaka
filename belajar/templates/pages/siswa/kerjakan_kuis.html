@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% block content %}
+  <style>
+    /* 1. Saat Radio Dipilih, Ubah Border & Background Kotak Luar */
+    input[type="radio"]:checked + .radio-card {
+        border-color: #2563eb !important; /* Blue 600 */
+        background-color: #eff6ff !important; /* Blue 50 */
+    }
+
+    /* 2. Saat Radio Dipilih, Ubah Lingkaran Jadi Biru Penuh */
+    input[type="radio"]:checked + .radio-card .radio-circle {
+        background-color: #2563eb !important; /* Blue 600 */
+        border-color: #2563eb !important;
+        box-shadow: 0 0 0 2px #fff inset; /* Ring putih tipis di dalam */
+    }
+  </style>
+  <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div class="sticky top-0 bg-white z-20 border-b pb-4 mb-6 flex justify-between items-center shadow-sm px-2">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">{{ kuis.judul }}</h1>
+        <p class="text-gray-500 text-sm">Jawab dengan teliti.</p>
+      </div>
+      <div class="bg-red-100 text-red-600 px-4 py-2 rounded-lg font-mono font-bold text-xl flex items-center shadow-sm transition-colors duration-300"
+           id="timer-box">
+        <i class="fa-regular fa-clock mr-2"></i>
+        <span id="timer">Loading...</span>
+      </div>
+    </div>
+    <form method="POST" id="quizForm">
+      {% csrf_token %}
+      <div class="space-y-8">
+        {% for soal in kuis.daftar_soal.all %}
+          <div class="p-5 rounded-xl border border-gray-200 bg-gray-50 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="mb-5">
+              <div class="flex items-start">
+                <span class="flex-shrink-0 bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1 text-sm shadow">
+                  {{ forloop.counter }}
+                </span>
+                <div class="w-full">
+                  {% if soal.gambar %}
+                    <div class="mb-4">
+                      <img src="{{ soal.gambar.url }}"
+                           alt="Ilustrasi Soal"
+                           class="max-h-64 rounded-lg shadow-md border border-gray-200 object-contain bg-white p-1">
+                    </div>
+                  {% endif %}
+                  <p class="font-semibold text-lg text-gray-800 leading-relaxed">{{ soal.pertanyaan }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-0 md:ml-11">
+              <label class="relative cursor-pointer group">
+                <input type="radio"
+                       name="soal_{{ soal.id }}"
+                       value="A"
+                       class="sr-only"
+                       required>
+                <div class="radio-card p-4 bg-white border-2 border-gray-200 rounded-xl transition-all duration-200 flex items-center">
+                  <div class="radio-circle flex-shrink-0 mr-3 w-6 h-6 rounded-full border-2 border-gray-300 bg-white transition-colors duration-200">
+                  </div>
+                  <span class="font-medium text-gray-700">A. {{ soal.opsi_a }}</span>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="soal_{{ soal.id }}" value="B" class="sr-only">
+                <div class="radio-card p-4 bg-white border-2 border-gray-200 rounded-xl transition-all duration-200 flex items-center">
+                  <div class="radio-circle flex-shrink-0 mr-3 w-6 h-6 rounded-full border-2 border-gray-300 bg-white transition-colors duration-200">
+                  </div>
+                  <span class="font-medium text-gray-700">B. {{ soal.opsi_b }}</span>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="soal_{{ soal.id }}" value="C" class="sr-only">
+                <div class="radio-card p-4 bg-white border-2 border-gray-200 rounded-xl transition-all duration-200 flex items-center">
+                  <div class="radio-circle flex-shrink-0 mr-3 w-6 h-6 rounded-full border-2 border-gray-300 bg-white transition-colors duration-200">
+                  </div>
+                  <span class="font-medium text-gray-700">C. {{ soal.opsi_c }}</span>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="soal_{{ soal.id }}" value="D" class="sr-only">
+                <div class="radio-card p-4 bg-white border-2 border-gray-200 rounded-xl transition-all duration-200 flex items-center">
+                  <div class="radio-circle flex-shrink-0 mr-3 w-6 h-6 rounded-full border-2 border-gray-300 bg-white transition-colors duration-200">
+                  </div>
+                  <span class="font-medium text-gray-700">D. {{ soal.opsi_d }}</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="mt-8 border-t pt-6 text-right">
+        <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl flex items-center ml-auto">
+          Selesai & Kumpulkan <i class="fa-solid fa-paper-plane ml-2"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <script>
+    // --- KONFIGURASI TIMER ---
+    const KUIS_ID = "{{ kuis.id }}";
+    const USER_ID = "{{ user.id }}";
+    const DURATION_MINUTES = {{ kuis.durasi_menit }};
+    // Key unik untuk menyimpan waktu di browser (agar tidak bentrok dengan kuis lain)
+    const STORAGE_KEY = `quiz_timer_${USER_ID}_${KUIS_ID}`;
+
+    const timerElement = document.getElementById('timer');
+    const timerBox = document.getElementById('timer-box');
+    const form = document.getElementById('quizForm');
+
+    // 1. Cek apakah sudah ada waktu tersimpan di browser?
+    let endTime = localStorage.getItem(STORAGE_KEY);
+
+    if (!endTime) {
+        // Jika BELUM ada (pertama kali masuk), set waktu selesai = sekarang + durasi
+        const now = new Date().getTime();
+        endTime = now + (DURATION_MINUTES * 60 * 1000);
+        localStorage.setItem(STORAGE_KEY, endTime);
+    } else {
+        // Jika SUDAH ada (misal habis refresh), gunakan waktu yang tersimpan
+        endTime = parseInt(endTime);
+    }
+
+    // Fungsi Update Timer
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        // Jika waktu habis
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            localStorage.removeItem(STORAGE_KEY); // Hapus penyimpanan
+            timerElement.innerText = "00:00";
+            alert("Waktu Habis! Jawaban Anda akan dikirim otomatis.");
+            form.submit();
+            return;
+        }
+
+        // Hitung menit dan detik
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Format tampilan (tambah angka 0 di depan jika satuan)
+        const minStr = minutes < 10 ? "0" + minutes : minutes;
+        const secStr = seconds < 10 ? "0" + seconds : seconds;
+
+        timerElement.innerText = `${minStr}:${secStr}`;
+
+        // Efek visual jika waktu kurang dari 1 menit (Merah Kedip-kedip)
+        if (distance < 60000) {
+             timerBox.classList.remove('bg-red-100', 'text-red-600');
+             timerBox.classList.add('bg-red-600', 'text-white', 'animate-pulse');
+        }
+    }
+
+    // Jalankan sekali di awal agar tidak delay 1 detik
+    updateTimer();
+
+    // Jalankan interval setiap 1 detik
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    // Jika tombol submit ditekan manual, hapus penyimpanan waktu agar bersih
+    form.addEventListener('submit', function() {
+        localStorage.removeItem(STORAGE_KEY);
+    });
+  </script>
+{% endblock %}

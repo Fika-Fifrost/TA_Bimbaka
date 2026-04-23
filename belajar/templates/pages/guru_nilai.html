@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load auth_extras %}
+{% block title %}Nilai Siswa - Dasbor Guru{% endblock %}
+{% block content %}
+  <div class="flex flex-col w-full">
+    <div class="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
+      <div>
+        <nav class="text-sm text-gray-500 mb-1" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-2">
+            <li>
+              <a href="{% url 'beranda' %}" class="hover:underline text-gray-500">Dasbor</a>
+            </li>
+            <li>
+              <span class="mx-1 text-gray-400">/</span>
+              <span class="text-gray-700 font-medium">Nilai</span>
+            </li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl font-bold text-gray-800">Daftar Nilai Siswa - {{ request.user.profile.get_kelas_display }}</h1>
+      </div>
+      <div class="flex items-center space-x-2 flex-shrink-0">
+        <span class="text-sm text-gray-500 hidden lg:block">
+          <i class="fa-solid fa-clock-rotate-left mr-1"></i>
+          Data per: {% now "d M Y, H:i" %}
+        </span>
+        <button class="bg-white border border-gray-300 px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50">
+          <i class="fa-solid fa-filter mr-1"></i> Filter
+        </button>
+        <a href="{% url 'export_nilai_excel' %}"
+           class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700">
+          <i class="fa-solid fa-download mr-1"></i> Export
+        </a>
+      </div>
+    </div>
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="p-4 font-semibold text-gray-600">Nama Siswa</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Materi 1</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Materi 2</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Materi 3</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Materi 4</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Materi 5</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Materi 6</th>
+              <th class="p-4 font-semibold text-gray-600 text-center">Nilai Akhir</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {% for item in student_data %}
+              <tr class="hover:bg-gray-50">
+                <td class="p-4">
+                  <a href="{% url 'guru_riwayat_siswa' item.student.id %}"
+                     class="flex items-center group">
+                    <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-semibold mr-3 flex-shrink-0">
+                      {{ item.student.first_name|first|upper }}
+                    </div>
+                    <div>
+                      <div class="font-medium text-gray-800 group-hover:underline"
+                           style="color: #0077B6">{{ item.student.get_full_name }}</div>
+                      <div class="text-xs text-gray-500">@{{ item.student.username }}</div>
+                    </div>
+                  </a>
+                </td>
+                {% for key, value in item.grades.items %}
+                  <td class="p-4 text-center">
+                    {% if value is not None %}
+                      {% if value > 0 %}
+                        <span class="font-medium text-gray-700">{{ value|floatformat:0 }}</span>
+                      {% else %}
+                        <span class="inline-block w-4 h-4 bg-red-100 border border-red-400 rounded-full"
+                              title="Nilai: 0"></span>
+                      {% endif %}
+                    {% else %}
+                      <span class="text-gray-400">-</span>
+                    {% endif %}
+                  </td>
+                {% endfor %}
+                <td class="p-4 text-center">
+                  {% if item.final_score is not None %}
+                    <span class="font-bold text-lg {% if item.final_score >= 70 %}text-green-600{% else %}text-red-600{% endif %}">
+                      {{ item.final_score|floatformat:0 }}
+                    </span>
+                  {% else %}
+                    <span class="text-gray-400">-</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="9" class="p-6 text-center text-gray-500">Belum ada siswa di kelas ini yang mengerjakan evaluasi.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="p-4 flex flex-col md:flex-row justify-between md:items-center text-sm border-t gap-2">
+        <span class="text-gray-600">Menampilkan 1 sampai {{ student_data|length }} dari {{ student_data|length }} hasil</span>
+        <div class="flex items-center space-x-2">
+          <button class="bg-white border border-gray-300 px-3 py-1 rounded-lg hover:bg-gray-50 disabled:opacity-50"
+                  disabled>&lt; Previous</button>
+          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg font-medium">Page 1</span>
+          <button class="bg-white border border-gray-300 px-3 py-1 rounded-lg hover:bg-gray-50 disabled:opacity-50"
+                  disabled>Next &gt;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

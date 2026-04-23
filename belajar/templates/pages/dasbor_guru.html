@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dasbor Guru - {{ request.user.profile.get_kelas_display }}{% endblock %}
+{% block content %}
+  <div class="flex flex-col w-full space-y-8">
+    <div class="flex justify-between items-center bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">Halo, {{ user.first_name }}! 👋</h1>
+        <p class="text-gray-500 text-sm mt-1">
+          Berikut ringkasan perkembangan siswa di {{ request.user.profile.get_kelas_display }} hari ini.
+        </p>
+      </div>
+      <div class="hidden md:block text-right">
+        <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Tanggal</p>
+        <p class="text-gray-700 font-medium">{% now "l, d F Y" %}</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-5 text-white shadow-lg shadow-blue-200">
+        <div class="flex justify-between items-start">
+          <div>
+            <p class="text-blue-100 text-sm font-medium">Total Siswa</p>
+            <h3 class="text-3xl font-bold mt-2">{{ total_siswa }}</h3>
+          </div>
+          <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+            <i class="fa-solid fa-users text-xl text-white"></i>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 border-l-4 border-green-500 shadow-sm">
+        <div class="flex justify-between items-start">
+          <div>
+            <p class="text-gray-500 text-sm font-medium">Siswa Lulus (Nilai > 70)</p>
+            <h3 class="text-3xl font-bold mt-2 text-gray-800">{{ siswa_lulus }}</h3>
+          </div>
+          <div class="bg-green-100 p-2 rounded-lg">
+            <i class="fa-solid fa-graduation-cap text-xl text-green-600"></i>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 border-l-4 border-orange-500 shadow-sm">
+        <div class="flex justify-between items-start">
+          <div>
+            <p class="text-gray-500 text-sm font-medium">Siswa Aktif Belajar</p>
+            <h3 class="text-3xl font-bold mt-2 text-gray-800">{{ siswa_aktif }}</h3>
+          </div>
+          <div class="bg-orange-100 p-2 rounded-lg">
+            <i class="fa-solid fa-book-open text-xl text-orange-600"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a href="{% url 'daftar_kuis_guru' %}"
+         class="flex items-center p-6 bg-white border border-indigo-100 rounded-xl shadow-sm hover:shadow-md hover:bg-indigo-50 transition group">
+        <div class="p-4 bg-indigo-100 text-indigo-600 rounded-full group-hover:bg-white group-hover:scale-110 transition duration-300">
+          <i class="fa-solid fa-pen-to-square text-2xl"></i>
+        </div>
+        <div class="ml-4 flex-grow">
+          <h3 class="text-lg font-bold text-gray-800 group-hover:text-indigo-700">Manajemen Kuis</h3>
+          <p class="text-sm text-gray-500 group-hover:text-indigo-600">Buat soal & kelola ujian kelas</p>
+        </div>
+        <div class="text-gray-300 group-hover:text-indigo-400">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </a>
+      <a href="{% url 'guru_nilai' %}"
+         class="flex items-center p-6 bg-white border border-emerald-100 rounded-xl shadow-sm hover:shadow-md hover:bg-emerald-50 transition group">
+        <div class="p-4 bg-emerald-100 text-emerald-600 rounded-full group-hover:bg-white group-hover:scale-110 transition duration-300">
+          <i class="fa-solid fa-chart-line text-2xl"></i>
+        </div>
+        <div class="ml-4 flex-grow">
+          <h3 class="text-lg font-bold text-gray-800 group-hover:text-emerald-700">Rekap Nilai Siswa</h3>
+          <p class="text-sm text-gray-500 group-hover:text-emerald-600">Pantau detail nilai evaluasi & kuis</p>
+        </div>
+        <div class="text-gray-300 group-hover:text-emerald-400">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </a>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+          <i class="fa-solid fa-chart-simple text-blue-500 mr-2"></i> Rata-rata Pemahaman Materi
+        </h2>
+        <div class="relative h-64 w-full">
+          <canvas id="materiChart"></canvas>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-fit">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">Aktivitas Evaluasi</h2>
+        <div class="space-y-4">
+          {% if recent_evals %}
+            {% for ev in recent_evals %}
+              <div class="flex items-start space-x-3 pb-3 border-b border-gray-50 last:border-0 last:pb-0">
+                <div class="bg-indigo-50 p-2 rounded-full flex-shrink-0">
+                  <i class="fa-solid fa-clipboard-check text-indigo-500 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-700">{{ ev.user.get_full_name }}</p>
+                  <p class="text-xs text-gray-500">Mengerjakan Evaluasi Akhir</p>
+                  <div class="mt-1 flex items-center space-x-2">
+                    <span class="text-xs px-2 py-0.5 rounded-full {% if ev.nilai >= 70 %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
+                      Skor: {{ ev.nilai|floatformat:0 }}
+                    </span>
+                    <span class="text-[10px] text-gray-400">{{ ev.created_at|timesince }} yang lalu</span>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="text-center py-8">
+              <i class="fa-solid fa-ghost text-gray-300 text-3xl mb-2"></i>
+              <p class="text-gray-400 text-sm">Belum ada aktivitas evaluasi.</p>
+            </div>
+          {% endif %}
+        </div>
+        <div class="mt-4 pt-3 border-t text-center">
+          <a href="{% url 'guru_nilai' %}"
+             class="text-sm text-blue-600 hover:text-blue-800 font-medium">Lihat Semua Nilai &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div id="daftar-siswa"
+         class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <div class="p-6 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+        <h2 class="text-lg font-bold text-gray-800">📚 Daftar Siswa {{ request.user.profile.get_kelas_display }}</h2>
+        <div class="relative w-full md:w-64">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fa-solid fa-search text-gray-400"></i>
+          </span>
+          <input type="text"
+                 id="searchSiswa"
+                 class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition"
+                 placeholder="Cari nama siswa...">
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left" id="tabelSiswa">
+          <thead class="bg-gray-50 text-gray-600 text-xs uppercase tracking-wider">
+            <tr>
+              <th class="p-4 font-semibold">Nama Lengkap</th>
+              <th class="p-4 font-semibold">Username</th>
+              <th class="p-4 font-semibold">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {% for siswa in siswa_list %}
+              <tr class="hover:bg-blue-50 transition-colors duration-150">
+                <td class="p-4 font-medium text-gray-800 flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">
+                    {{ siswa.first_name|first }}{{ siswa.last_name|first }}
+                  </div>
+                  <span>{{ siswa.get_full_name }}</span>
+                </td>
+                <td class="p-4 text-gray-600 text-sm">{{ siswa.username }}</td>
+                <td class="p-4">
+                  <a href="{% url 'guru_riwayat_siswa' siswa.id %}"
+                     class="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline">Lihat Detail</a>
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="3" class="p-8 text-center text-gray-500">
+                  <img src="{% static 'images/empty_state.svg' %}"
+                       alt="No Data"
+                       class="h-24 mx-auto mb-3 opacity-50">
+                  Belum ada siswa yang terdaftar di kelas ini.
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  // 1. Inisialisasi Chart
+  const ctx = document.getElementById('materiChart').getContext('2d');
+  const materiChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: {{ chart_labels|safe }},
+          datasets: [{
+              label: 'Rata-rata Nilai Siswa',
+              data: {{ chart_data|safe }},
+              backgroundColor: 'rgba(59, 130, 246, 0.6)',
+              borderColor: 'rgba(59, 130, 246, 1)',
+              borderWidth: 1,
+              borderRadius: 4,
+              barPercentage: 0.6,
+          }]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  max: 100,
+                  grid: { color: '#f3f4f6' }
+              },
+              x: { grid: { display: false } }
+          },
+          plugins: { legend: { display: false } }
+      }
+  });
+
+  // 2. Fungsi Search Sederhana
+  document.getElementById('searchSiswa').addEventListener('keyup', function() {
+      let filter = this.value.toLowerCase();
+      let rows = document.querySelectorAll('#tabelSiswa tbody tr');
+
+      rows.forEach(row => {
+          let text = row.textContent.toLowerCase();
+          if(text.includes(filter)) {
+              row.style.display = '';
+          } else {
+              row.style.display = 'none';
+          }
+      });
+  });
+  </script>
+{% endblock %}

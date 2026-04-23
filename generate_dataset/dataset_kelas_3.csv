@@ -1,0 +1,361 @@
+NAMA,KELAS,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,Q16,Q17,Q18,Q19,Q20,Q21,Q22,Q23,Q24,NILAI_1,NILAI_2,NILAI_3,NILAI_4,NILAI_5,NILAI_6,TOTAL_NILAI,REKOMENDASI_MATERI
+Siswa_Gen_1,Kelas 3,C,A,C,D,A,B,D,A,A,B,B,D,A,D,C,A,B,B,A,A,D,A,C,C,50.0,50.0,75.0,50.0,25.0,25.0,45.83,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_2,Kelas 3,A,B,C,D,C,B,B,C,C,B,C,A,C,B,B,A,B,B,D,D,D,B,C,C,100.0,25.0,50.0,25.0,50.0,50.0,50.0,Materi 2: Perkalian Bersusun
+Siswa_Gen_3,Kelas 3,A,B,C,D,A,B,C,A,C,D,A,D,A,C,C,C,A,B,A,A,A,A,C,B,100.0,75.0,25.0,50.0,50.0,50.0,58.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_4,Kelas 3,C,A,A,B,A,D,C,D,C,B,C,D,D,B,C,A,C,C,D,A,B,C,C,D,0.0,75.0,75.0,50.0,0.0,50.0,41.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_5,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,C,A,D,A,B,C,D,100.0,100.0,100.0,100.0,50.0,100.0,91.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_6,Kelas 3,A,B,C,D,A,D,C,D,A,B,C,A,A,B,C,D,A,B,C,D,A,D,D,C,100.0,75.0,75.0,100.0,100.0,25.0,79.17,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_7,Kelas 3,C,B,D,B,D,B,C,D,A,B,A,A,B,D,D,B,A,A,A,B,C,B,C,D,25.0,75.0,50.0,0.0,25.0,75.0,41.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_8,Kelas 3,A,B,C,D,C,D,A,B,A,C,D,D,A,D,C,D,D,B,C,A,A,B,C,A,100.0,0.0,50.0,75.0,50.0,75.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_9,Kelas 3,A,C,D,A,D,B,D,C,B,C,D,B,B,C,D,D,B,C,B,D,A,C,A,C,25.0,25.0,0.0,25.0,25.0,25.0,20.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_10,Kelas 3,A,B,C,D,A,C,C,D,A,B,C,D,C,B,B,D,A,B,C,C,A,B,C,D,100.0,75.0,100.0,50.0,75.0,100.0,83.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_11,Kelas 3,C,A,B,D,A,D,C,D,A,D,A,D,B,B,A,C,A,A,B,A,B,B,B,B,25.0,75.0,50.0,25.0,25.0,25.0,37.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_12,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_13,Kelas 3,B,B,A,B,D,B,A,B,A,B,C,D,C,B,C,D,D,B,D,D,A,B,C,A,25.0,25.0,100.0,75.0,50.0,75.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_14,Kelas 3,A,B,C,D,A,B,B,A,A,B,C,D,A,B,C,D,D,C,C,D,D,B,D,C,100.0,50.0,100.0,100.0,50.0,25.0,70.83,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_15,Kelas 3,A,B,D,D,A,B,C,D,B,D,B,C,A,B,C,D,A,C,C,B,A,D,C,D,75.0,100.0,0.0,100.0,50.0,75.0,66.67,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_16,Kelas 3,D,A,A,D,D,C,C,C,A,A,D,D,B,D,A,D,D,C,D,B,B,D,A,A,25.0,25.0,50.0,25.0,0.0,0.0,20.83,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_17,Kelas 3,B,B,D,B,B,B,C,B,A,B,C,C,B,B,D,D,D,A,C,C,A,A,C,A,25.0,50.0,75.0,50.0,25.0,50.0,45.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_18,Kelas 3,A,B,C,A,C,B,C,D,A,B,A,D,B,A,C,B,A,B,C,D,A,A,C,C,75.0,75.0,75.0,25.0,100.0,50.0,66.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_19,Kelas 3,C,C,A,B,A,C,A,B,A,B,D,A,B,D,D,B,A,D,B,D,B,B,B,C,0.0,25.0,50.0,0.0,50.0,25.0,25.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_20,Kelas 3,B,D,C,C,D,A,D,A,C,D,B,C,C,A,D,C,B,C,D,C,B,B,A,D,25.0,0.0,0.0,0.0,0.0,50.0,12.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_21,Kelas 3,A,B,A,A,A,B,A,D,B,A,D,A,D,A,B,A,B,A,D,A,B,D,B,D,50.0,75.0,0.0,0.0,0.0,25.0,25.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_22,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,C,C,A,C,A,B,C,D,A,B,D,D,100.0,100.0,100.0,0.0,100.0,75.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_23,Kelas 3,A,A,C,C,A,B,C,D,C,C,C,D,A,B,C,D,B,A,D,B,A,B,A,D,50.0,100.0,50.0,100.0,0.0,75.0,62.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_24,Kelas 3,A,B,C,D,A,B,C,B,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,100.0,75.0,100.0,100.0,100.0,100.0,95.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_25,Kelas 3,C,A,C,A,A,B,C,D,A,B,C,D,A,B,C,D,A,B,D,D,D,D,D,D,25.0,100.0,100.0,100.0,75.0,25.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_26,Kelas 3,A,B,C,D,B,D,A,D,D,B,C,D,B,A,A,D,D,B,C,D,A,C,C,A,100.0,25.0,75.0,25.0,75.0,50.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_27,Kelas 3,A,B,C,D,A,B,C,D,B,A,B,C,A,B,C,D,A,B,B,C,A,B,C,D,100.0,100.0,0.0,100.0,50.0,100.0,75.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_28,Kelas 3,A,B,C,D,A,B,C,C,B,A,C,D,B,B,D,B,A,C,C,D,C,C,C,B,100.0,75.0,50.0,25.0,75.0,25.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_29,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,D,B,C,D,C,B,C,B,100.0,100.0,100.0,100.0,75.0,50.0,87.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_30,Kelas 3,B,C,D,B,D,B,D,D,B,C,C,A,C,B,C,A,D,B,C,D,B,D,A,C,0.0,50.0,25.0,50.0,75.0,0.0,33.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_31,Kelas 3,D,A,B,B,A,B,C,A,D,D,C,D,A,D,C,D,D,C,D,D,A,C,C,B,0.0,75.0,50.0,75.0,25.0,50.0,45.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_32,Kelas 3,A,B,C,D,A,D,A,D,C,B,D,C,A,B,C,D,A,A,C,D,D,B,C,D,100.0,50.0,25.0,100.0,75.0,75.0,70.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_33,Kelas 3,C,A,A,D,A,B,C,D,C,D,C,C,C,B,A,B,A,B,C,D,A,C,C,C,25.0,100.0,25.0,25.0,100.0,50.0,54.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_34,Kelas 3,A,B,B,D,B,B,D,D,A,C,A,D,A,B,A,A,A,B,C,D,A,B,C,D,75.0,50.0,50.0,50.0,100.0,100.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_35,Kelas 3,A,B,C,B,A,D,A,D,A,B,B,D,A,A,C,D,C,C,C,D,A,B,C,D,75.0,50.0,75.0,75.0,50.0,100.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_36,Kelas 3,B,B,B,D,D,B,C,B,D,B,C,D,A,B,C,D,A,B,D,D,C,C,A,A,50.0,50.0,75.0,100.0,75.0,0.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_37,Kelas 3,D,D,A,A,D,D,A,B,A,A,C,A,C,B,C,C,D,D,D,D,D,D,B,D,0.0,0.0,50.0,50.0,25.0,25.0,25.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_38,Kelas 3,D,B,C,D,A,A,B,B,A,A,A,C,C,C,C,A,B,D,B,A,A,A,B,C,75.0,25.0,25.0,25.0,0.0,25.0,29.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_39,Kelas 3,B,C,C,B,D,D,A,D,B,D,B,A,D,A,B,A,A,D,D,B,A,D,A,B,25.0,25.0,0.0,0.0,25.0,25.0,16.67,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_40,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,D,B,C,D,A,B,C,B,100.0,100.0,100.0,100.0,75.0,75.0,91.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_41,Kelas 3,A,D,C,D,A,B,B,D,A,B,C,A,C,D,C,D,A,C,D,D,C,D,B,D,75.0,75.0,75.0,50.0,50.0,25.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_42,Kelas 3,A,B,C,D,A,B,C,C,A,D,C,D,A,B,C,D,A,B,C,D,A,C,B,D,100.0,75.0,75.0,100.0,100.0,50.0,83.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_43,Kelas 3,C,C,D,C,B,B,D,C,C,C,A,A,B,A,C,D,A,B,B,C,B,C,B,C,0.0,25.0,0.0,50.0,50.0,0.0,20.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_44,Kelas 3,A,A,C,D,A,B,B,D,C,B,C,A,A,B,C,D,C,A,C,D,A,C,C,D,75.0,75.0,50.0,100.0,50.0,75.0,70.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_45,Kelas 3,A,B,B,A,A,A,C,C,B,B,B,B,A,D,A,D,C,C,C,B,C,B,D,C,50.0,50.0,25.0,50.0,25.0,25.0,37.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_46,Kelas 3,A,B,C,D,A,B,C,D,A,B,B,C,D,D,A,B,D,B,B,D,B,B,C,D,100.0,100.0,50.0,0.0,50.0,75.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_47,Kelas 3,C,B,A,D,B,B,C,D,A,B,C,A,A,A,C,D,A,C,B,D,D,D,A,D,50.0,75.0,75.0,75.0,50.0,25.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_48,Kelas 3,A,B,C,D,A,B,C,D,A,A,C,D,A,B,C,D,A,B,C,D,D,A,D,B,100.0,100.0,75.0,100.0,100.0,0.0,79.17,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_49,Kelas 3,D,D,B,D,A,C,C,C,A,B,D,C,A,B,D,D,D,A,C,D,D,C,A,B,25.0,50.0,50.0,75.0,50.0,0.0,41.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_50,Kelas 3,A,B,C,D,B,B,C,C,D,D,C,C,B,D,B,D,B,A,D,D,A,B,C,D,100.0,50.0,25.0,25.0,25.0,100.0,54.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_51,Kelas 3,A,B,C,D,C,B,C,D,C,D,C,D,A,B,D,D,A,B,C,D,A,C,C,D,100.0,75.0,50.0,75.0,100.0,75.0,79.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_52,Kelas 3,A,B,C,D,D,B,D,A,A,B,C,D,A,B,C,A,D,C,C,D,A,B,C,A,100.0,25.0,100.0,75.0,50.0,75.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_53,Kelas 3,C,B,B,D,A,B,C,D,A,B,D,A,B,B,B,B,C,D,B,C,C,D,C,C,50.0,100.0,50.0,25.0,0.0,25.0,41.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_54,Kelas 3,C,B,C,D,A,D,B,D,A,B,C,D,C,B,C,D,B,B,C,D,D,A,C,C,75.0,50.0,100.0,75.0,75.0,25.0,66.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_55,Kelas 3,B,A,D,D,A,D,A,C,A,D,C,B,A,B,D,A,D,A,B,C,A,D,C,C,25.0,25.0,50.0,50.0,0.0,50.0,33.33,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_56,Kelas 3,A,B,C,D,B,A,C,D,B,B,C,C,D,C,C,D,D,B,C,B,C,B,B,A,100.0,50.0,50.0,50.0,50.0,25.0,54.17,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_57,Kelas 3,A,B,C,D,A,B,C,D,A,B,D,A,D,B,C,D,C,B,C,D,A,B,C,B,100.0,100.0,50.0,75.0,75.0,75.0,79.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_58,Kelas 3,C,C,C,D,B,B,C,D,A,C,C,C,C,A,D,D,C,B,D,C,B,C,C,D,50.0,75.0,50.0,25.0,25.0,50.0,45.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_59,Kelas 3,A,B,C,D,A,B,B,D,A,B,C,A,A,B,C,D,A,D,C,D,B,B,B,D,100.0,75.0,75.0,100.0,75.0,50.0,79.17,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_60,Kelas 3,C,B,C,D,D,B,C,D,C,D,D,C,A,B,B,B,C,A,D,D,B,C,D,C,75.0,75.0,0.0,50.0,25.0,0.0,37.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_61,Kelas 3,A,C,B,D,A,B,B,D,D,C,C,D,C,D,D,D,A,A,C,D,A,B,C,D,50.0,75.0,50.0,25.0,75.0,100.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_62,Kelas 3,A,B,C,A,A,B,A,D,A,B,C,D,B,B,A,C,C,B,B,D,B,B,B,D,75.0,75.0,100.0,25.0,50.0,50.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_63,Kelas 3,A,A,C,D,C,B,C,C,C,B,C,C,A,B,C,B,C,D,A,A,C,D,A,C,75.0,50.0,50.0,75.0,0.0,0.0,41.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_64,Kelas 3,A,B,D,B,A,B,A,D,A,B,C,C,D,D,B,D,A,B,B,A,B,B,D,D,50.0,75.0,75.0,25.0,50.0,50.0,54.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_65,Kelas 3,C,B,C,A,A,B,C,D,A,B,C,D,A,B,C,D,C,A,C,D,B,B,D,D,50.0,100.0,100.0,100.0,50.0,50.0,75.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_66,Kelas 3,B,B,C,D,D,D,B,D,C,C,D,D,D,D,A,D,D,A,D,C,D,B,A,B,75.0,25.0,25.0,25.0,0.0,25.0,29.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_67,Kelas 3,D,B,B,D,A,B,C,D,C,C,B,D,A,B,B,D,A,B,C,D,B,B,C,D,50.0,100.0,25.0,75.0,100.0,75.0,70.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_68,Kelas 3,A,B,D,D,C,D,D,A,A,D,A,A,A,B,C,A,A,D,D,D,B,B,D,C,75.0,0.0,25.0,75.0,50.0,25.0,41.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_69,Kelas 3,A,A,C,A,A,B,B,D,C,B,C,A,A,D,B,D,C,A,C,D,D,B,C,D,50.0,75.0,50.0,50.0,50.0,75.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_70,Kelas 3,A,A,C,C,A,B,C,D,A,B,C,C,D,C,C,B,D,B,C,A,A,A,A,D,50.0,100.0,75.0,25.0,50.0,50.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_71,Kelas 3,A,B,C,D,A,C,C,D,A,D,C,D,A,B,D,D,D,C,C,C,A,D,D,D,100.0,75.0,75.0,75.0,25.0,50.0,66.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_72,Kelas 3,B,A,C,D,A,B,C,D,D,B,C,D,A,B,C,D,A,B,C,D,A,A,B,D,50.0,100.0,75.0,100.0,100.0,50.0,79.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_73,Kelas 3,D,B,C,D,A,D,C,D,A,B,C,D,B,B,A,D,A,D,B,D,A,B,C,D,75.0,75.0,100.0,50.0,50.0,100.0,75.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_74,Kelas 3,A,B,C,D,B,B,A,D,A,C,D,D,D,B,C,D,C,B,D,D,B,B,A,D,100.0,50.0,50.0,75.0,50.0,50.0,62.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_75,Kelas 3,A,B,C,D,A,B,C,D,C,B,B,B,C,A,C,C,D,A,C,B,A,C,C,D,100.0,100.0,25.0,25.0,25.0,75.0,58.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_76,Kelas 3,C,A,B,D,C,B,C,D,C,C,C,D,B,B,B,C,B,A,D,D,A,B,A,A,25.0,75.0,50.0,25.0,25.0,50.0,41.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_77,Kelas 3,A,C,A,D,A,B,C,D,B,B,C,D,C,B,C,B,A,C,B,C,C,B,C,D,50.0,100.0,75.0,50.0,25.0,75.0,62.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_78,Kelas 3,A,A,D,D,B,A,C,D,A,B,C,D,D,B,A,C,B,C,D,B,A,A,C,A,50.0,50.0,100.0,25.0,0.0,50.0,45.83,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_79,Kelas 3,A,C,B,A,C,D,C,D,A,C,C,D,A,B,B,D,B,C,C,D,A,B,C,A,25.0,50.0,75.0,75.0,50.0,75.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_80,Kelas 3,A,B,C,A,C,B,C,A,C,D,C,A,A,D,B,D,D,C,C,B,B,A,C,D,75.0,50.0,25.0,50.0,25.0,50.0,45.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_81,Kelas 3,A,A,C,D,A,B,C,D,D,B,D,D,A,B,C,D,A,B,C,C,A,B,C,D,75.0,100.0,50.0,100.0,75.0,100.0,83.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_82,Kelas 3,A,B,C,B,A,A,C,D,B,B,A,D,D,A,C,D,A,B,C,D,A,C,D,A,75.0,75.0,50.0,50.0,100.0,25.0,62.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_83,Kelas 3,D,A,D,D,A,D,D,C,D,B,A,D,B,D,A,D,C,C,B,A,A,C,D,D,25.0,25.0,50.0,25.0,0.0,50.0,29.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_84,Kelas 3,A,B,C,D,A,B,C,D,C,A,C,D,A,D,B,B,B,A,A,A,B,D,A,A,100.0,100.0,50.0,25.0,0.0,0.0,45.83,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_85,Kelas 3,D,B,A,A,A,B,C,B,C,B,B,B,A,A,B,D,D,B,B,A,C,A,D,D,25.0,75.0,25.0,50.0,25.0,25.0,37.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_86,Kelas 3,A,B,D,A,D,C,A,B,B,B,A,D,A,B,A,D,D,D,C,C,A,B,C,C,50.0,0.0,50.0,75.0,25.0,75.0,45.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_87,Kelas 3,C,C,B,C,D,D,A,C,A,A,D,A,B,C,D,A,D,D,C,D,A,D,B,C,0.0,0.0,25.0,0.0,50.0,25.0,16.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_88,Kelas 3,A,C,C,D,D,B,C,D,A,B,C,C,B,D,A,C,C,B,A,B,C,D,C,B,75.0,75.0,75.0,0.0,25.0,25.0,45.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_89,Kelas 3,A,B,C,D,B,B,C,D,A,B,C,D,A,B,C,A,C,A,A,A,C,B,C,C,100.0,75.0,100.0,75.0,0.0,50.0,66.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_90,Kelas 3,A,A,C,B,A,B,A,D,B,B,C,D,C,B,C,B,A,B,C,D,C,D,A,C,50.0,75.0,75.0,50.0,100.0,0.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_91,Kelas 3,C,C,C,A,B,C,D,A,D,C,D,A,A,D,A,C,D,C,B,A,A,A,B,C,25.0,0.0,0.0,25.0,0.0,25.0,12.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_92,Kelas 3,A,B,C,D,A,B,A,D,A,B,D,D,A,A,C,A,A,B,C,D,A,B,C,C,100.0,75.0,75.0,50.0,100.0,75.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_93,Kelas 3,D,C,C,A,B,B,C,D,A,C,B,B,D,D,D,D,A,B,A,A,A,A,C,D,25.0,75.0,25.0,25.0,50.0,75.0,45.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_94,Kelas 3,A,B,C,D,A,C,B,D,A,B,C,D,B,D,C,D,B,B,B,D,A,B,C,C,100.0,50.0,100.0,50.0,50.0,75.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_95,Kelas 3,A,B,C,D,A,A,A,D,A,A,C,D,A,A,C,B,C,B,C,C,A,B,C,D,100.0,50.0,75.0,50.0,50.0,100.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_96,Kelas 3,C,B,D,D,D,D,B,D,A,B,C,D,A,D,C,B,D,C,A,A,B,C,D,B,50.0,25.0,100.0,50.0,0.0,0.0,37.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_97,Kelas 3,B,D,C,C,C,B,D,D,A,B,C,D,A,C,C,D,A,C,C,D,A,B,C,D,25.0,50.0,100.0,75.0,75.0,100.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_98,Kelas 3,A,B,C,C,C,B,C,C,A,B,C,C,A,B,C,B,D,D,C,D,A,A,A,D,75.0,50.0,75.0,75.0,50.0,50.0,62.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_99,Kelas 3,A,B,D,A,A,C,C,D,D,A,D,A,C,A,B,A,D,D,C,D,C,A,D,C,50.0,75.0,0.0,0.0,50.0,0.0,29.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_100,Kelas 3,A,B,B,C,D,B,B,B,A,D,B,D,C,A,D,B,D,C,D,C,D,A,B,A,50.0,25.0,50.0,0.0,0.0,0.0,20.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_101,Kelas 3,D,B,A,A,A,B,C,D,A,B,C,D,B,B,C,D,A,B,D,C,B,B,C,D,25.0,100.0,100.0,75.0,50.0,75.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_102,Kelas 3,A,C,C,D,A,B,C,B,A,B,C,D,A,A,C,D,A,B,C,D,A,A,D,C,75.0,75.0,100.0,75.0,100.0,25.0,75.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_103,Kelas 3,D,C,C,D,A,B,C,D,A,C,A,D,A,B,C,D,B,B,C,A,A,B,C,A,50.0,100.0,50.0,100.0,50.0,75.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_104,Kelas 3,A,D,C,A,A,B,D,D,A,B,D,A,A,A,A,D,A,C,C,D,A,B,A,D,50.0,75.0,50.0,50.0,75.0,75.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_105,Kelas 3,A,C,B,D,B,B,C,D,B,A,A,D,A,A,C,C,A,B,A,A,A,D,C,B,50.0,75.0,25.0,50.0,50.0,50.0,50.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_106,Kelas 3,C,B,C,D,A,B,B,D,B,B,C,C,A,B,A,A,B,B,B,C,B,D,D,C,75.0,75.0,50.0,50.0,25.0,0.0,45.83,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_107,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,A,C,D,A,B,C,D,B,C,C,A,100.0,100.0,100.0,75.0,100.0,25.0,83.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_108,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,A,C,100.0,100.0,100.0,100.0,100.0,50.0,91.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_109,Kelas 3,A,A,A,D,A,B,C,D,A,B,A,D,D,B,C,A,D,B,C,B,B,D,C,D,50.0,100.0,75.0,50.0,50.0,50.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_110,Kelas 3,A,C,C,D,D,B,B,D,D,A,C,D,A,A,C,B,C,B,C,D,A,B,C,C,75.0,50.0,50.0,50.0,75.0,75.0,62.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_111,Kelas 3,A,B,C,D,A,B,B,D,A,C,B,D,A,B,C,A,A,B,D,B,A,A,C,A,100.0,75.0,50.0,75.0,50.0,50.0,66.67,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_112,Kelas 3,B,B,C,B,A,B,D,D,A,B,C,A,C,B,C,B,C,B,B,C,A,B,D,D,50.0,75.0,75.0,50.0,25.0,75.0,58.33,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_113,Kelas 3,A,B,C,D,A,B,C,D,C,A,C,D,A,B,C,B,C,C,D,B,B,B,A,D,100.0,100.0,50.0,75.0,0.0,50.0,62.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_114,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,A,B,B,C,D,A,B,A,D,C,B,A,A,100.0,100.0,75.0,75.0,75.0,25.0,75.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_115,Kelas 3,D,B,D,A,D,B,A,C,A,C,C,D,D,A,D,D,A,C,A,C,A,C,B,D,25.0,25.0,75.0,25.0,25.0,50.0,37.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_116,Kelas 3,A,B,C,A,D,B,A,B,A,C,C,C,A,C,C,B,A,C,C,D,C,B,C,D,75.0,25.0,50.0,50.0,75.0,75.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_117,Kelas 3,D,B,A,B,C,B,C,D,A,C,C,D,C,B,A,A,A,B,A,A,D,D,C,D,25.0,75.0,75.0,25.0,50.0,50.0,50.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_118,Kelas 3,A,D,A,C,D,D,C,C,A,B,D,D,C,C,D,B,D,B,C,D,A,B,C,D,25.0,25.0,75.0,0.0,75.0,100.0,50.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_119,Kelas 3,D,B,C,D,A,B,D,D,A,B,C,D,D,A,D,D,B,A,C,D,D,D,C,D,75.0,75.0,100.0,25.0,50.0,50.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_120,Kelas 3,B,B,B,D,A,C,C,D,A,D,C,B,A,B,C,D,A,B,B,D,A,D,C,A,50.0,75.0,50.0,100.0,75.0,50.0,66.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_121,Kelas 3,B,B,C,D,A,A,C,D,A,B,C,D,C,B,B,D,D,C,C,D,C,B,A,A,75.0,75.0,100.0,50.0,50.0,25.0,62.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_122,Kelas 3,C,B,C,D,B,B,A,A,A,B,C,A,D,B,C,D,A,B,C,C,A,C,C,D,75.0,25.0,75.0,75.0,75.0,75.0,66.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_123,Kelas 3,B,B,B,B,B,A,C,D,D,B,B,A,C,A,D,A,D,A,D,D,D,B,A,D,25.0,50.0,25.0,0.0,25.0,50.0,29.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_124,Kelas 3,B,B,A,D,B,B,C,D,C,B,C,D,A,A,C,C,A,B,C,D,A,B,C,D,50.0,75.0,75.0,50.0,100.0,100.0,75.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_125,Kelas 3,A,B,C,A,C,D,C,D,B,B,A,D,A,A,C,C,D,B,C,C,B,B,A,A,75.0,50.0,50.0,50.0,50.0,25.0,50.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_126,Kelas 3,A,A,C,C,A,B,C,D,A,B,C,D,A,A,C,D,A,B,C,D,A,B,D,D,50.0,100.0,100.0,75.0,100.0,75.0,83.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_127,Kelas 3,A,B,B,A,A,C,C,D,A,B,C,D,A,B,D,D,D,B,C,D,A,B,C,D,50.0,75.0,100.0,75.0,75.0,100.0,79.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_128,Kelas 3,D,B,C,D,C,A,A,C,A,C,C,C,A,C,C,D,D,D,B,D,D,C,A,D,75.0,0.0,50.0,75.0,25.0,25.0,41.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_129,Kelas 3,A,B,C,D,D,B,C,A,C,A,C,D,A,A,A,D,A,B,B,A,A,B,A,B,100.0,50.0,50.0,50.0,50.0,50.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_130,Kelas 3,A,B,C,D,A,B,C,D,A,D,C,D,C,B,A,D,D,B,D,D,A,B,C,D,100.0,100.0,75.0,50.0,50.0,100.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_131,Kelas 3,B,D,C,C,B,A,B,D,C,C,C,D,D,A,C,A,D,C,A,A,D,B,B,C,25.0,25.0,50.0,25.0,0.0,25.0,25.0,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_132,Kelas 3,A,B,C,C,A,C,C,D,D,C,A,D,A,B,B,D,A,B,C,D,D,C,A,C,75.0,75.0,25.0,75.0,100.0,0.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_133,Kelas 3,C,B,A,D,D,B,C,D,C,C,C,D,A,D,C,D,A,D,B,D,A,D,C,B,50.0,75.0,50.0,75.0,50.0,50.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_134,Kelas 3,B,B,C,B,D,B,A,A,C,D,A,D,B,B,B,D,C,D,C,D,D,B,B,C,50.0,25.0,25.0,50.0,50.0,25.0,37.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_135,Kelas 3,D,B,C,D,A,B,D,D,D,A,C,D,D,A,C,B,B,C,D,B,A,B,C,B,75.0,75.0,50.0,25.0,0.0,75.0,50.0,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_136,Kelas 3,A,A,B,D,A,A,C,D,A,B,C,D,A,D,C,D,A,B,C,D,A,B,C,D,50.0,75.0,100.0,75.0,100.0,100.0,83.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_137,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,D,B,A,B,C,D,100.0,100.0,100.0,100.0,50.0,100.0,91.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_138,Kelas 3,A,B,C,D,B,B,D,B,A,B,C,C,A,B,C,B,A,B,C,A,D,A,C,D,100.0,25.0,75.0,75.0,75.0,50.0,66.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_139,Kelas 3,C,A,C,D,A,B,D,D,A,A,B,D,D,A,C,D,A,B,C,D,A,B,C,D,50.0,75.0,50.0,50.0,100.0,100.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_140,Kelas 3,A,B,C,D,D,B,B,A,B,B,A,A,D,B,C,D,D,B,C,A,A,B,B,D,100.0,25.0,25.0,75.0,50.0,75.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_141,Kelas 3,C,B,C,D,A,B,C,D,A,A,C,D,D,B,C,D,D,B,D,D,C,B,C,D,75.0,100.0,75.0,75.0,50.0,75.0,75.0,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_142,Kelas 3,A,B,C,D,A,B,C,C,A,B,C,D,A,B,A,A,A,B,C,A,A,B,C,C,100.0,75.0,100.0,50.0,75.0,75.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_143,Kelas 3,A,B,A,D,A,A,A,D,A,D,D,A,B,A,C,D,D,A,C,C,A,A,C,B,75.0,50.0,25.0,50.0,25.0,50.0,45.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_144,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,C,B,C,D,100.0,100.0,100.0,100.0,100.0,75.0,95.83,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_145,Kelas 3,C,B,C,B,A,C,C,B,C,C,C,A,A,A,B,D,A,A,B,A,B,A,D,C,50.0,50.0,25.0,50.0,25.0,0.0,33.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_146,Kelas 3,A,D,C,D,A,C,C,A,A,C,D,D,A,A,C,B,A,B,A,A,D,C,C,A,75.0,50.0,50.0,50.0,50.0,25.0,50.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_147,Kelas 3,A,B,C,D,A,B,C,D,C,B,B,A,A,C,C,D,A,B,C,D,A,B,C,D,100.0,100.0,25.0,75.0,100.0,100.0,83.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_148,Kelas 3,A,B,A,B,A,D,C,A,A,D,C,D,B,B,A,D,A,B,C,B,B,D,D,B,50.0,50.0,75.0,50.0,75.0,0.0,50.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_149,Kelas 3,D,B,C,D,A,A,A,D,D,D,C,B,A,B,C,C,A,A,C,D,D,A,B,D,75.0,50.0,25.0,75.0,75.0,25.0,54.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_150,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,D,B,D,A,100.0,100.0,100.0,100.0,100.0,25.0,87.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_151,Kelas 3,B,C,C,B,C,C,D,D,A,B,B,C,C,C,A,B,A,D,D,A,D,C,C,A,25.0,25.0,50.0,0.0,25.0,25.0,25.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_152,Kelas 3,A,A,D,A,C,C,A,A,C,C,A,B,B,C,D,B,C,A,A,A,A,A,B,B,25.0,0.0,0.0,0.0,0.0,25.0,8.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_153,Kelas 3,A,B,C,D,A,C,C,B,A,C,B,C,A,D,C,D,B,C,C,D,B,A,C,D,100.0,50.0,25.0,75.0,50.0,50.0,58.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_154,Kelas 3,A,A,C,B,A,C,C,D,A,D,B,C,D,C,C,C,C,B,B,C,A,B,C,D,50.0,75.0,25.0,25.0,25.0,100.0,50.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_155,Kelas 3,A,B,C,C,A,C,C,B,A,C,C,D,C,B,C,A,B,D,B,D,A,C,C,C,75.0,50.0,75.0,50.0,25.0,50.0,54.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_156,Kelas 3,A,B,C,C,A,B,C,D,A,B,C,D,A,B,B,D,A,B,C,D,A,B,C,C,75.0,100.0,100.0,75.0,100.0,75.0,87.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_157,Kelas 3,A,D,A,D,B,D,C,C,B,B,B,D,B,B,D,D,C,B,A,D,B,A,D,B,50.0,25.0,50.0,50.0,50.0,0.0,37.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_158,Kelas 3,A,B,D,B,C,B,D,D,A,B,C,D,B,B,B,D,C,B,C,D,A,D,C,C,50.0,50.0,100.0,50.0,75.0,50.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_159,Kelas 3,B,D,C,D,D,B,C,B,C,D,D,C,A,B,D,D,A,B,C,C,D,D,C,D,50.0,50.0,0.0,75.0,75.0,50.0,50.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_160,Kelas 3,A,A,B,D,A,B,A,D,A,B,C,C,D,D,B,C,D,C,A,B,D,B,C,C,50.0,75.0,75.0,0.0,0.0,50.0,41.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_161,Kelas 3,D,B,A,A,A,B,B,C,A,B,D,D,A,B,C,D,D,C,B,B,C,B,A,D,25.0,50.0,75.0,100.0,0.0,50.0,50.0,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_162,Kelas 3,A,B,C,D,A,C,A,D,C,B,C,D,A,D,C,C,A,D,A,D,A,A,B,D,100.0,50.0,75.0,50.0,50.0,50.0,62.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_163,Kelas 3,A,C,C,D,C,C,A,D,C,C,A,C,A,A,D,D,D,A,B,A,D,A,D,A,75.0,25.0,0.0,50.0,0.0,0.0,25.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_164,Kelas 3,D,A,C,A,C,A,B,D,D,C,C,D,C,D,C,B,C,B,C,D,D,C,C,A,25.0,25.0,50.0,25.0,75.0,25.0,37.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_165,Kelas 3,A,B,D,D,A,B,C,D,A,C,C,D,A,B,C,A,A,C,C,D,C,A,B,A,75.0,100.0,75.0,75.0,75.0,0.0,66.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_166,Kelas 3,A,A,B,D,A,D,C,D,D,B,C,D,A,A,A,D,A,D,B,A,A,B,B,A,50.0,75.0,75.0,50.0,25.0,50.0,54.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_167,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,A,D,A,B,C,D,A,D,A,D,100.0,100.0,100.0,75.0,100.0,50.0,87.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_168,Kelas 3,A,B,C,D,A,B,C,D,A,C,C,D,A,B,C,D,A,B,C,D,C,A,A,D,100.0,100.0,75.0,100.0,100.0,25.0,83.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_169,Kelas 3,A,B,D,D,A,B,C,D,A,D,A,D,D,D,C,B,D,D,A,D,B,B,C,D,75.0,100.0,50.0,25.0,25.0,75.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_170,Kelas 3,A,B,C,D,D,C,D,A,A,B,C,D,C,B,C,C,C,A,A,D,A,B,D,D,100.0,0.0,100.0,50.0,25.0,75.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_171,Kelas 3,A,B,C,D,A,B,C,D,A,D,A,C,C,B,B,B,C,B,B,D,D,D,C,B,100.0,100.0,25.0,25.0,50.0,25.0,54.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_172,Kelas 3,A,B,C,A,A,D,D,B,D,B,C,D,D,C,B,C,B,C,B,B,A,B,A,D,75.0,25.0,75.0,0.0,0.0,75.0,41.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_173,Kelas 3,B,C,A,C,C,A,C,C,B,B,C,C,C,C,D,B,B,C,D,A,C,B,B,A,0.0,25.0,50.0,0.0,0.0,25.0,16.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_174,Kelas 3,A,D,C,B,C,B,D,C,A,D,C,C,D,B,B,B,D,D,A,D,B,A,D,B,50.0,25.0,50.0,25.0,25.0,0.0,29.17,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_175,Kelas 3,B,C,C,D,A,B,D,B,A,C,B,D,A,B,C,D,A,B,D,D,C,B,C,A,50.0,50.0,50.0,100.0,75.0,50.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_176,Kelas 3,A,B,C,D,A,D,A,D,A,B,C,D,A,C,C,D,A,B,C,D,C,B,C,D,100.0,50.0,100.0,75.0,100.0,75.0,83.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_177,Kelas 3,A,B,C,A,A,B,C,D,D,B,C,C,A,B,A,D,A,B,D,A,A,D,B,C,75.0,100.0,50.0,75.0,50.0,25.0,62.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_178,Kelas 3,A,B,C,D,A,A,C,D,A,B,C,D,A,B,A,C,B,A,C,D,A,B,C,D,100.0,75.0,100.0,50.0,50.0,100.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_179,Kelas 3,D,B,D,D,A,A,B,D,C,D,D,B,A,B,B,B,D,A,A,B,C,D,C,C,50.0,50.0,0.0,50.0,0.0,25.0,29.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_180,Kelas 3,A,B,C,C,D,A,C,B,D,B,B,D,D,A,C,C,B,C,C,D,B,B,B,B,75.0,25.0,50.0,25.0,50.0,25.0,41.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_181,Kelas 3,A,B,D,B,B,C,B,D,D,A,A,D,A,D,B,B,B,B,C,B,C,D,A,C,50.0,25.0,25.0,25.0,50.0,0.0,29.17,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_182,Kelas 3,D,A,B,B,C,C,B,C,C,D,B,D,B,D,C,B,D,C,A,C,A,B,D,B,0.0,0.0,25.0,25.0,0.0,50.0,16.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_183,Kelas 3,A,B,C,D,A,B,C,D,C,B,B,A,D,C,A,B,A,C,A,D,A,B,C,D,100.0,100.0,25.0,0.0,50.0,100.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_184,Kelas 3,A,B,B,D,C,D,A,D,A,A,C,C,D,A,B,A,B,D,A,C,B,A,C,C,75.0,25.0,50.0,0.0,0.0,25.0,29.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_185,Kelas 3,A,C,C,D,A,B,C,D,B,B,C,D,A,B,C,D,B,C,C,C,A,A,A,A,75.0,100.0,75.0,100.0,25.0,25.0,66.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_186,Kelas 3,A,D,C,D,D,B,C,D,A,B,C,D,A,B,C,D,A,B,C,A,A,D,A,B,75.0,75.0,100.0,100.0,75.0,25.0,75.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_187,Kelas 3,A,B,C,C,D,D,C,C,A,D,C,D,A,B,A,D,A,B,B,D,C,B,C,D,75.0,25.0,75.0,75.0,75.0,75.0,66.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_188,Kelas 3,A,B,C,D,A,B,D,D,A,B,C,D,D,C,B,D,A,B,C,D,B,D,C,D,100.0,75.0,100.0,25.0,100.0,50.0,75.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_189,Kelas 3,A,A,C,A,C,B,C,A,D,A,B,D,D,C,D,C,C,C,A,C,D,B,C,B,50.0,50.0,25.0,0.0,0.0,50.0,29.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_190,Kelas 3,A,C,C,C,A,B,C,D,C,B,C,D,C,C,B,D,A,D,C,D,A,B,A,C,50.0,100.0,75.0,25.0,75.0,50.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_191,Kelas 3,A,A,C,D,C,C,D,D,A,A,D,D,C,B,A,A,B,A,D,A,B,D,A,A,75.0,25.0,50.0,25.0,0.0,0.0,29.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_192,Kelas 3,A,A,C,D,B,B,A,B,B,B,C,D,A,B,B,C,A,D,B,A,B,C,D,A,75.0,25.0,75.0,50.0,25.0,0.0,41.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_193,Kelas 3,B,C,B,D,C,A,A,D,B,C,C,A,A,B,C,D,B,A,B,D,A,D,C,B,25.0,25.0,25.0,100.0,25.0,50.0,41.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_194,Kelas 3,D,B,C,D,A,C,A,D,A,D,C,D,C,B,C,D,B,B,A,A,D,B,A,D,75.0,50.0,75.0,75.0,25.0,50.0,58.33,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_195,Kelas 3,C,B,C,D,C,A,C,D,C,C,D,A,A,A,D,D,A,D,C,D,A,B,C,B,75.0,50.0,0.0,50.0,75.0,75.0,54.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_196,Kelas 3,A,B,C,D,C,D,B,B,A,B,C,D,A,D,C,B,B,B,B,B,D,C,A,D,100.0,0.0,100.0,50.0,25.0,25.0,50.0,Materi 2: Perkalian Bersusun
+Siswa_Gen_197,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,B,A,B,C,D,100.0,100.0,100.0,100.0,75.0,100.0,95.83,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_198,Kelas 3,A,B,C,D,B,D,A,D,B,B,C,D,A,B,C,A,A,B,C,D,D,B,A,B,100.0,25.0,75.0,75.0,100.0,25.0,66.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_199,Kelas 3,D,A,D,A,A,A,C,D,B,D,C,D,A,D,C,D,A,C,C,C,A,B,A,C,0.0,75.0,50.0,75.0,50.0,50.0,50.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_200,Kelas 3,A,B,C,D,A,A,B,A,A,B,B,D,C,D,A,D,A,C,C,D,D,C,C,B,100.0,25.0,75.0,25.0,75.0,25.0,54.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_201,Kelas 3,A,A,D,D,D,B,B,A,C,C,D,A,D,B,B,A,A,C,A,B,B,B,C,C,50.0,25.0,0.0,25.0,25.0,50.0,29.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_202,Kelas 3,A,B,C,D,C,C,C,D,C,B,D,A,A,A,D,D,A,B,C,C,A,B,A,D,100.0,50.0,25.0,50.0,75.0,75.0,62.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_203,Kelas 3,B,B,C,A,A,B,A,A,A,B,D,D,A,B,B,C,A,B,D,A,A,A,D,B,50.0,50.0,75.0,50.0,50.0,25.0,50.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_204,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,D,B,C,A,100.0,100.0,100.0,100.0,100.0,50.0,91.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_205,Kelas 3,A,A,C,B,A,B,C,D,A,A,B,D,A,C,D,D,C,A,C,D,A,B,B,C,50.0,100.0,50.0,50.0,50.0,50.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_206,Kelas 3,A,B,C,D,C,B,C,B,C,B,C,D,D,A,C,A,A,D,D,D,A,B,C,D,100.0,50.0,75.0,25.0,50.0,100.0,66.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_207,Kelas 3,D,B,C,C,B,D,C,D,A,C,B,A,C,A,B,D,B,B,B,C,D,D,C,A,50.0,50.0,25.0,25.0,25.0,25.0,33.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_208,Kelas 3,A,A,D,A,A,B,D,B,A,B,C,D,C,D,D,D,D,B,B,A,A,C,A,A,25.0,50.0,100.0,25.0,25.0,25.0,41.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_209,Kelas 3,A,B,A,D,A,B,C,D,B,B,C,C,B,D,C,D,C,D,C,C,C,B,C,B,75.0,100.0,50.0,50.0,25.0,50.0,58.33,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_210,Kelas 3,A,B,C,D,A,B,D,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,B,D,100.0,75.0,100.0,100.0,100.0,75.0,91.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_211,Kelas 3,C,A,D,A,A,B,C,D,A,A,C,C,B,A,C,B,A,B,C,D,A,A,D,D,0.0,100.0,50.0,25.0,100.0,50.0,54.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_212,Kelas 3,C,C,A,D,C,A,B,B,D,D,B,B,C,D,C,A,B,D,A,B,D,D,D,D,25.0,0.0,0.0,25.0,0.0,25.0,12.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_213,Kelas 3,D,B,C,D,D,A,C,D,A,A,C,B,A,B,C,C,C,A,A,B,D,C,C,C,75.0,50.0,50.0,75.0,0.0,25.0,45.83,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_214,Kelas 3,C,C,C,D,A,C,D,B,A,B,D,D,B,B,C,B,B,B,D,D,B,B,C,D,50.0,25.0,75.0,50.0,50.0,75.0,54.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_215,Kelas 3,A,B,C,D,A,B,C,A,D,C,C,D,A,B,B,C,A,A,C,B,A,A,B,A,100.0,75.0,50.0,50.0,50.0,25.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_216,Kelas 3,B,B,C,D,A,B,C,D,A,B,D,C,A,C,B,C,A,C,C,D,C,C,C,B,75.0,100.0,50.0,25.0,75.0,25.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_217,Kelas 3,A,B,C,C,D,A,C,D,A,D,C,D,C,C,C,D,A,B,C,D,A,B,C,D,75.0,50.0,75.0,50.0,100.0,100.0,75.0,Materi 2: Perkalian Bersusun
+Siswa_Gen_218,Kelas 3,D,B,B,D,D,A,B,A,B,B,A,A,C,D,D,D,C,C,A,B,A,B,C,B,50.0,0.0,25.0,25.0,0.0,75.0,29.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_219,Kelas 3,A,C,A,D,A,C,D,D,D,C,C,A,A,C,C,A,B,B,C,C,D,B,B,D,50.0,50.0,25.0,50.0,50.0,50.0,45.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_220,Kelas 3,A,B,B,D,A,B,C,D,D,B,C,D,A,C,A,B,A,B,B,A,C,B,D,C,75.0,100.0,75.0,25.0,50.0,25.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_221,Kelas 3,D,B,D,D,A,C,B,D,C,D,B,D,C,A,C,D,D,D,A,C,C,A,A,B,50.0,50.0,25.0,50.0,0.0,0.0,29.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_222,Kelas 3,A,B,C,D,B,B,D,D,D,B,C,D,A,B,C,D,A,B,C,D,C,B,D,D,100.0,50.0,75.0,100.0,100.0,50.0,79.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_223,Kelas 3,A,B,C,D,A,B,C,D,A,B,B,D,A,C,C,C,D,B,C,C,A,B,C,D,100.0,100.0,75.0,50.0,50.0,100.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_224,Kelas 3,A,B,C,D,C,A,C,C,B,B,C,D,B,B,C,D,D,B,C,D,A,B,D,D,100.0,25.0,75.0,75.0,75.0,75.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_225,Kelas 3,A,B,C,D,A,B,B,C,D,A,A,B,A,A,C,D,A,B,D,D,A,B,A,C,100.0,50.0,0.0,75.0,75.0,50.0,58.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_226,Kelas 3,A,B,B,D,A,B,A,D,A,B,C,D,C,C,C,D,A,B,B,C,B,B,C,B,75.0,75.0,100.0,50.0,50.0,50.0,66.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_227,Kelas 3,C,D,B,C,C,C,B,D,A,C,D,A,C,C,A,D,C,D,B,A,C,A,D,A,0.0,25.0,25.0,25.0,0.0,0.0,12.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_228,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,C,C,D,A,A,C,D,100.0,100.0,100.0,100.0,75.0,75.0,91.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_229,Kelas 3,C,C,C,D,A,B,C,A,D,D,D,D,C,B,C,D,C,B,C,C,A,D,C,D,50.0,75.0,25.0,75.0,50.0,75.0,58.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_230,Kelas 3,A,B,C,D,D,B,C,A,C,B,D,D,B,A,C,C,A,A,C,D,B,A,A,A,100.0,50.0,50.0,25.0,75.0,0.0,50.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_231,Kelas 3,A,B,D,B,D,B,C,B,D,C,C,B,D,C,C,C,A,B,C,B,B,A,C,D,50.0,50.0,25.0,25.0,75.0,50.0,45.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_232,Kelas 3,A,D,C,C,A,B,C,D,C,B,C,A,B,D,D,A,C,B,C,D,D,B,A,B,50.0,100.0,50.0,0.0,75.0,25.0,50.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_233,Kelas 3,A,B,C,D,C,D,C,B,C,B,D,B,A,B,C,D,A,D,B,A,C,B,C,A,100.0,25.0,25.0,100.0,25.0,50.0,54.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_234,Kelas 3,A,C,B,B,A,B,D,D,A,D,C,C,A,B,B,D,D,C,A,D,D,D,C,A,25.0,75.0,50.0,75.0,25.0,25.0,45.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_235,Kelas 3,A,A,C,B,A,B,D,B,C,B,C,D,C,A,B,B,A,C,C,A,D,C,C,C,50.0,50.0,75.0,0.0,50.0,25.0,41.67,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_236,Kelas 3,A,A,C,D,C,C,A,D,A,A,C,D,A,B,D,D,A,B,C,D,A,C,C,D,75.0,25.0,75.0,75.0,100.0,75.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_237,Kelas 3,A,B,C,D,A,B,A,D,A,B,C,B,A,B,C,D,A,B,C,D,A,B,C,C,100.0,75.0,75.0,100.0,100.0,75.0,87.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_238,Kelas 3,C,B,C,D,A,B,C,D,A,B,A,D,A,D,D,D,C,C,C,D,C,A,A,D,75.0,100.0,75.0,50.0,50.0,25.0,62.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_239,Kelas 3,A,C,A,D,C,C,C,D,C,B,C,A,D,C,B,D,D,D,A,B,B,A,A,A,50.0,50.0,50.0,25.0,0.0,0.0,29.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_240,Kelas 3,A,B,C,D,B,B,C,D,A,A,C,D,A,B,C,D,A,B,C,D,A,B,D,D,100.0,75.0,75.0,100.0,100.0,75.0,87.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_241,Kelas 3,B,B,C,D,D,A,C,C,C,B,C,B,A,B,D,D,B,A,B,A,C,D,B,D,75.0,25.0,50.0,75.0,0.0,25.0,41.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_242,Kelas 3,A,B,C,D,A,B,C,A,A,C,C,A,A,B,C,D,A,D,B,D,A,B,C,A,100.0,75.0,50.0,100.0,50.0,75.0,75.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_243,Kelas 3,A,C,C,D,C,A,A,B,D,B,A,C,D,A,A,C,B,D,B,B,C,A,D,A,75.0,0.0,25.0,0.0,0.0,0.0,16.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_244,Kelas 3,D,D,D,A,D,D,B,B,C,A,D,A,A,A,B,D,D,D,A,B,A,B,B,B,0.0,0.0,0.0,50.0,0.0,50.0,16.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_245,Kelas 3,A,C,A,A,A,C,C,D,A,B,C,D,A,B,A,D,A,C,B,D,A,A,A,B,25.0,75.0,100.0,75.0,50.0,25.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_246,Kelas 3,A,B,C,D,D,D,B,D,A,B,C,D,A,D,D,D,A,A,C,D,D,A,B,A,100.0,25.0,100.0,50.0,75.0,0.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_247,Kelas 3,C,A,A,A,A,B,A,C,A,B,C,D,A,B,D,B,B,B,C,D,C,D,D,A,0.0,50.0,100.0,50.0,75.0,0.0,45.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_248,Kelas 3,B,A,C,D,A,B,C,D,D,B,C,D,A,B,B,C,D,B,D,D,A,B,C,A,50.0,100.0,75.0,50.0,50.0,75.0,66.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_249,Kelas 3,A,A,C,D,C,A,C,D,D,B,B,C,A,B,B,B,C,C,C,D,A,B,A,C,75.0,50.0,25.0,50.0,50.0,50.0,50.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_250,Kelas 3,A,B,B,D,A,B,A,D,A,B,C,D,D,C,C,A,B,C,C,D,A,B,A,A,75.0,75.0,100.0,25.0,50.0,50.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_251,Kelas 3,A,C,D,A,A,B,C,D,A,B,C,D,A,B,C,D,A,B,B,D,A,B,D,D,25.0,100.0,100.0,100.0,75.0,75.0,79.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_252,Kelas 3,C,B,B,A,C,B,C,B,A,B,B,D,A,C,C,B,B,B,D,D,A,D,A,C,25.0,50.0,75.0,50.0,50.0,25.0,45.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_253,Kelas 3,A,B,C,D,B,A,C,A,A,A,C,D,A,B,A,D,A,B,C,A,A,B,C,C,100.0,25.0,75.0,75.0,75.0,75.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_254,Kelas 3,A,A,D,B,D,A,B,A,D,C,C,D,B,C,A,B,B,C,A,C,A,B,C,C,25.0,0.0,50.0,0.0,0.0,75.0,25.0,Materi 2: Perkalian Bersusun
+Siswa_Gen_255,Kelas 3,A,B,D,D,A,B,D,A,A,B,C,B,D,B,C,C,B,D,A,B,A,B,D,D,75.0,50.0,75.0,50.0,0.0,75.0,54.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_256,Kelas 3,A,B,A,D,A,B,C,D,B,B,C,D,A,D,B,B,D,A,C,C,B,B,C,C,75.0,100.0,75.0,25.0,25.0,50.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_257,Kelas 3,A,B,C,D,A,D,A,A,A,B,C,B,A,B,D,A,B,A,D,C,A,D,D,D,100.0,25.0,75.0,50.0,0.0,50.0,50.0,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_258,Kelas 3,A,B,C,D,B,B,D,D,A,B,C,D,A,B,C,D,A,B,C,A,A,C,D,C,100.0,50.0,100.0,100.0,75.0,25.0,75.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_259,Kelas 3,A,B,C,C,A,B,C,C,B,B,C,D,B,B,A,D,A,C,C,C,A,B,C,D,75.0,75.0,75.0,50.0,50.0,100.0,70.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_260,Kelas 3,A,B,D,C,D,A,D,D,C,D,A,C,D,A,D,B,D,B,D,B,C,C,D,A,50.0,25.0,0.0,0.0,25.0,0.0,16.67,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_261,Kelas 3,C,C,C,C,A,B,C,A,B,C,D,A,D,B,D,D,B,B,B,A,D,A,B,A,25.0,75.0,0.0,50.0,25.0,0.0,29.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_262,Kelas 3,A,B,D,C,A,B,C,D,A,C,C,B,D,D,A,D,B,B,C,A,A,A,C,D,50.0,100.0,50.0,25.0,50.0,75.0,58.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_263,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,B,B,C,A,A,B,D,D,100.0,100.0,100.0,100.0,50.0,75.0,87.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_264,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,C,B,B,D,100.0,100.0,100.0,100.0,100.0,50.0,91.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_265,Kelas 3,B,A,A,B,D,A,A,C,C,D,A,C,B,D,D,A,A,A,D,B,B,D,A,C,0.0,0.0,0.0,0.0,25.0,0.0,4.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_266,Kelas 3,C,B,B,D,C,D,A,B,A,B,D,B,A,B,B,D,D,C,D,D,B,D,D,C,50.0,0.0,50.0,75.0,25.0,0.0,33.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_267,Kelas 3,B,D,C,B,A,A,B,D,B,D,D,A,D,C,D,A,D,B,D,B,A,B,B,B,25.0,50.0,0.0,0.0,25.0,50.0,25.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_268,Kelas 3,D,B,B,D,A,B,C,D,C,D,B,D,C,C,A,D,A,A,A,D,A,B,A,D,50.0,100.0,25.0,25.0,50.0,75.0,54.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_269,Kelas 3,A,D,B,D,A,B,C,D,B,A,A,D,A,C,B,C,B,C,B,B,C,B,B,C,50.0,100.0,25.0,25.0,0.0,25.0,37.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_270,Kelas 3,C,B,A,C,A,B,C,D,A,B,C,D,A,B,C,D,A,A,D,A,A,C,A,A,25.0,100.0,100.0,100.0,25.0,25.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_271,Kelas 3,B,B,C,B,A,D,C,D,B,C,D,D,C,B,C,C,C,C,C,C,A,B,C,A,50.0,75.0,25.0,50.0,25.0,75.0,50.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_272,Kelas 3,A,B,C,C,D,C,C,A,A,A,A,D,A,B,D,D,C,C,D,B,A,B,C,D,75.0,25.0,50.0,75.0,0.0,100.0,54.17,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_273,Kelas 3,D,B,A,D,A,B,C,D,D,B,A,B,A,B,A,D,A,B,C,D,D,C,C,C,50.0,100.0,25.0,75.0,100.0,25.0,62.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_274,Kelas 3,C,C,C,C,A,A,C,B,D,B,C,D,B,A,C,C,D,B,C,D,C,B,D,D,25.0,50.0,75.0,25.0,75.0,50.0,50.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_275,Kelas 3,D,B,B,D,A,B,C,D,A,B,C,D,C,C,C,D,C,A,D,C,A,B,C,D,50.0,100.0,100.0,50.0,0.0,100.0,66.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_276,Kelas 3,B,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,D,D,B,75.0,100.0,100.0,100.0,100.0,25.0,83.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_277,Kelas 3,C,D,B,C,C,B,A,D,B,A,D,A,B,C,D,A,A,A,B,A,D,C,A,A,0.0,50.0,0.0,0.0,25.0,0.0,12.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_278,Kelas 3,A,B,C,D,B,D,B,C,D,A,A,B,C,B,C,C,A,C,C,A,B,B,C,D,100.0,0.0,0.0,50.0,50.0,75.0,45.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_279,Kelas 3,A,B,C,D,B,B,C,D,B,B,C,B,A,B,C,A,B,B,C,D,A,A,C,D,100.0,75.0,50.0,75.0,75.0,75.0,75.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_280,Kelas 3,B,B,C,D,A,B,C,D,A,B,B,D,C,B,D,D,A,B,D,B,B,B,C,D,75.0,100.0,75.0,50.0,50.0,75.0,70.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_281,Kelas 3,D,B,B,A,B,B,C,D,A,A,A,D,A,B,A,D,D,C,D,C,D,C,D,B,25.0,75.0,50.0,75.0,0.0,0.0,37.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_282,Kelas 3,C,B,C,C,A,B,C,D,A,B,C,D,A,B,D,A,C,A,C,D,C,A,A,C,50.0,100.0,100.0,50.0,50.0,0.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_283,Kelas 3,D,C,B,B,C,B,A,D,A,B,B,C,A,A,D,B,A,B,B,B,B,B,C,D,0.0,50.0,50.0,25.0,50.0,75.0,41.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_284,Kelas 3,A,C,C,D,D,C,B,A,B,C,A,C,C,C,B,A,A,D,C,D,B,D,C,C,75.0,0.0,0.0,0.0,75.0,25.0,29.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_285,Kelas 3,A,B,C,B,A,B,C,D,A,C,C,A,D,B,D,C,A,B,B,D,D,D,C,D,75.0,100.0,50.0,25.0,75.0,50.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_286,Kelas 3,B,D,D,C,C,A,B,A,C,B,D,C,C,C,A,B,C,C,B,A,D,C,D,A,0.0,0.0,25.0,0.0,0.0,0.0,4.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_287,Kelas 3,A,B,C,D,A,B,A,D,C,A,C,C,A,B,C,D,A,D,D,B,A,A,B,D,100.0,75.0,25.0,100.0,25.0,50.0,62.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_288,Kelas 3,A,B,A,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,B,C,C,D,B,75.0,100.0,100.0,100.0,75.0,0.0,75.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_289,Kelas 3,B,A,C,B,A,B,B,D,A,B,B,A,B,C,A,C,C,D,C,D,B,B,C,D,25.0,75.0,50.0,0.0,50.0,75.0,45.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_290,Kelas 3,B,B,C,C,A,B,A,D,B,D,C,B,A,B,D,A,C,B,C,C,C,C,A,C,50.0,75.0,25.0,50.0,50.0,0.0,41.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_291,Kelas 3,C,B,A,C,C,D,A,B,D,D,C,A,A,B,C,D,B,B,C,D,A,D,A,B,25.0,0.0,25.0,100.0,75.0,25.0,41.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_292,Kelas 3,A,D,C,D,A,B,D,B,A,B,C,D,C,C,D,B,D,B,C,C,D,B,A,D,75.0,50.0,100.0,0.0,50.0,50.0,54.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_293,Kelas 3,B,B,C,B,A,B,B,D,A,B,B,D,A,B,C,D,A,B,B,D,C,B,D,A,50.0,75.0,75.0,100.0,75.0,25.0,66.67,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_294,Kelas 3,B,D,A,B,A,B,A,D,A,C,C,B,B,D,C,B,A,C,B,C,B,B,D,B,0.0,75.0,50.0,25.0,25.0,25.0,33.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_295,Kelas 3,A,B,A,A,A,D,C,D,B,C,C,D,A,B,C,D,A,B,C,D,B,B,D,D,50.0,75.0,50.0,100.0,100.0,50.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_296,Kelas 3,A,B,C,D,B,A,C,D,A,B,C,D,A,B,C,D,A,C,D,D,A,A,C,D,100.0,50.0,100.0,100.0,50.0,75.0,79.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_297,Kelas 3,A,B,C,D,C,B,C,D,A,B,B,D,D,D,C,C,A,C,A,C,B,B,D,B,100.0,75.0,75.0,25.0,25.0,25.0,54.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_298,Kelas 3,A,B,C,D,A,B,A,D,A,B,C,D,A,B,B,D,A,B,C,D,A,D,B,D,100.0,75.0,100.0,75.0,100.0,50.0,83.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_299,Kelas 3,A,C,A,A,A,B,C,B,A,B,B,B,B,D,D,A,C,A,C,D,C,B,B,B,25.0,75.0,50.0,0.0,50.0,25.0,37.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_300,Kelas 3,C,D,C,D,A,B,C,D,B,B,C,D,A,A,B,D,C,B,C,D,C,D,A,D,50.0,100.0,75.0,50.0,75.0,25.0,62.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_301,Kelas 3,A,D,D,D,B,D,A,D,A,D,C,A,D,B,C,C,A,D,D,C,A,C,C,D,50.0,25.0,50.0,50.0,25.0,75.0,45.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_302,Kelas 3,C,B,C,D,A,B,A,D,A,B,D,D,D,B,C,B,A,B,C,C,A,D,C,D,75.0,75.0,75.0,50.0,75.0,75.0,70.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_303,Kelas 3,A,B,C,D,A,B,C,D,A,A,A,A,A,B,B,D,A,B,C,D,A,B,C,D,100.0,100.0,25.0,75.0,100.0,100.0,83.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_304,Kelas 3,C,D,C,D,B,B,C,D,A,B,C,D,D,B,C,D,A,C,C,D,A,B,C,D,50.0,75.0,100.0,75.0,75.0,100.0,79.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_305,Kelas 3,A,C,C,B,C,B,C,D,D,A,C,D,A,B,C,A,A,B,C,D,C,D,C,D,50.0,75.0,50.0,75.0,100.0,50.0,66.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_306,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,B,A,B,C,D,A,A,C,D,B,B,C,D,100.0,100.0,75.0,100.0,75.0,75.0,87.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_307,Kelas 3,A,C,A,A,D,A,A,A,C,A,C,D,D,D,B,D,C,B,C,D,C,D,A,B,25.0,0.0,50.0,25.0,75.0,0.0,29.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_308,Kelas 3,A,B,B,A,D,D,D,C,B,C,A,C,D,C,B,A,C,D,C,C,A,D,A,B,50.0,0.0,0.0,0.0,25.0,25.0,16.67,Materi 2: Perkalian Bersusun
+Siswa_Gen_309,Kelas 3,A,A,D,D,D,A,C,B,D,A,D,B,B,C,D,C,D,A,C,C,C,D,D,C,50.0,25.0,0.0,0.0,25.0,0.0,16.67,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_310,Kelas 3,D,A,A,C,D,B,C,A,C,C,A,A,D,D,C,A,D,A,B,B,B,A,A,B,0.0,50.0,0.0,25.0,0.0,0.0,12.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_311,Kelas 3,C,C,A,A,B,C,C,C,A,C,C,B,A,B,C,C,D,C,D,A,D,B,B,A,0.0,25.0,50.0,75.0,0.0,25.0,29.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_312,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,D,B,B,B,100.0,100.0,100.0,100.0,100.0,25.0,87.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_313,Kelas 3,D,B,C,D,D,D,D,D,A,A,C,D,A,B,A,D,A,A,C,B,A,B,D,D,75.0,25.0,75.0,75.0,50.0,75.0,62.5,Materi 2: Perkalian Bersusun
+Siswa_Gen_314,Kelas 3,A,B,C,D,A,B,C,D,C,B,C,D,A,B,C,D,C,C,C,D,B,B,C,D,100.0,100.0,75.0,100.0,50.0,75.0,83.33,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_315,Kelas 3,A,B,C,D,A,B,C,D,D,B,B,D,B,B,B,D,A,B,D,D,A,B,C,D,100.0,100.0,50.0,50.0,75.0,100.0,79.17,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_316,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,D,B,B,D,B,B,B,D,B,B,C,D,100.0,100.0,100.0,50.0,50.0,75.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_317,Kelas 3,A,B,C,D,A,B,A,C,A,B,C,D,A,D,C,B,A,D,C,D,A,B,C,D,100.0,50.0,100.0,50.0,75.0,100.0,79.17,Materi 2: Perkalian Bersusun
+Siswa_Gen_318,Kelas 3,D,B,C,D,A,B,C,D,B,B,C,B,A,B,B,D,A,B,C,D,C,B,C,B,75.0,100.0,50.0,75.0,100.0,50.0,75.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_319,Kelas 3,B,D,B,B,A,B,C,D,A,C,C,D,D,B,C,D,A,B,A,D,A,C,C,A,0.0,100.0,75.0,75.0,75.0,50.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_320,Kelas 3,A,C,C,D,C,D,A,C,B,B,B,D,A,A,B,D,A,B,C,D,A,B,C,B,75.0,0.0,50.0,50.0,100.0,75.0,58.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_321,Kelas 3,D,D,C,D,A,B,C,D,A,D,C,B,A,B,A,B,B,D,C,C,A,A,C,D,50.0,100.0,50.0,50.0,25.0,75.0,58.33,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_322,Kelas 3,D,B,C,C,A,B,C,C,A,B,C,D,A,B,A,D,C,A,A,A,B,D,D,B,50.0,75.0,100.0,75.0,0.0,0.0,50.0,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_323,Kelas 3,A,C,A,D,D,B,C,D,A,B,C,D,C,A,C,D,B,B,C,D,A,C,D,C,50.0,75.0,100.0,50.0,75.0,25.0,62.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_324,Kelas 3,A,B,C,D,B,D,C,D,D,C,C,D,A,C,C,D,B,C,C,D,B,B,D,C,100.0,50.0,50.0,75.0,50.0,25.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_325,Kelas 3,D,A,A,D,D,D,C,D,B,B,C,A,A,D,A,D,A,C,B,D,B,A,D,A,25.0,50.0,50.0,50.0,50.0,0.0,37.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_326,Kelas 3,A,B,C,D,D,B,C,D,A,B,C,D,C,B,B,D,A,B,C,D,C,D,C,A,100.0,75.0,100.0,50.0,100.0,25.0,75.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_327,Kelas 3,A,B,C,D,A,B,C,D,B,B,C,B,D,D,C,D,A,B,B,D,B,B,C,D,100.0,100.0,50.0,50.0,75.0,75.0,75.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_328,Kelas 3,D,B,C,D,A,B,C,C,A,B,A,D,C,A,B,C,D,D,C,D,A,A,B,A,75.0,75.0,75.0,0.0,50.0,25.0,50.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_329,Kelas 3,A,D,C,B,A,B,B,B,D,B,B,D,A,A,D,C,C,B,D,A,D,B,C,D,50.0,50.0,50.0,25.0,25.0,75.0,45.83,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_330,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,D,A,B,C,C,A,B,C,B,100.0,100.0,100.0,100.0,75.0,75.0,91.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_331,Kelas 3,B,B,B,A,A,B,B,D,A,D,A,D,A,B,C,B,D,C,B,D,A,B,C,D,25.0,75.0,50.0,75.0,25.0,100.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_332,Kelas 3,B,B,C,D,A,A,C,A,A,D,A,D,A,C,B,A,A,B,C,C,B,C,D,D,75.0,50.0,50.0,25.0,75.0,25.0,50.0,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_333,Kelas 3,A,B,A,A,B,B,C,D,B,B,D,D,B,C,D,D,A,D,C,D,A,B,C,D,50.0,75.0,50.0,25.0,75.0,100.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_334,Kelas 3,A,A,C,D,D,B,A,D,B,C,D,C,C,C,D,B,A,C,A,D,A,A,B,C,75.0,50.0,0.0,0.0,50.0,25.0,33.33,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_335,Kelas 3,C,B,B,B,C,B,C,A,C,B,C,D,A,B,C,D,C,B,D,A,D,D,A,D,25.0,50.0,75.0,100.0,25.0,25.0,50.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_336,Kelas 3,A,B,C,D,C,B,C,D,C,B,C,B,A,B,C,D,A,B,B,D,A,D,A,D,100.0,75.0,50.0,100.0,75.0,50.0,75.0,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_337,Kelas 3,C,D,D,C,A,B,C,D,D,D,C,D,B,D,A,D,C,B,A,C,A,A,A,D,0.0,100.0,50.0,25.0,25.0,50.0,41.67,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_338,Kelas 3,A,A,C,D,B,B,C,D,A,B,C,D,A,B,D,D,D,B,C,D,C,B,C,D,75.0,75.0,100.0,75.0,75.0,75.0,79.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_339,Kelas 3,A,B,C,D,A,B,C,D,A,B,B,B,A,B,C,D,A,B,C,D,A,A,C,D,100.0,100.0,50.0,100.0,100.0,75.0,87.5,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_340,Kelas 3,A,B,C,D,A,B,C,D,D,B,C,D,B,A,C,C,A,B,C,D,D,B,C,D,100.0,100.0,75.0,25.0,100.0,75.0,79.17,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_341,Kelas 3,B,B,C,D,B,B,C,D,A,B,C,D,A,B,C,C,B,D,B,D,B,D,C,B,75.0,75.0,100.0,75.0,25.0,25.0,62.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_342,Kelas 3,D,B,C,C,A,B,C,C,A,B,C,D,A,A,C,C,A,D,C,C,B,B,C,B,50.0,75.0,100.0,50.0,50.0,50.0,62.5,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_343,Kelas 3,D,A,D,D,A,B,C,D,A,D,C,D,A,C,A,A,B,A,C,D,C,B,C,D,25.0,100.0,75.0,25.0,50.0,75.0,58.33,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_344,Kelas 3,B,B,D,D,C,B,C,D,A,B,C,A,C,B,C,D,D,D,D,D,A,A,C,D,50.0,75.0,75.0,75.0,25.0,75.0,62.5,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_345,Kelas 3,A,B,B,D,A,B,A,D,D,A,D,C,A,A,A,C,A,A,A,A,C,B,C,A,75.0,75.0,0.0,25.0,25.0,50.0,41.67,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_346,Kelas 3,C,B,D,D,A,B,C,C,A,B,C,A,C,B,C,D,A,B,A,B,A,D,B,C,50.0,75.0,75.0,75.0,50.0,25.0,58.33,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_347,Kelas 3,A,B,C,D,A,A,C,D,D,B,D,D,A,B,C,D,C,D,B,B,A,B,C,B,100.0,75.0,50.0,100.0,0.0,75.0,66.67,Materi 5: Operasi Hitung Campuran Sederhana
+Siswa_Gen_348,Kelas 3,B,A,C,D,A,B,C,C,A,B,B,D,C,B,C,D,A,B,C,D,A,C,D,D,50.0,75.0,75.0,75.0,100.0,50.0,70.83,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_349,Kelas 3,A,B,A,D,C,B,D,D,D,B,C,B,B,B,C,D,A,B,C,D,A,B,C,D,75.0,50.0,50.0,75.0,100.0,100.0,75.0,Materi 2: Perkalian Bersusun
+Siswa_Gen_350,Kelas 3,B,B,C,C,B,C,A,C,D,C,A,C,B,B,D,D,A,A,A,D,A,A,C,A,50.0,0.0,0.0,50.0,50.0,50.0,33.33,Materi 2: Perkalian Bersusun
+Siswa_Gen_351,Kelas 3,A,B,C,D,A,B,B,D,A,B,A,C,C,C,C,B,A,B,A,D,A,B,D,C,100.0,75.0,50.0,25.0,75.0,50.0,62.5,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_352,Kelas 3,B,B,B,B,B,B,B,C,D,D,C,D,C,B,B,A,A,D,A,B,B,C,B,B,25.0,25.0,50.0,25.0,25.0,0.0,25.0,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_353,Kelas 3,A,B,C,D,C,C,C,D,A,C,A,D,A,B,A,D,A,B,C,A,A,B,D,D,100.0,50.0,50.0,75.0,75.0,75.0,70.83,Materi 2: Perkalian Bersusun
+Siswa_Gen_354,Kelas 3,A,B,C,D,A,B,C,D,A,A,C,D,A,B,C,D,A,B,C,D,A,D,B,D,100.0,100.0,75.0,100.0,100.0,50.0,87.5,Materi 6: Penerapan Urutan Operasi Hitung Campuran dalam Soal Cerita
+Siswa_Gen_355,Kelas 3,B,C,D,C,A,B,D,A,A,D,D,C,A,C,D,A,C,C,B,A,A,A,C,D,0.0,50.0,25.0,25.0,0.0,75.0,29.17,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_356,Kelas 3,B,A,A,B,C,D,D,A,C,B,D,B,C,C,C,A,D,B,A,D,A,A,C,B,0.0,0.0,25.0,25.0,50.0,50.0,25.0,Materi 1: Perkalian dengan 0 dan 10
+Siswa_Gen_357,Kelas 3,A,C,C,D,A,A,C,D,B,B,B,C,A,B,C,D,A,B,C,D,D,B,C,A,75.0,75.0,25.0,100.0,100.0,50.0,70.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_358,Kelas 3,A,B,C,D,A,B,C,D,A,B,C,D,B,D,C,A,A,B,C,A,A,B,C,D,100.0,100.0,100.0,25.0,75.0,100.0,83.33,Materi 4: Pembagian Bersusun Dasar (Porogapit)
+Siswa_Gen_359,Kelas 3,C,B,C,D,A,B,C,D,D,D,C,B,A,B,C,D,B,C,C,D,A,B,C,B,75.0,100.0,25.0,100.0,50.0,75.0,70.83,Materi 3: Pembagian dengan 1 dan 0
+Siswa_Gen_360,Kelas 3,A,A,B,C,B,B,B,D,A,B,C,D,A,D,C,D,A,B,A,D,B,A,D,D,25.0,50.0,100.0,75.0,75.0,25.0,58.33,Materi 1: Perkalian dengan 0 dan 10

@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Riwayat Evaluasi - {{ siswa.get_full_name }}{% endblock %}
+{% block content %}
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <nav class="flex mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+          <a href="{% url 'beranda' %}"
+             class="hover:text-blue-600 transition-colors">
+            <i class="fa-solid fa-house mr-2"></i>Dasbor
+          </a>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <i class="fa-solid fa-chevron-right text-gray-400 mx-2"></i>
+            <a href="{% url 'guru_daftar_siswa' %}"
+               class="hover:text-blue-600 transition-colors">Daftar Siswa</a>
+          </div>
+        </li>
+        <li aria-current="page">
+          <div class="flex items-center">
+            <i class="fa-solid fa-chevron-right text-gray-400 mx-2"></i>
+            <span class="text-gray-900 font-medium">{{ siswa.get_full_name }}</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sticky top-24">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-3xl font-bold mb-4 shadow-lg border-4 border-white">
+              {% if siswa.profile.foto %}
+                <img src="{{ siswa.profile.foto.url }}"
+                     class="w-full h-full rounded-full object-cover">
+              {% else %}
+                {{ siswa.first_name|first }}{{ siswa.last_name|first }}
+              {% endif %}
+            </div>
+            <h2 class="text-xl font-bold text-gray-800">{{ siswa.get_full_name }}</h2>
+            <p class="text-gray-500 text-sm mb-4">{{ siswa.email }}</p>
+            <div class="flex flex-wrap gap-2 justify-center mb-6">
+              <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full border border-blue-100">
+                {{ siswa.profile.get_kelas_display }}
+              </span>
+              <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-semibold rounded-full border border-purple-100">
+                Siswa Aktif
+              </span>
+            </div>
+            <div class="w-full border-t border-gray-100 pt-4 text-left">
+              <p class="text-xs text-gray-400 font-semibold uppercase mb-2">Statistik Singkat</p>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-600 text-sm">Total Evaluasi</span>
+                <span class="font-bold text-gray-800">{{ evaluasi_list.count }}x</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 space-y-6">
+        <h3 class="text-lg font-bold text-gray-800 flex items-center">
+          <i class="fa-solid fa-clock-rotate-left mr-2 text-blue-500"></i> Riwayat Pengerjaan
+        </h3>
+        {% if evaluasi_list %}
+          <div class="relative border-l-2 border-gray-200 ml-3 space-y-8 pb-4">
+            {% for eval in evaluasi_list %}
+              <div class="ml-6 relative group">
+                <span class="absolute -left-[33px] top-4 w-4 h-4 rounded-full border-2 border-white shadow-sm {% if eval.nilai >= 70 %}bg-green-500{% else %}bg-red-500{% endif %}">
+                </span>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                  <div class="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-gray-50 bg-gray-50/50">
+                    <div>
+                      <h4 class="font-bold text-gray-800 text-lg">Evaluasi Akhir</h4>
+                      <p class="text-xs text-gray-500 mt-1">
+                        <i class="fa-regular fa-calendar mr-1"></i> {{ eval.created_at|date:"d F Y, H:i" }} WIB
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="text-right">
+                        <div class="text-2xl font-bold {% if eval.nilai >= 70 %}text-green-600{% else %}text-red-600{% endif %}">
+                          {{ eval.nilai|floatformat:0 }}
+                        </div>
+                        <div class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Nilai Akhir</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-5">
+                    {% if eval.rekomendasi_materi %}
+                      <div class="mb-4 bg-amber-50 border border-amber-100 rounded-lg p-3 flex items-start gap-3">
+                        <i class="fa-solid fa-robot text-amber-500 mt-1"></i>
+                        <div>
+                          <p class="text-xs font-bold text-amber-800 uppercase">Saran Perbaikan</p>
+                          <p class="text-sm text-amber-700">
+                            Disarankan untuk mempelajari kembali: <strong>{{ eval.rekomendasi_materi }}</strong>
+                          </p>
+                        </div>
+                      </div>
+                    {% endif %}
+                    <div class="flex justify-between items-center text-sm text-gray-600 mb-4">
+                      <span>Benar: <b class="text-green-600">{{ eval.jumlah_benar }}</b></span>
+                      <span>Salah: <b class="text-red-600">{{ eval.total_soal|add:"-"|add:eval.jumlah_benar }}</b></span>
+                      <span>Total Soal: <b>{{ eval.total_soal }}</b></span>
+                    </div>
+                    <button onclick="toggleDetail('detail-{{ eval.id }}')"
+                            class="w-full py-2 px-4 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition flex justify-between items-center group">
+                      <span>Lihat Detail Jawaban</span>
+                      <i id="icon-detail-{{ eval.id }}"
+                         class="fa-solid fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div id="detail-{{ eval.id }}"
+                         class="hidden mt-4 space-y-3 border-t border-gray-100 pt-4">
+                      {% for jawaban in eval.jawaban_evaluasi.all %}
+                        <div class="p-3 rounded-lg border {% if jawaban.is_correct %}border-green-100 bg-green-50/30{% else %}border-red-100 bg-red-50/30{% endif %}">
+                          <div class="flex gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                              {% if jawaban.is_correct %}
+                                <i class="fa-solid fa-circle-check text-green-500"></i>
+                              {% else %}
+                                <i class="fa-solid fa-circle-xmark text-red-500"></i>
+                              {% endif %}
+                            </div>
+                            <div class="flex-grow">
+                              <p class="text-sm font-medium text-gray-800 mb-1">
+                                <span class="text-xs text-gray-400 font-normal mr-1">No. {{ jawaban.nomor_soal }}</span>
+                                {{ jawaban.soal_pertanyaan }}
+                              </p>
+                              <div class="flex flex-col sm:flex-row gap-2 sm:gap-6 text-xs mt-2">
+                                <div class="{% if not jawaban.is_correct %}text-red-600 font-semibold{% else %}text-gray-600{% endif %}">
+                                  Jawaban Siswa: {{ jawaban.jawaban_user }}
+                                </div>
+                                {% if not jawaban.is_correct %}
+                                  <div class="text-green-600 font-semibold">Kunci Jawaban: {{ jawaban.jawaban_benar }}</div>
+                                {% endif %}
+                              </div>
+                              <div class="mt-1">
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-gray-100 text-gray-500 border border-gray-200">
+                                  Materi: {{ jawaban.get_materi_soal_display }}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="flex flex-col items-center justify-center bg-white p-12 rounded-xl border border-dashed border-gray-300 text-center">
+            <div class="bg-gray-50 p-4 rounded-full mb-4">
+              <i class="fa-solid fa-clipboard-question text-3xl text-gray-300"></i>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">Belum Ada Riwayat</h3>
+            <p class="text-gray-500 text-sm mt-1">Siswa ini belum mengerjakan evaluasi apapun.</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <script>
+  function toggleDetail(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById('icon-' + id);
+
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      content.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+  </script>
+{% endblock %}

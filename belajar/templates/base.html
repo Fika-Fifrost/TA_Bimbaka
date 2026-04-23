@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+{% load auth_extras %}
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Bimbaka
+      {% endblock title %}
+    </title>
+    <meta name="description"
+          content="Bimbaka - Belajar Jadi Menyenangkan! Platform pembelajaran interaktif untuk siswa dan guru.">
+    <meta name="keywords"
+          content="Bimbaka, belajar, pendidikan, siswa, guru, materi, evaluasi">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Fredoka', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style type="text/tailwindcss">
+      /* Custom styles if needed */
+      .nav-link {
+        @apply px-3 py-2 text-gray-600 font-medium hover:text-blue-600 transition-colors relative;
+      }
+      .nav-link-active {
+        @apply text-blue-600 font-semibold;
+      }
+      .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px; /* Adjust based on border thickness */
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: theme('colors.blue.600');
+        border-radius: 1.5px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+    <nav class="bg-white p-4 shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+          <a href="/" class="flex items-center space-x-2 flex-shrink-0">
+            <span class="text-2xl font-bold text-blue-600">
+              <i class="fa-solid fa-graduation-cap mr-1 text-blue-500"></i>BIMBAKA
+            </span>
+          </a>
+          <div class="hidden md:flex items-center space-x-4 border-l pl-6">
+            {% if user.is_authenticated %}
+              {% if user|has_group:"Guru" %}
+                <a href="{% url 'beranda' %}"
+                   class="nav-link {% if request.resolver_match.url_name == 'beranda' %}nav-link-active{% endif %}">Dasbor</a>
+                <a href="{% url 'guru_nilai' %}"
+                   class="nav-link {% if request.resolver_match.url_name == 'guru_nilai' %}nav-link-active{% endif %}">Nilai</a>
+                <a href="{% url 'guru_daftar_siswa' %}"
+                   class="nav-link {% if request.resolver_match.url_name == 'guru_daftar_siswa' or 'guru_riwayat_siswa' in request.resolver_match.url_name %}nav-link-active{% endif %}">Siswa</a>
+              {% else %}
+                <a href="{% url 'beranda' %}"
+                   class="nav-link {% if request.resolver_match.url_name == 'beranda' %}nav-link-active{% endif %}">Beranda</a>
+                <a href="{% url 'materi' %}"
+                   class="nav-link {% if request.resolver_match.url_name == 'materi' or request.resolver_match.url_name == 'materi_detail' %}nav-link-active{% endif %}">Materi</a>
+              {% endif %}
+            {% else %}
+              <a href="{% url 'beranda' %}"
+                 class="nav-link {% if request.resolver_match.url_name == 'beranda' %}nav-link-active{% endif %}">Beranda</a>
+              <a href="{% url 'masuk' %}" class="nav-link">Materi</a>
+              <a href="{% url 'masuk' %}" class="nav-link">Masuk</a>
+              <a href="{% url 'daftar' %}"
+                 class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 text-sm">Daftar</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          {% if user.is_authenticated %}
+            <div class="relative">
+              <button id="avatar-button"
+                      class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-white font-semibold focus:outline-none flex-shrink-0 overflow-hidden border-2 border-white shadow-sm">
+                {% if user.profile.foto %}
+                  <img src="{{ user.profile.foto.url }}"
+                       alt="Avatar"
+                       class="w-full h-full object-cover">
+                {% else %}
+                  {{ user.first_name|first|upper }}
+                {% endif %}
+              </button>
+              <div id="avatar-dropdown"
+                   class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden z-50">
+                <a href="{% url 'edit_profile' %}"
+                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <i class="fa-solid fa-user-gear mr-2"></i>Edit Profil
+                </a>
+                <div class="border-t border-gray-100 my-1"></div>
+                <a href="{% url 'keluar' %}"
+                   class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">Keluar</a>
+              </div>
+            </div>
+          {% endif %}
+          <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+            <i class="fa-solid fa-bars-staggered fa-lg"></i>
+          </button>
+        </div>
+      </div>
+      <div id="menu" class="hidden md:hidden mt-4 border-t pt-4">
+        <div class="flex flex-col space-y-2">
+          {% if user.is_authenticated %}
+            {% if user|has_group:"Guru" %}
+              <a href="{% url 'beranda' %}"
+                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Dasbor</a>
+              <a href="{% url 'guru_nilai' %}"
+                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Nilai</a>
+              <a href="{% url 'guru_daftar_siswa' %}"
+                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded {% if request.resolver_match.url_name == 'guru_daftar_siswa' %}bg-blue-50 text-blue-700 font-semibold{% endif %}">Siswa</a>
+              <hr class="my-2">
+              <a href="{% url 'keluar' %}"
+                 class="block px-4 py-2 text-red-600 hover:bg-red-50 rounded">Keluar</a>
+            {% else %}
+              <a href="{% url 'beranda' %}"
+                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Beranda</a>
+              <a href="{% url 'materi' %}"
+                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Materi</a>
+              <a href="{% url 'evaluasi' %}"
+                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Evaluasi Akhir</a>
+              <hr class="my-2">
+              <a href="{% url 'keluar' %}"
+                 class="block px-4 py-2 text-red-600 hover:bg-red-50 rounded">Keluar</a>
+            {% endif %}
+          {% else %}
+            <a href="{% url 'beranda' %}"
+               class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Beranda</a>
+            <a href="{% url 'masuk' %}"
+               class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Materi</a>
+            <a href="{% url 'masuk' %}"
+               class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Masuk</a>
+            <a href="{% url 'daftar' %}"
+               class="block px-4 py-2 bg-blue-600 text-white rounded text-center font-medium hover:bg-blue-700">Daftar</a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+    <main class="container mx-auto p-6 flex-grow flex">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+      <p>© {% now "Y" %} Bimbaka - Belajar Jadi Menyenangkan!</p>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        // Toggle Menu Mobile
+        $('#menu-toggle').on('click', function () {
+          $('#menu').toggleClass('hidden');
+        });
+
+        // Toggle Avatar Dropdown saat Klik
+        $('#avatar-button').on('click', function(event) {
+          event.stopPropagation(); // Mencegah klik menyebar ke elemen lain
+          $('#avatar-dropdown').toggleClass('hidden');
+        });
+
+        // Sembunyikan Dropdown jika Klik di Luar
+        $(document).on('click', function(event) {
+          // Cek apakah klik BUKAN pada tombol avatar DAN BUKAN di dalam dropdown
+          if (!$(event.target).closest('#avatar-button').length && !$(event.target).closest('#avatar-dropdown').length) {
+            $('#avatar-dropdown').addClass('hidden'); // Sembunyikan dropdown
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

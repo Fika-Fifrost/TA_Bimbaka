@@ -1,0 +1,118 @@
+{% extends 'auth_base.html' %}
+{% block title %}Masuk - BIMBAKA{% endblock %}
+{% block content %}
+  <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-gray-800">BIMBAKA</h1>
+      <p class="text-gray-500 text-sm sm:text-base">Belajar Perkalian & Pembagian Jadi Menyenangkan!</p>
+    </div>
+    <div class="flex border-b mb-6">
+      <button id="tab-siswa"
+              class="flex-1 py-2 px-4 text-center font-semibold text-blue-600 border-b-2 border-blue-600 focus:outline-none">
+        <i class="fa-solid fa-user-graduate mr-2"></i>
+        Login Siswa
+      </button>
+      <button id="tab-guru"
+              class="flex-1 py-2 px-4 text-center font-semibold text-gray-500 hover:text-blue-500 focus:outline-none">
+        <i class="fa-solid fa-chalkboard-user mr-2"></i>
+        Login Guru
+      </button>
+    </div>
+    {% if messages %}
+      <div class="mb-4">
+        {% for message in messages %}<div class="p-3 text-sm text-white rounded bg-red-500">{{ message }}</div>{% endfor %}
+      </div>
+    {% endif %}
+    <div>
+      <form id="form-siswa" method="POST" action="{% url 'masuk' %}">
+        {% csrf_token %}
+        <input type="hidden" name="peran" value="siswa">
+        <div class="mb-4">
+          <label for="username_siswa" class="block text-gray-700 font-semibold mb-2">Username Siswa</label>
+          <input type="text"
+                 id="username_siswa"
+                 name="username"
+                 required
+                 class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                 placeholder="Masukkan username kamu" />
+        </div>
+        <div class="mb-6">
+          <label for="password_siswa" class="block text-gray-700 font-semibold mb-2">Password</label>
+          <input type="password"
+                 id="password_siswa"
+                 name="password"
+                 required
+                 class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                 placeholder="Masukkan password" />
+        </div>
+        <button type="submit"
+                class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded hover:bg-blue-700 transition duration-300">
+          Masuk Belajar! 🚀
+        </button>
+      </form>
+      <form id="form-guru"
+            method="POST"
+            action="{% url 'masuk' %}"
+            class="hidden">
+        {% csrf_token %}
+        <input type="hidden" name="peran" value="guru">
+        <div class="mb-4">
+          <label for="username_guru" class="block text-gray-700 font-semibold mb-2">Username Guru</label>
+          <input type="text"
+                 id="username_guru"
+                 name="username"
+                 required
+                 class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                 placeholder="Masukkan username guru" />
+        </div>
+        <div class="mb-6">
+          <label for="password_guru" class="block text-gray-700 font-semibold mb-2">Password</label>
+          <input type="password"
+                 id="password_guru"
+                 name="password"
+                 required
+                 class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                 placeholder="Masukkan password" />
+        </div>
+        <button type="submit"
+                class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded hover:bg-green-700 transition duration-300">
+          Masuk Dasbor 📊
+        </button>
+      </form>
+    </div>
+    <p class="mt-6 text-center text-sm text-gray-600">
+      Belum punya akun siswa? <a href="{% url 'daftar' %}" class="text-blue-600 hover:underline">Daftar di sini</a>
+    </p>
+  </div>
+  <script>
+  $(document).ready(function() {
+    $('#tab-siswa').on('click', function() {
+      // Tampilkan form Siswa, sembunyikan form Guru
+      $('#form-siswa').removeClass('hidden');
+      $('#form-guru').addClass('hidden');
+
+      // Atur style tab Siswa (aktif)
+      $(this).addClass('text-blue-600 border-blue-600');
+      $(this).removeClass('text-gray-500 hover:text-blue-500');
+
+      // Atur style tab Guru (non-aktif)
+      $('#tab-guru').addClass('text-gray-500 hover:text-blue-500');
+      $('#tab-guru').removeClass('text-blue-600 border-blue-600');
+    });
+
+    $('#tab-guru').on('click', function() {
+      // Tampilkan form Guru, sembunyikan form Siswa
+      $('#form-guru').removeClass('hidden');
+      $('#form-siswa').addClass('hidden');
+
+      // Atur style tab Guru (aktif)
+      $(this).addClass('text-blue-600 border-blue-600');
+      $(this).removeClass('text-gray-500 hover:text-blue-500');
+
+      // Atur style tab Siswa (non-aktif)
+      $('#tab-siswa').addClass('text-gray-500 hover:text-blue-500');
+      $('#tab-siswa').removeClass('text-blue-600 border-blue-600');
+    });
+  });
+  </script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="max-w-5xl mx-auto p-6">
+    <div class="flex justify-between items-center mb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">Hasil Kuis: {{ kuis.judul }}</h1>
+        <p class="text-gray-600">Kelas: {{ kuis.get_kelas_target_display }} | Total Responden: {{ total_responden }} Siswa</p>
+      </div>
+      <a href="{% url 'daftar_kuis_guru' %}"
+         class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">
+        <i class="fa-solid fa-arrow-left mr-1"></i> Kembali
+      </a>
+    </div>
+    <div class="bg-white rounded-lg shadow overflow-hidden border border-gray-200">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-indigo-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-bold text-indigo-800 uppercase tracking-wider">No</th>
+            <th class="px-6 py-3 text-left text-xs font-bold text-indigo-800 uppercase tracking-wider">Nama Siswa</th>
+            <th class="px-6 py-3 text-center text-xs font-bold text-indigo-800 uppercase tracking-wider">Benar / Salah</th>
+            <th class="px-6 py-3 text-center text-xs font-bold text-indigo-800 uppercase tracking-wider">Nilai</th>
+            <th class="px-6 py-3 text-right text-xs font-bold text-indigo-800 uppercase tracking-wider">Waktu Mengerjakan</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          {% for riwayat in riwayat_list %}
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 text-sm text-gray-500">{{ forloop.counter }}</td>
+              <td class="px-6 py-4">
+                <div class="text-sm font-bold text-gray-900">{{ riwayat.siswa.get_full_name }}</div>
+                <div class="text-xs text-gray-500">{{ riwayat.siswa.username }}</div>
+              </td>
+              <td class="px-6 py-4 text-center text-sm">
+                <span class="text-green-600 font-bold">{{ riwayat.benar }}</span> /
+                <span class="text-red-600 font-bold">{{ riwayat.salah }}</span>
+              </td>
+              <td class="px-6 py-4 text-center">
+                {% if riwayat.nilai >= 70 %}
+                  <span class="px-3 py-1 inline-flex text-sm leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    {{ riwayat.nilai|floatformat:0 }}
+                  </span>
+                {% else %}
+                  <span class="px-3 py-1 inline-flex text-sm leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                    {{ riwayat.nilai|floatformat:0 }}
+                  </span>
+                {% endif %}
+              </td>
+              <td class="px-6 py-4 text-right text-sm text-gray-500">{{ riwayat.tanggal_mengerjakan|date:"d M Y, H:i" }}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="5" class="px-6 py-12 text-center text-gray-500">
+                <i class="fa-solid fa-users-slash text-4xl mb-3 text-gray-300"></i>
+                <p>Belum ada siswa yang mengerjakan kuis ini.</p>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

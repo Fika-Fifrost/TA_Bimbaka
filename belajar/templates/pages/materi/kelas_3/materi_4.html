@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="flex flex-col w-full max-w-5xl mx-auto pb-12">
+    <div class="bg-gradient-to-r from-[#0077B6] to-[#00B4D8] rounded-3xl p-8 shadow-xl text-white mb-8 relative overflow-hidden">
+      <div class="relative z-10">
+        <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-bold mb-2 backdrop-blur-sm">
+          MATEMATIKA KELAS 3
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">4. Pembagian Bersusun Dasar (Porogapit)</h1>
+        <p class="mt-2 text-blue-50 text-lg opacity-90">Cara membagi angka besar dengan menulisnya seperti "rumah kecil"!</p>
+      </div>
+      <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8">
+      <h2 class="text-2xl font-bold text-[#0077B6] mb-4">Apa itu Porogapit?</h2>
+      <p class="text-gray-700 mb-6 text-lg">
+        Porogapit adalah cara membagi angka besar dengan menulisnya seperti "rumah kecil"! Kenapa disebut porogapit? [cite_start]Karena bentuknya seperti gerbang rumah. [cite: 218-220]
+      </p>
+      <div class="bg-[#caf0f8]/30 p-6 rounded-2xl border border-[#00B4D8]">
+        <h3 class="font-bold text-[#0077B6] mb-4 text-center">Mengapa Perlu Porogapit?</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-4 rounded-xl border-l-4 border-[#c45f55] shadow-sm">
+            <p class="font-bold text-[#c45f55] mb-1">❌ Cara Lama:</p>
+            <p class="text-gray-600 font-mono text-sm">84 ÷ 4 = 84 - 4 - 4... (21 kali!)</p>
+            <p class="text-xs text-gray-400 mt-1 italic">Lama dan mudah salah!</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border-l-4 border-[#00B4D8] shadow-sm">
+            <p class="font-bold text-[#00B4D8] mb-1">✅ Dengan Porogapit:</p>
+            <p class="text-gray-600 font-mono text-sm">Cepat dan teratur!</p>
+            <p class="text-xs text-gray-400 mt-1 italic">Langkah jelas dan mudah!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8">
+      <h2 class="text-xl font-bold text-[#0077B6] mb-6 text-center">Mengenal Bagian-bagian Porogapit</h2>
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+        <div class="text-center font-mono text-4xl bg-[#fefefe] p-6 rounded-xl border-2 border-[#caf0f8]">
+          <div class="text-[#F5B7B1] font-bold mb-2 text-2xl">Hasil</div>
+          <div class="flex items-end">
+            <div class="mr-3 text-[#0077B6] text-3xl font-bold">Pembagi</div>
+            <div class="border-t-4 border-l-4 border-gray-600 pl-3 pt-1 pr-4 rounded-tl-lg">Yang Dibagi</div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="bg-[#0077B6] text-white px-3 py-1 rounded text-sm font-bold w-24 text-center">Pembagi</span>
+            <span class="text-gray-700">= Angka yang membagi</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-gray-600 text-white px-3 py-1 rounded text-sm font-bold w-24 text-center">Yang Dibagi</span>
+            <span class="text-gray-700">= Angka yang akan dibagi</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-[#F5B7B1] text-white px-3 py-1 rounded text-sm font-bold w-24 text-center">Hasil</span>
+            <span class="text-gray-700">= Jawaban pembagian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8 relative">
+      <div class="absolute top-0 left-8 -mt-4 bg-[#00B4D8] text-white px-6 py-2 rounded-full font-bold shadow-md text-sm">
+        📝 LANGKAH-LANGKAH (Contoh: 84 ÷ 4)
+      </div>
+      <div class="mt-8 space-y-10">
+        <div class="flex flex-col md:flex-row gap-8 items-start border-b border-[#caf0f8] pb-8">
+          <div class="bg-[#fefefe] p-6 rounded-xl border-2 border-[#caf0f8] font-mono text-4xl text-gray-800 min-w-[180px] text-center">
+            <div class="flex justify-center items-end">
+              <span class="mr-2 text-[#0077B6]">4</span>
+              <span class="border-t-4 border-l-4 border-gray-800 pl-2 pr-2 pt-1 rounded-tl-md">84</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#0077B6] mb-2">Langkah 1: Buat Porogapit</h3>
+            <p class="text-gray-600">Tulis angka dalam bentuk porogapit. 4 di luar, 84 di dalam.</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 items-start border-b border-[#caf0f8] pb-8">
+          <div class="bg-[#fefefe] p-6 rounded-xl border-2 border-[#caf0f8] font-mono text-4xl text-gray-800 min-w-[180px] text-center">
+            <div class="text-[#F5B7B1] font-bold mb-1">2</div>
+            <div class="flex justify-center items-end">
+              <span class="mr-2">4</span>
+              <span class="border-t-4 border-l-4 border-gray-800 pl-2 pr-2 pt-1 rounded-tl-md"><span class="bg-yellow-200">8</span>4</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#0077B6] mb-2">Langkah 2: Bagi Digit Pertama</h3>
+            <p class="text-gray-600">
+              8 ÷ 4 = ? → <strong>8 ÷ 4 = 2</strong>.
+            </p>
+            <p class="text-gray-600">Tulis 2 di atas (hasil).</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 items-start border-b border-[#caf0f8] pb-8">
+          <div class="bg-[#fefefe] p-6 rounded-xl border-2 border-[#caf0f8] font-mono text-4xl text-gray-800 min-w-[180px]">
+            <div class="text-[#F5B7B1] font-bold mb-1 text-center ml-8">2</div>
+            <div class="flex justify-center items-end">
+              <span class="mr-2">4</span>
+              <span class="border-t-4 border-l-4 border-gray-800 pl-2 pr-2 pt-1 rounded-tl-md">84</span>
+            </div>
+            <div class="ml-12 mt-1">8</div>
+            <div class="ml-10 border-t-4 border-gray-800 w-12 mt-1"></div>
+            <div class="ml-12 mt-1">04</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#0077B6] mb-2">Langkah 3: Kalikan dan Kurangi</h3>
+            <p class="text-gray-600">2 × 4 = 8. Lalu 8 - 8 = 0.</p>
+            <p class="text-gray-600">Turunkan angka 4 ke bawah.</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="bg-[#fefefe] p-6 rounded-xl border-2 border-[#caf0f8] font-mono text-4xl text-gray-800 min-w-[180px]">
+            <div class="text-[#F5B7B1] font-bold mb-1 text-center ml-8">21</div>
+            <div class="flex justify-center items-end">
+              <span class="mr-2">4</span>
+              <span class="border-t-4 border-l-4 border-gray-800 pl-2 pr-2 pt-1 rounded-tl-md">84</span>
+            </div>
+            <div class="ml-12 mt-1">8</div>
+            <div class="ml-10 border-t-4 border-gray-800 w-12 mt-1"></div>
+            <div class="ml-12 mt-1">04</div>
+            <div class="ml-16 mt-1">4</div>
+            <div class="ml-14 border-t-4 border-gray-800 w-12 mt-1"></div>
+            <div class="ml-16 mt-1 text-[#00B4D8] font-bold">0</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#0077B6] mb-2">Langkah 4: Turunkan Angka Berikutnya</h3>
+            <p class="text-gray-600">Sekarang 4 ÷ 4 = 1. Tulis 1 di atas.</p>
+            <p class="text-gray-600">1 × 4 = 4. Kurangi 4 - 4 = 0.</p>
+            <p class="text-[#00B4D8] font-bold mt-2">Hasil: 21</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border-2 border-[#F5B7B1] p-8 mb-8">
+      <h2 class="text-2xl font-bold text-[#0077B6] mb-6 flex items-center gap-3">
+        <span class="text-3xl">📚</span> Contoh Lain
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[#caf0f8]/30 p-6 rounded-xl border border-[#caf0f8]">
+          <p class="font-bold text-[#0077B6] mb-4 text-center">Contoh Mudah: 63 ÷ 3</p>
+          <div class="flex justify-center gap-6">
+            <div class="font-mono text-3xl text-gray-800 text-left">
+              <div class="text-[#F5B7B1] ml-6 font-bold">21</div>
+              <div class="flex items-end">
+                <span class="mr-2">3</span>
+                <span class="border-t-2 border-l-2 border-gray-800 pl-2 pr-2 pt-1 rounded-tl-md">63</span>
+              </div>
+              <div class="ml-8 mt-1">6</div>
+              <div class="ml-6 border-t-2 border-gray-800 w-8"></div>
+              <div class="ml-8">03</div>
+              <div class="ml-10">3</div>
+              <div class="ml-8 border-t-2 border-gray-800 w-8"></div>
+              <div class="ml-10 font-bold text-[#00B4D8]">0</div>
+            </div>
+            <div class="text-sm text-gray-600 self-center space-y-1">
+              <p>6÷3=2</p>
+              <p>3÷3=1</p>
+              <p class="font-bold text-[#00B4D8]">Hasil: 21</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#caf0f8]/30 p-6 rounded-xl border border-[#caf0f8]">
+          <p class="font-bold text-[#0077B6] mb-4 text-center">Contoh Sedang: 96 ÷ 6</p>
+          <div class="flex justify-center gap-6">
+            <div class="font-mono text-3xl text-gray-800 text-left">
+              <div class="text-[#F5B7B1] ml-6 font-bold">16</div>
+              <div class="flex items-end">
+                <span class="mr-2">6</span>
+                <span class="border-t-2 border-l-2 border-gray-800 pl-2 pr-2 pt-1 rounded-tl-md">96</span>
+              </div>
+              <div class="ml-8 mt-1">6</div>
+              <div class="ml-6 border-t-2 border-gray-800 w-8"></div>
+              <div class="ml-8">36</div>
+              <div class="ml-8">36</div>
+              <div class="ml-6 border-t-2 border-gray-800 w-10"></div>
+              <div class="ml-10 font-bold text-[#00B4D8]">0</div>
+            </div>
+            <div class="text-sm text-gray-600 self-center space-y-1">
+              <p>9÷6=1 (sisa 3)</p>
+              <p>36÷6=6</p>
+              <p class="font-bold text-[#00B4D8]">Hasil: 16</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8">
+      <h2 class="text-2xl font-bold text-[#0077B6] mb-6">🧮 Latihan Terbimbing</h2>
+      <p class="text-gray-600 mb-8 text-center">Coba selesaikan soal berikut langkah demi langkah:</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#fefefe] p-6 rounded-xl border border-[#caf0f8] flex flex-col items-center hover:shadow-lg transition-shadow">
+          <p class="font-bold text-gray-500 mb-4 w-full text-center border-b border-gray-100 pb-2">Latihan 1</p>
+          <div class="font-mono text-2xl text-gray-800 leading-tight">
+            <div class="text-[#00B4D8] font-bold text-center ml-6 mb-1">24</div>
+            <div class="flex">
+              <span class="mr-2 text-gray-600">2</span>
+              <span class="border-t-2 border-l-2 border-gray-800 pl-2 pr-1 rounded-tl-md">48</span>
+            </div>
+            <div class="ml-8 text-gray-400 text-sm mt-1">4</div>
+            <div class="ml-6 border-t border-gray-300 w-8 mb-1"></div>
+            <div class="ml-8">08</div>
+            <div class="ml-10 text-gray-400 text-sm">8</div>
+            <div class="ml-8 border-t border-gray-300 w-8 mb-1"></div>
+            <div class="ml-12 font-bold text-[#00B4D8]">0</div>
+          </div>
+        </div>
+        <div class="bg-[#fefefe] p-6 rounded-xl border border-[#caf0f8] flex flex-col items-center hover:shadow-lg transition-shadow">
+          <p class="font-bold text-gray-500 mb-4 w-full text-center border-b border-gray-100 pb-2">Latihan 2</p>
+          <div class="font-mono text-2xl text-gray-800 leading-tight">
+            <div class="text-[#00B4D8] font-bold text-center ml-6 mb-1">15</div>
+            <div class="flex">
+              <span class="mr-2 text-gray-600">5</span>
+              <span class="border-t-2 border-l-2 border-gray-800 pl-2 pr-1 rounded-tl-md">75</span>
+            </div>
+            <div class="ml-8 text-gray-400 text-sm mt-1">5</div>
+            <div class="ml-6 border-t border-gray-300 w-8 mb-1"></div>
+            <div class="ml-8">25</div>
+            <div class="ml-8 text-gray-400 text-sm">25</div>
+            <div class="ml-6 border-t border-gray-300 w-8 mb-1"></div>
+            <div class="ml-12 font-bold text-[#00B4D8]">0</div>
+          </div>
+        </div>
+        <div class="bg-[#fefefe] p-6 rounded-xl border border-[#caf0f8] flex flex-col items-center hover:shadow-lg transition-shadow">
+          <p class="font-bold text-gray-500 mb-4 w-full text-center border-b border-gray-100 pb-2">Latihan 3</p>
+          <div class="font-mono text-2xl text-gray-800 leading-tight">
+            <div class="text-[#00B4D8] font-bold text-center ml-6 mb-1">13</div>
+            <div class="flex">
+              <span class="mr-2 text-gray-600">7</span>
+              <span class="border-t-2 border-l-2 border-gray-800 pl-2 pr-1 rounded-tl-md">91</span>
+            </div>
+            <div class="ml-8 text-gray-400 text-sm mt-1">7</div>
+            <div class="ml-6 border-t border-gray-300 w-8 mb-1"></div>
+            <div class="ml-8">21</div>
+            <div class="ml-8 text-gray-400 text-sm">21</div>
+            <div class="ml-6 border-t border-gray-300 w-8 mb-1"></div>
+            <div class="ml-12 font-bold text-[#00B4D8]">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-white rounded-3xl shadow p-6 border border-[#90E0EF]">
+        <h3 class="text-lg font-bold text-[#0077B6] mb-3">💡 Tips dan Trik</h3>
+        <ul class="text-sm text-gray-700 list-disc ml-4 space-y-2">
+          <li>
+            Ingat urutan: <strong>Bagi → Kali → Kurang → Turun</strong>.
+          </li>
+          <li>Mulai dari digit paling kiri.</li>
+          <li>Tulis rapi agar tidak bingung.</li>
+          <li>Cek hasil dengan perkalian.</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-6 border-2 border-[#F5B7B1]">
+        <h3 class="text-lg font-bold text-[#0077B6] mb-3">🌍 Kapan Digunakan?</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li>
+            <strong>Membagi Pizza:</strong> 84 potong pizza untuk 4 kelas.
+            <br>
+            84 ÷ 4 = <strong>21 potong per kelas</strong>.
+          </li>
+          <li>
+            <strong>Membagi Buku:</strong> 96 buku untuk 6 rak.
+            <br>
+            96 ÷ 6 = <strong>16 buku per rak</strong>.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      <a href="{% url 'materi_detail' materi_id|add:'-1' %}"
+         class="group flex items-center justify-center gap-3 bg-[#caf0f8] text-[#0077B6] py-4 px-6 rounded-2xl font-bold hover:bg-[#90E0EF] transition-all duration-300">
+        <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        <span>Materi Sebelumnya</span>
+      </a>
+      <button onclick="openQuiz()"
+              class="group flex items-center justify-center gap-3 bg-[#F5B7B1] text-white py-4 px-6 rounded-2xl font-bold shadow-lg hover:shadow-xl hover:bg-[#ffc4be] hover:-translate-y-1 transition-all duration-300 border-b-4 border-[#e5a09a] active:border-b-0 active:translate-y-1">
+        <span>Tantangan Berikutnya!</span>
+        <i class="fa-solid fa-gamepad text-xl group-hover:rotate-12 transition-transform"></i>
+      </button>
+    </div>
+  </div>
+  {% include 'components/modal_quiz.html' %}
+{% endblock %}

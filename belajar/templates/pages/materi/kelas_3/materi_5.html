@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="flex flex-col w-full max-w-5xl mx-auto pb-12">
+    <div class="bg-gradient-to-r from-[#0077B6] to-[#00B4D8] rounded-3xl p-8 shadow-xl text-white mb-8 relative overflow-hidden">
+      <div class="relative z-10">
+        <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-bold mb-2 backdrop-blur-sm">
+          MATEMATIKA KELAS 3
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">5. Operasi Hitung Campuran Sederhana</h1>
+        <p class="mt-2 text-blue-50 text-lg opacity-90">Bagaimana jika ada tambah, kurang, kali, dan bagi sekaligus?</p>
+      </div>
+      <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8 relative">
+      <div class="absolute top-0 left-8 -mt-4 bg-[#00B4D8] text-white px-6 py-2 rounded-full font-bold shadow-md text-sm">
+        📏 ATURAN WAJIB
+      </div>
+      <p class="mt-6 text-gray-600 mb-6">
+        Operasi hitung campuran adalah soal matematika yang menggunakan lebih dari satu operasi! Contoh: 5 + 3 × 2.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-yellow-200 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-2 text-yellow-800">
+            1
+          </div>
+          <p class="font-bold text-[#0077B6]">Kurung ( )</p>
+          <p class="text-xs text-gray-500">Dulu!</p>
+        </div>
+        <i class="fa-solid fa-arrow-right text-gray-300"></i>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-orange-200 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-2 text-orange-800">
+            2
+          </div>
+          <p class="font-bold text-[#0077B6]">× dan ÷</p>
+          <p class="text-xs text-gray-500">Kedua!</p>
+        </div>
+        <i class="fa-solid fa-arrow-right text-gray-300"></i>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-2 text-blue-800">
+            3
+          </div>
+          <p class="font-bold text-[#0077B6]">+ dan -</p>
+          <p class="text-xs text-gray-500">Terakhir!</p>
+        </div>
+      </div>
+      <p class="text-center mt-6 text-gray-600 bg-[#caf0f8]/30 p-3 rounded-lg">
+        Kalau sama tingkatnya, kerjakan dari <strong>kiri ke kanan</strong>.
+      </p>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8">
+      <h2 class="text-2xl font-bold text-[#0077B6] mb-6 flex items-center gap-3">
+        <span class="text-3xl">📐</span> Contoh dengan Kurung
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#fefefe] p-5 rounded-2xl border border-[#caf0f8]">
+          <p class="font-bold text-gray-700 mb-2">Contoh 1: (4 + 2) × 3</p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p>
+              1. Kerjakan kurung: (4 + 2) = <strong>6</strong>
+            </p>
+            <p>
+              2. Lalu kalikan: 6 × 3 = <strong>18</strong>
+            </p>
+          </div>
+        </div>
+        <div class="bg-[#fefefe] p-5 rounded-2xl border border-[#caf0f8]">
+          <p class="font-bold text-gray-700 mb-2">Contoh 2: 8 + (5 - 3)</p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p>
+              1. Kerjakan kurung: (5 - 3) = <strong>2</strong>
+            </p>
+            <p>
+              2. Lalu jumlahkan: 8 + 2 = <strong>10</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border-2 border-[#F5B7B1] p-8 mb-8">
+      <h2 class="text-2xl font-bold text-[#0077B6] mb-6 flex items-center gap-3">
+        <span class="text-3xl">🚀</span> Contoh Tanpa Kurung
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#F5B7B1]/10 p-5 rounded-2xl border border-[#F5B7B1]">
+          <p class="font-bold text-[#c45f55] mb-2">Contoh 3: 5 + 3 × 2</p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p>
+              1. Cari perkalian/pembagian dulu: 3 × 2 = <strong>6</strong>
+            </p>
+            <p>
+              2. Lalu jumlahkan: 5 + 6 = <strong>11</strong>
+            </p>
+          </div>
+        </div>
+        <div class="bg-[#F5B7B1]/10 p-5 rounded-2xl border border-[#F5B7B1]">
+          <p class="font-bold text-[#c45f55] mb-2">Contoh 4: 12 ÷ 3 + 4</p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p>
+              1. Cari perkalian/pembagian dulu: 12 ÷ 3 = <strong>4</strong>
+            </p>
+            <p>
+              2. Lalu jumlahkan: 4 + 4 = <strong>8</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl shadow-lg border border-[#90E0EF] p-8 mb-8">
+      <h2 class="text-2xl font-bold text-[#0077B6] mb-4">🧮 Ayo Berlatih!</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#caf0f8]/30 p-4 rounded-xl border border-[#caf0f8]">
+          <p class="font-bold text-[#0077B6] mb-2">Tanpa Kurung</p>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>
+              4 + 2 × 3 = 4 + 6 = <strong>10</strong>
+            </li>
+            <li>
+              15 ÷ 3 + 5 = 5 + 5 = <strong>10</strong>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-[#caf0f8]/30 p-4 rounded-xl border border-[#caf0f8]">
+          <p class="font-bold text-[#0077B6] mb-2">Dengan Kurung</p>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>
+              (3 + 5) × 2 = 8 × 2 = <strong>16</strong>
+            </li>
+            <li>
+              6 + (8 - 4) = 6 + 4 = <strong>10</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-white rounded-3xl shadow p-6 border border-[#90E0EF]">
+        <h3 class="text-lg font-bold text-[#0077B6] mb-3">💡 Tips Mudah Mengingat</h3>
+        <ul class="space-y-2 text-sm text-gray-700 list-disc ml-4">
+          <li>
+            Ingat: <strong>"Kurung Dulu!"</strong>
+          </li>
+          <li>
+            Lalu: <strong>"Kali-Bagi sebelum Tambah-Kurang"</strong>
+          </li>
+          <li>
+            Terakhir: <strong>"Kiri ke Kanan"</strong>
+          </li>
+          <li>Periksa ulang hasilnya!</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-6 border-2 border-[#F5B7B1]">
+        <h3 class="text-lg font-bold text-[#0077B6] mb-3">🌍 Contoh Kehidupan</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <p>
+            <strong>Belanja:</strong> Beli 3 buku @Rp 5.000 + 1 pensil Rp 2.000.
+            <br>
+            (3 × 5.000) + 2.000 = 15.000 + 2.000 = <strong>Rp 17.000</strong>
+          </p>
+          <p>
+            <strong>Makan:</strong> 2 pizza (@4 potong), dimakan 3 potong.
+            <br>
+            (2 × 4) - 3 = 8 - 3 = <strong>5 potong tersisa</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      <a href="{% url 'materi_detail' materi_id|add:'-1' %}"
+         class="group flex items-center justify-center gap-3 bg-[#caf0f8] text-[#0077B6] py-4 px-6 rounded-2xl font-bold hover:bg-[#90E0EF] transition-all duration-300">
+        <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        <span>Materi Sebelumnya</span>
+      </a>
+      <button onclick="openQuiz()"
+              class="group flex items-center justify-center gap-3 bg-[#F5B7B1] text-white py-4 px-6 rounded-2xl font-bold shadow-lg hover:shadow-xl hover:bg-[#ffc4be] hover:-translate-y-1 transition-all duration-300 border-b-4 border-[#e5a09a] active:border-b-0 active:translate-y-1">
+        <span>Tantangan Berikutnya!</span>
+        <i class="fa-solid fa-gamepad text-xl group-hover:rotate-12 transition-transform"></i>
+      </button>
+    </div>
+  </div>
+  {% include 'components/modal_quiz.html' %}
+{% endblock %}

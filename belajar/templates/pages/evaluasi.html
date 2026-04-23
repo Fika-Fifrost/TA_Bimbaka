@@ -1,0 +1,218 @@
+
+{% extends 'base.html' %}
+{% load auth_extras %}
+{% block title %}Evaluasi Akhir - Bimbaka{% endblock %}
+{% block content %}
+  <div class="flex flex-col w-full max-w-3xl mx-auto items-center pb-12">
+    {% if page_obj %}
+      <div class="w-full p-6 sm:p-10 rounded-lg shadow-xl"
+           style="background-color: #fefefe">
+        <!-- Header & Progress Bar -->
+        <div class="text-center mb-4">
+          <p class="text-gray-600">Selamat datang di Evaluasi Akhir! Pilih jawaban yang tepat.</p>
+          <p class="text-gray-600">Kamu bisa!</p>
+        </div>
+        <div class="w-full my-6">
+          <div class="w-full bg-[#caf0f8] rounded-full h-2.5">
+            <div class="h-2.5 rounded-full transition-all duration-300"
+                 style="background-color: #00B4D8;
+                        width: {{ progress_percentage }}%"></div>
+          </div>
+        </div>
+        <p class="text-sm font-semibold text-gray-500 mb-8 text-center">
+          Pertanyaan {{ page_obj.number }} dari {{ page_obj.paginator.count }}
+        </p>
+
+        <!-- SOAL -->
+        {% for soal in page_obj %}
+          <form method="post"
+                action="{% url 'evaluasi' %}?page={{ page_obj.number }}">
+            {% csrf_token %}
+
+            <!-- ============================================ -->
+            <!-- SOAL VISUAL (Penjumlahan Berulang) -->
+            <!-- ============================================ -->
+            {% if soal.type == 'visual' %}
+              <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-8 shadow-lg border-2 border-yellow-300 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8">{{ soal.question_text }}</h2>
+                
+                <!-- Visual Representation -->
+                <div class="flex justify-center items-center space-x-4 mb-8 flex-wrap">
+                  {% for i in soal.a_range %}
+                    <div class="flex flex-col items-center">
+                      <div class="text-4xl sm:text-5xl flex gap-1 mb-1">
+                        {% for j in soal.b_range %}
+                          <span>{{ soal.icon }}</span>
+                        {% endfor %}
+                      </div>
+                      <span class="text-xs text-gray-500 font-bold">Kelompok {{ forloop.counter }}</span>
+                    </div>
+                    {% if not forloop.last %}
+                      <span class="text-3xl text-blue-500 font-bold">+</span>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+
+                <div class="flex justify-center gap-4 text-2xl font-bold text-gray-700 mb-8">
+                  <span>=</span>
+                  <span class="text-blue-600">{{ soal.bilangan_1 }} {{ soal.op }} {{ soal.bilangan_2 }} = ?</span>
+                </div>
+              </div>
+
+            <!-- ============================================ -->
+            <!-- SOAL PERKALIAN BERSUSUN (Kelas 3 - Materi 2) -->
+            <!-- ============================================ -->
+            {% elif soal.type == 'susun_multiply' %}
+              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-lg border-2 border-blue-300 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-10">{{ soal.question_text }}</h2>
+
+                <div class="flex justify-center mb-10">
+                  <div class="bg-white rounded-2xl p-8 border-2 border-blue-400 inline-block shadow-md">
+
+                    <div style="font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: flex-end;">
+
+                      <div style="color: #0077B6; font-weight: bold; font-size: 2.5rem; margin-bottom: 8px; padding-right: 45px;">
+                        {{ soal.bilangan_1 }}
+                      </div>
+
+                      <div style="color: #000; font-weight: bold; font-size: 2.5rem; margin-bottom: 8px; padding-right: 45px;">
+                        {{ soal.bilangan_2 }}
+                      </div>
+
+                      <div style="display: flex; align-items: center; justify-content: flex-end; width: 100%;">
+                        <div style="height: 3px; background: #000; width: 70px;"></div>
+
+                        <div style="color: #0077B6; font-weight: bold; font-size: 2.5rem; width: 45px; text-align: center;">
+                          ×
+                        </div>
+                      </div>
+
+                      <div style="color: #10b981; font-weight: bold; font-size: 2.2rem; margin-top: 8px; padding-right: 45px;">
+                        ?
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            <!-- ============================================ -->
+            <!-- SOAL PEMBAGIAN POROGAPIT (Kelas 3 - Materi 4) -->
+            <!-- ============================================ -->
+            {% elif soal.type == 'susun_divide' %}
+              <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-lg border-2 border-green-300 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-10">{{ soal.question_text }}</h2>
+
+                <div class="flex justify-center mb-10">
+                  <div class="bg-white rounded-2xl p-8 sm:px-12 border-2 border-green-400 inline-block shadow-md">
+
+                    <div style="display: flex; align-items: flex-end; font-family: 'Courier New', monospace; font-size: 3rem; font-weight: bold; line-height: 1;">
+
+                      <div style="color: #059669; padding-right: 12px; padding-bottom: 8px;">
+                        {{ soal.divisor }}
+                      </div>
+
+                      <div style="color: #0077B6; border-top: 4px solid #000; border-left: 4px solid #000; padding: 8px 24px 8px 16px;">
+                        {{ soal.dividend }}
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            <!-- ============================================ -->
+            <!-- SOAL TEXT -->
+            <!-- ============================================ -->
+            {% else %}
+              <div class="bg-gradient-to-br from-blue-100 via-blue-50 to-cyan-100 rounded-3xl p-8 sm:p-12 shadow-lg border-4 border-white outline outline-2 outline-blue-300 mb-10 flex items-center justify-center relative min-h-[180px] transition-all duration-300 hover:shadow-xl">
+
+                <div class="absolute top-4 left-5 text-4xl opacity-60 drop-shadow-sm animate-pulse">✨</div>
+                <div class="absolute bottom-4 right-5 text-4xl opacity-60 drop-shadow-sm">🤔</div>
+
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 text-center leading-snug drop-shadow-sm z-10">
+                  {{ soal.question_text }}
+                </h2>
+
+              </div>
+            {% endif %}
+
+            <!-- ============================================ -->
+            <!-- PILIHAN JAWABAN (Universal) -->
+            <!-- ============================================ -->
+            <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-10">
+              {% for choice in soal.choices %}
+                <label class="block">
+                  <input type="radio"
+                         name="jawaban"
+                         value="{{ choice }}"
+                         class="sr-only peer"
+                         required
+                         {% if jawaban_chosen == choice %}checked{% endif %} />
+                  <div class="p-4 sm:p-6 border-2 rounded-2xl cursor-pointer transition-all duration-200 text-center bg-white border-[#F5B7B1] text-[#00B4D8] hover:border-[#00B4D8] hover:bg-blue-50 peer-checked:border-[#00B4D8] peer-checked:bg-[#caf0f8] peer-checked:shadow-lg">
+                    <span class="block text-2xl sm:text-3xl font-bold">{{ choice }}</span>
+                    <span class="block text-xs sm:text-sm text-gray-500 mt-1">{{ choice|to_terbilang }}</span>
+                  </div>
+                </label>
+              {% endfor %}
+            </div>
+
+            <!-- ============================================ -->
+            <!-- TOMBOL NAVIGASI -->
+            <!-- ============================================ -->
+            <div class="flex justify-center">
+              {% if page_obj.has_next %}
+                <button type="submit"
+                        class="w-full sm:w-auto text-white font-bold py-3 px-10 rounded-full shadow-lg transition-transform hover:scale-105 text-lg"
+                        style="background-color: #00B4D8">
+                  Next Question <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+              {% else %}
+                <button type="submit"
+                        class="w-full sm:w-auto text-white font-bold py-3 px-10 rounded-full shadow-lg transition-transform hover:scale-105 text-lg"
+                        style="background-color: #0077B6">
+                  🎯 Selesai Evaluasi
+                </button>
+              {% endif %}
+            </div>
+          </form>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- ============================================ -->
+      <!-- HALAMAN AWAL (Sebelum Memulai) -->
+      <!-- ============================================ -->
+      <div class="w-full p-8 text-center rounded-lg shadow-xl"
+           style="background-color: #fefefe">
+        <div class="mb-6">
+          <i class="fas fa-flag-checkered text-6xl" style="color: #0077B6;"></i>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Siap untuk Evaluasi Akhir?</h2>
+        <p class="text-gray-600 mb-6 text-lg">
+          Ini akan menguji semua materi yang telah kamu pelajari. 
+          <br>
+          Total <strong>24 soal</strong> - 4 soal per materi.
+          <br>
+          Semoga berhasil!
+        </p>
+        <a href="{% url 'evaluasi' %}?start=1"
+           class="inline-block text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-lg"
+           style="background-color: #00B4D8">
+          🚀 Mulai Evaluasi
+        </a>
+        {% if latest_evaluasi %}
+          <div class="mt-8 text-sm text-gray-600">
+            <p class="mb-2">
+              Nilai terakhirmu: <strong class="text-2xl text-gray-800">{{ latest_evaluasi.nilai|floatformat:0 }}%</strong>
+            </p>
+            <p class="text-xs text-gray-500">
+              Waktu: {{ latest_evaluasi.created_at|date:"d M Y H:i" }}
+            </p>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

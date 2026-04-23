@@ -1,0 +1,234 @@
+<div id="quizModal"
+     class="fixed inset-0 bg-[#0077B6]/90 backdrop-blur-sm hidden items-center justify-center z-50 transition-all duration-300 opacity-0">
+  <div class="bg-white rounded-3xl shadow-2xl p-6 w-full max-w-2xl mx-4 transform scale-95 transition-all duration-300 relative overflow-hidden"
+       id="quizCard">
+    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#0077B6] to-[#00B4D8]"></div>
+    <div class="text-center mb-6">
+      <h3 class="text-2xl font-extrabold text-[#0077B6]">Pasangkan Jawaban!</h3>
+      <p class="text-[#00B4D8] text-sm">
+        Tarik kotak <span class="font-bold text-[#F5B7B1]">Soal</span> ke kotak <span class="font-bold text-[#0077B6]">Jawaban</span> yang benar.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-8 mb-6 relative">
+      <div class="flex flex-col space-y-3" id="questionsContainer">
+        <h4 class="text-center font-bold text-gray-400 text-xs tracking-widest mb-1">SOAL</h4>
+        {% for item in quiz_data.questions %}
+          <div class="draggable-source bg-[#F5B7B1] text-white font-bold py-3 px-4 rounded-xl shadow-md cursor-grab active:cursor-grabbing hover:scale-105 transition-transform text-center select-none relative z-10"
+               draggable="true"
+               data-id="{{ item.id }}"
+               id="q-{{ item.id }}">
+            {{ item.question }}
+            <i class="fa-solid fa-grip-lines-vertical absolute right-3 opacity-50"></i>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="flex flex-col space-y-3" id="answersContainer">
+        <h4 class="text-center font-bold text-gray-400 text-xs tracking-widest mb-1">JAWABAN</h4>
+        {% for item in quiz_data.answers %}
+          <div class="droppable-target bg-white border-2 border-dashed border-[#00B4D8] text-[#0077B6] font-bold py-3 px-4 rounded-xl flex items-center justify-center transition-all h-[52px]"
+               data-id="{{ item.id }}"
+               id="a-{{ item.id }}">
+            <span class="pointer-events-none">{{ item.answer }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div id="feedbackMessage"
+         class="hidden text-center mb-4 font-bold text-lg"></div>
+    <div class="text-center">
+      <button onclick="closeQuiz()"
+              class="text-gray-400 text-xs font-medium hover:text-[#F5B7B1] underline decoration-dotted">
+        Nyerah? Kembali Belajar
+      </button>
+    </div>
+  </div>
+</div>
+<style>
+    /* Style saat item didrag di atas target */
+    .drag-over {
+        background-color: #caf0f8 !important;
+        border-style: solid !important;
+        transform: scale(1.05);
+    }
+    /* Style saat jawaban benar */
+    .matched {
+        background-color: #00B4D8 !important; /* Biru Solid */
+        color: white !important;
+        border-style: solid !important;
+        border-color: #0077B6 !important;
+        opacity: 1 !important;
+    }
+    /* Animasi sukses */
+    @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+    .pop-anim { animation: pop 0.3s ease-in-out; }
+
+    /* Indikator item terpilih (untuk mode klik/tap) */
+    .selected-source {
+        ring: 4px solid #0077B6;
+        transform: scale(1.05);
+    }
+</style>
+<script>
+  const modal = document.getElementById('quizModal');
+  const card = document.getElementById('quizCard');
+  const feedback = document.getElementById('feedbackMessage');
+  const nextUrl = "{% url 'mark_materi_completed' materi_id %}";
+
+  let matchesCount = 0;
+  const totalPairs = {{ quiz_data.total_pairs|default:3 }};
+
+  // Variables for Click/Tap matching fallback
+  let selectedSourceId = null;
+
+  function openQuiz() {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    setTimeout(() => {
+      modal.classList.remove('opacity-0');
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }, 10);
+  }
+
+  function closeQuiz() {
+    modal.classList.add('opacity-0');
+    card.classList.remove('scale-100');
+    card.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      // Opsional: Reload page untuk reset game jika user menutup tanpa selesai
+      // window.location.reload();
+    }, 300);
+  }
+
+  // ==========================================
+  // DRAG AND DROP LOGIC
+  // ==========================================
+  const draggables = document.querySelectorAll('.draggable-source');
+  const droppables = document.querySelectorAll('.droppable-target');
+
+  draggables.forEach(draggable => {
+    // Event Drag Start
+    draggable.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', draggable.getAttribute('data-id'));
+        e.dataTransfer.effectAllowed = "move";
+        setTimeout(() => draggable.classList.add('opacity-50'), 0);
+    });
+
+    // Event Drag End
+    draggable.addEventListener('dragend', () => {
+        draggable.classList.remove('opacity-50');
+    });
+
+    // CLICK EVENT (Untuk Mobile/Tap Matching)
+    draggable.addEventListener('click', () => {
+        // Reset seleksi sebelumnya
+        draggables.forEach(d => d.classList.remove('selected-source', 'ring-4', 'ring-[#0077B6]'));
+
+        // Set seleksi baru
+        selectedSourceId = draggable.getAttribute('data-id');
+        draggable.classList.add('selected-source', 'ring-4', 'ring-[#0077B6]');
+    });
+  });
+
+  droppables.forEach(droppable => {
+    // Allow Drop
+    droppable.addEventListener('dragover', (e) => {
+        e.preventDefault(); // Wajib agar bisa di-drop
+        if(!droppable.classList.contains('matched')) {
+            droppable.classList.add('drag-over');
+        }
+    });
+
+    // Leave Drop Zone
+    droppable.addEventListener('dragleave', () => {
+        droppable.classList.remove('drag-over');
+    });
+
+    // Handle DROP
+    droppable.addEventListener('drop', (e) => {
+        e.preventDefault();
+        droppable.classList.remove('drag-over');
+        const sourceId = e.dataTransfer.getData('text/plain');
+        checkMatch(sourceId, droppable);
+    });
+
+    // HANDLE CLICK on Target (Pasangan dari Click Source)
+    droppable.addEventListener('click', () => {
+        if(selectedSourceId && !droppable.classList.contains('matched')) {
+            checkMatch(selectedSourceId, droppable);
+            // Reset selection
+            selectedSourceId = null;
+            draggables.forEach(d => d.classList.remove('selected-source', 'ring-4', 'ring-[#0077B6]'));
+        }
+    });
+  });
+
+  function checkMatch(sourceId, targetElement) {
+    const targetId = targetElement.getAttribute('data-id');
+
+    if (sourceId === targetId) {
+        // MATCH!
+        handleCorrect(sourceId, targetElement);
+    } else {
+        // WRONG!
+        handleWrong(targetElement);
+    }
+  }
+
+  function handleCorrect(id, targetElement) {
+    // 1. Ubah style target jadi "Matched"
+    targetElement.classList.remove('border-dashed', 'border-[#00B4D8]', 'bg-white', 'text-[#0077B6]');
+    targetElement.classList.add('matched', 'pop-anim');
+    targetElement.innerHTML = `<i class="fa-solid fa-check text-2xl"></i>`;
+
+    // 2. Hilangkan source element (Soal)
+    const sourceEl = document.getElementById(`q-${id}`);
+    if(sourceEl) {
+        sourceEl.style.visibility = 'hidden'; // Sembunyikan tapi jaga layout
+    }
+
+    // 3. Cek kemenangan
+    matchesCount++;
+    if (matchesCount === totalPairs) {
+        showWin();
+    }
+  }
+
+  function handleWrong(targetElement) {
+    // Animasi Getar Merah
+    targetElement.classList.add('bg-red-100', 'border-red-400');
+    targetElement.classList.add('shake-anim'); // Custom animation below
+
+    setTimeout(() => {
+        targetElement.classList.remove('bg-red-100', 'border-red-400', 'shake-anim');
+    }, 500);
+  }
+
+  function showWin() {
+    feedback.textContent = "🎉 Sempurna! Semua Terjawab!";
+    feedback.className = "text-center mb-4 font-bold text-xl text-[#00B4D8] animate-bounce block";
+
+    setTimeout(() => {
+        window.location.href = nextUrl;
+    }, 1500);
+  }
+
+  // Tambahkan CSS shake manual lewat JS jika belum ada
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = `
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+    .shake-anim { animation: shake 0.3s; }
+  `;
+  document.head.appendChild(styleSheet);
+
+</script>

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profil - Bimbaka{% endblock %}
+{% block content %}
+  <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md mt-10">
+    <div class="mb-6 border-b pb-4 flex items-center space-x-4">
+      <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500 bg-gray-200 flex-shrink-0 shadow-sm">
+        {% if user.profile.foto %}
+          <img src="{{ user.profile.foto.url }}"
+               alt="Foto Profil"
+               class="w-full h-full object-cover">
+        {% else %}
+          <div class="w-full h-full flex items-center justify-center text-gray-500 text-xl font-bold">
+            {{ user.first_name|first|upper }}
+          </div>
+        {% endif %}
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800">Edit Profil</h2>
+        <p class="text-gray-600 text-sm mt-1">Perbarui foto profil dan data diri Anda di sini.</p>
+      </div>
+    </div>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="mb-4 p-4 rounded-md border {% if message.tags == 'success' %}bg-green-50 border-green-200 text-green-700{% else %}bg-red-50 border-red-200 text-red-700{% endif %}">
+          <div class="flex items-center">
+            {% if message.tags == 'success' %}
+              <i class="fa-solid fa-check-circle mr-2"></i>
+            {% else %}
+              <i class="fa-solid fa-triangle-exclamation mr-2"></i>
+            {% endif %}
+            {{ message }}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h3 class="text-gray-800 font-semibold mb-3 border-l-4 border-blue-500 pl-2">Informasi Akun</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-gray-700 font-medium mb-2 text-sm">Nama Depan</label>
+          {{ u_form.first_name }}
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-2 text-sm">Nama Belakang</label>
+          {{ u_form.last_name }}
+        </div>
+      </div>
+      {% if u_form.email %}
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2 text-sm">Alamat Email</label>
+        {{ u_form.email }}
+      </div>
+      {% endif %}
+      <h3 class="text-gray-800 font-semibold mb-3 border-l-4 border-purple-500 pl-2 mt-6">Personalisasi</h3>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-2 text-sm">Foto Profil</label>
+        <div class="flex items-center space-x-3">
+          <label class="cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors flex items-center">
+            <i class="fa-solid fa-cloud-arrow-up mr-2 text-blue-500"></i> Ganti Foto...
+            <span class="hidden">{{ p_form.foto }}</span>
+          </label>
+          {% if user.profile.foto %}
+            <a href="{% url 'hapus_foto_profil' %}"
+               onclick="return confirm('Apakah Anda yakin ingin menghapus foto profil ini?')"
+               class="bg-red-50 hover:bg-red-100 text-red-600 font-medium py-2 px-4 rounded-lg border border-red-200 transition-colors flex items-center"
+               title="Hapus Foto Saat Ini">
+              <i class="fa-solid fa-trash-can mr-2"></i> Hapus
+            </a>
+          {% endif %}
+        </div>
+        <p class="text-xs text-gray-500 mt-2 ml-1" id="file-name">
+          {% if user.profile.foto %}
+            Foto saat ini: <span class="font-medium text-gray-700">{{ user.profile.foto.name }}</span>
+          {% else %}
+            Belum ada foto profil.
+          {% endif %}
+        </p>
+        <p class="text-xs text-gray-400 mt-1 ml-1">Format: JPG, PNG. Ukuran maks: 2MB.</p>
+      </div>
+      <hr class="my-6 border-gray-100">
+      <div class="flex items-center justify-end space-x-3">
+        <a href="{% url 'beranda' %}"
+           class="px-5 py-2.5 text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition font-medium text-sm">
+          Batal
+        </a>
+        <button type="submit"
+                class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition shadow-md text-sm flex items-center">
+          <i class="fa-solid fa-save mr-2"></i> Simpan Perubahan
+        </button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+        var fileName = e.target.files[0] ? e.target.files[0].name : "Belum ada file dipilih";
+        document.getElementById('file-name').innerHTML = 'File terpilih: <span class="font-medium text-blue-600">' + fileName + '</span>';
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="max-w-2xl mx-auto p-6">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="bg-indigo-600 px-6 py-4">
+        <h2 class="text-xl font-bold text-white mb-0">{{ title }}</h2>
+      </div>
+      <form method="POST" class="p-6 space-y-6">
+        {% csrf_token %}
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Judul Kuis</label>
+          {{ form.judul }}
+          <p class="text-xs text-gray-500 mt-1">Contoh: "Ulangan Harian Matematika Perkalian"</p>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi Singkat</label>
+          {{ form.deskripsi }}
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Target Kelas</label>
+            {{ form.kelas_target }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Durasi (Menit)</label>
+            {{ form.durasi_menit }}
+            <p class="text-xs text-red-500 mt-1">*Siswa akan otomatis selesai jika waktu habis.</p>
+          </div>
+        </div>
+        <div class="flex items-center bg-gray-50 p-3 rounded border">
+          {{ form.is_active }}
+          <label class="ml-2 block text-sm text-gray-900 font-bold">Aktifkan Kuis Sekarang?</label>
+        </div>
+        <p class="text-xs text-gray-500 ml-1">Jika tidak dicentang, siswa tidak bisa melihat kuis ini.</p>
+        <div class="flex justify-end pt-4 border-t space-x-3">
+          <a href="{% url 'daftar_kuis_guru' %}"
+             class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Batal</a>
+          <button type="submit"
+                  class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700 font-bold shadow">
+            Simpan & Lanjut Buat Soal <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

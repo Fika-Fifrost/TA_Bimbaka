@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Materi Belajar{% endblock %}
+{% block content %}
+  <div class="flex flex-col w-full max-w-2xl mx-auto"
+       style="background-color: #fefefe;
+              border-radius: 8px;
+              padding: 24px;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.05)">
+    <div class="bg-gradient-to-r from-[#0077B6] to-[#00B4D8] text-white p-6 rounded-lg mb-8 shadow-lg">
+      <h1 class="text-3xl font-bold mb-2">{{ header_title }}</h1>
+      <p class="text-white/90">{{ header_desc }}</p>
+    </div>
+    <div class="bg-white shadow rounded-lg p-6 mb-12 border border-gray-200">
+      <h2 class="text-xl font-bold text-[#0077B6] mb-4">📊 Progress Belajar Kamu</h2>
+      <div class="flex items-center space-x-4">
+        <div class="flex-1 bg-[#caf0f8] rounded-full h-4">
+          <div class="bg-[#00B4D8] h-4 rounded-full transition-all duration-500"
+               style="width: {{ progress_percentage }}%"></div>
+        </div>
+        <span class="text-sm font-medium text-gray-600">{{ total_selesai }}/{{ total_materi }} Selesai</span>
+      </div>
+    </div>
+    <div class="relative flex flex-col items-center space-y-8 pb-12">
+      {% for lesson in learning_path %}
+        <div class="relative w-full flex {% if forloop.counter|divisibleby:2 %}justify-end{% else %}justify-start{% endif %}">
+          <div class="w-32 h-32 {% if forloop.counter|divisibleby:2 %}mr-16{% else %}ml-16{% endif %}">
+            {% if lesson.status == 'active' %}
+              <a href="{% url 'materi_detail' lesson.id %}"
+                 class="block relative transition-transform hover:scale-110 active:scale-100">
+                <span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-white font-bold text-sm px-4 py-1.5 rounded-full shadow-lg border-2 border-gray-200 z-10"
+                      style="color: #D9534F">MULAI</span>
+                <div class="w-28 h-28 mx-auto bg-[#F5B7B1] rounded-full flex items-center justify-center text-white text-4xl shadow-lg border-4 border-white"
+                     style="box-shadow: 0 5px 0 #D9534F, 0 8px 15px rgba(0,0,0,0.2)">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </a>
+            {% elif lesson.status == 'completed' %}
+              <a href="{% url 'materi_detail' lesson.id %}"
+                 class="block relative transition-transform hover:scale-105 opacity-90 hover:opacity-100">
+                <div class="w-28 h-28 mx-auto bg-[#0077B6] rounded-full flex items-center justify-center text-white text-4xl shadow-md border-4 border-[#90E0EF]">
+                  {{ lesson.icon }}
+                </div>
+              </a>
+            {% else %}
+              <div class="block relative">
+                <div class="w-28 h-28 mx-auto bg-[#caf0f8] rounded-full flex items-center justify-center text-gray-500 text-4xl shadow-inner border-4 border-[#90E0EF]/50">
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+            {% endif %}
+            <p class="text-center font-semibold text-gray-700 mt-3 w-40 -ml-4">{{ lesson.title }}</p>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="relative w-full flex {% if learning_path|length|add:1|divisibleby:2 %}justify-end{% else %}justify-start{% endif %}">
+        <div class="w-32 h-32 {% if learning_path|length|add:1|divisibleby:2 %}mr-16{% else %}ml-16{% endif %}">
+          {% if total_selesai == total_materi %}
+            <a href="{% url 'evaluasi' %}"
+               class="block relative transition-transform hover:scale-110 active:scale-100">
+              <span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-white font-bold text-sm px-4 py-1.5 rounded-full shadow-lg border-2 border-gray-200 z-10"
+                    style="color: #0077B6">Ujian Akhir</span>
+              <div class="w-28 h-28 mx-auto bg-[#00B4D8] rounded-full flex items-center justify-center text-white text-4xl shadow-lg border-4 border-white"
+                   style="box-shadow: 0 5px 0 #0077B6, 0 8px 15px rgba(0,0,0,0.2)">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+            </a>
+          {% else %}
+            <div class="block relative">
+              <div class="w-28 h-28 mx-auto bg-[#caf0f8] rounded-full flex items-center justify-center text-gray-500 text-4xl shadow-inner border-4 border-[#90E0EF]/50">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+            </div>
+          {% endif %}
+          <p class="text-center font-semibold text-gray-700 mt-3 w-40 -ml-4">Evaluasi Akhir</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

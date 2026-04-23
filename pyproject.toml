@@ -1,0 +1,7 @@
+[tool.djlint]
+indent = 2
+
+[tool.black]
+line-length = 88
+include = "(\\.pyi?|\\.ipynb)$"
+exclude = "/(\\.git|\\.hg|\\.mypy_cache|\\.nox|\\.tox|\\.venv|_build|buck-out|build|dist)/"

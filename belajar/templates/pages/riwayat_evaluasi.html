@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Riwayat Belajarku
+{% endblock title %}
+{% block content %}
+  <div class="flex flex-col w-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden min-h-screen">
+    <div class="bg-blue-50/50 border-b border-gray-200">
+      <div class="p-6 pb-0">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">📜 Jejak Belajarku</h1>
+        <p class="text-gray-500 text-sm mb-6">Pantau terus perkembangan nilai dan materi yang sudah kamu pelajari.</p>
+        <div class="flex space-x-6">
+          <button onclick="switchTab('tab-evaluasi')"
+                  id="btn-evaluasi"
+                  class="tab-btn pb-3 px-1 text-sm font-bold border-b-2 border-blue-600 text-blue-600 transition-colors">
+            <i class="fa-solid fa-trophy mr-2"></i> Hasil Evaluasi
+          </button>
+          <button onclick="switchTab('tab-materi')"
+                  id="btn-materi"
+                  class="tab-btn pb-3 px-1 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-colors">
+            <i class="fa-solid fa-book-open mr-2"></i> Materi Selesai
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="p-6 bg-gray-50 flex-grow">
+      <div id="tab-evaluasi" class="tab-content space-y-6">
+        {% if riwayat_evaluasi %}
+          {% for evaluasi in riwayat_evaluasi %}
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+              <div class="p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-16 h-16 rounded-full flex flex-col items-center justify-center border-4 {% if evaluasi.nilai >= 80 %}border-green-100 bg-green-50 text-green-600 {% elif evaluasi.nilai >= 70 %}border-blue-100 bg-blue-50 text-blue-600 {% else %}border-red-100 bg-red-50 text-red-600{% endif %}">
+                    <span class="text-xl font-bold">{{ evaluasi.nilai|floatformat:0 }}</span>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h3 class="text-lg font-bold text-gray-800">Evaluasi Akhir</h3>
+                      {% if forloop.first %}
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white">TERBARU</span>
+                      {% endif %}
+                    </div>
+                    <p class="text-sm text-gray-500 mt-0.5">
+                      <i class="fa-regular fa-calendar mr-1"></i> {{ evaluasi.created_at|date:"d F Y, H:i" }}
+                    </p>
+                  </div>
+                </div>
+                <div class="text-right hidden md:block">
+                  <p class="text-xs text-gray-400 font-bold uppercase">Status</p>
+                  {% if evaluasi.nilai >= 70 %}
+                    <span class="text-green-600 font-bold text-sm">LULUS</span>
+                  {% else %}
+                    <span class="text-red-500 font-bold text-sm">BELUM LULUS</span>
+                  {% endif %}
+                </div>
+              </div>
+              {% if evaluasi.rekomendasi_materi %}
+                <div class="bg-indigo-50 px-5 py-3 border-t border-indigo-100 flex items-start gap-3">
+                  <i class="fa-solid fa-robot text-indigo-500 mt-1"></i>
+                  <div>
+                    <h4 class="font-bold text-indigo-800 text-xs uppercase">Saran Belajar</h4>
+                    <p class="text-indigo-900 text-sm">
+                      Fokus pelajari lagi: <strong>{{ evaluasi.rekomendasi_materi }}</strong>
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+              <details class="group border-t border-gray-100">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 hover:bg-gray-100 transition text-gray-600">
+                  <span class="text-xs font-bold uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-list-check mr-2"></i> Lihat Detail Jawaban
+                  </span>
+                  <span class="transition group-open:rotate-180">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="p-5 text-sm bg-white border-t border-gray-100">
+                  {% regroup evaluasi.jawaban_evaluasi.all|dictsort:"materi_soal" by get_materi_soal_display as materi_list %}
+                  {% for materi in materi_list %}
+                    <div class="mb-6 last:mb-0">
+                      <h5 class="font-bold text-gray-800 mb-3 pb-1 border-b border-gray-100 flex items-center">
+                        <span class="w-2 h-6 bg-blue-500 rounded-full mr-2"></span>
+                        {{ materi.grouper }}
+                      </h5>
+                      <div class="space-y-3">
+                        {% for jawaban in materi.list %}
+                          <div class="p-3 rounded-lg border flex gap-3 {% if jawaban.is_correct %}bg-green-50/50 border-green-100{% else %}bg-red-50/50 border-red-100{% endif %}">
+                            <div class="mt-0.5">
+                              {% if jawaban.is_correct %}
+                                <i class="fa-solid fa-circle-check text-green-500"></i>
+                              {% else %}
+                                <i class="fa-solid fa-circle-xmark text-red-500"></i>
+                              {% endif %}
+                            </div>
+                            <div class="flex-grow">
+                              <p class="text-gray-800 font-medium mb-1">{{ jawaban.soal_pertanyaan }}</p>
+                              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-xs">
+                                <span class="text-gray-500">Jawabanmu: <b class="{% if jawaban.is_correct %}text-green-700{% else %}text-red-600{% endif %}">{{ jawaban.jawaban_user }}</b></span>
+                                {% if not jawaban.is_correct %}
+                                  <span class="text-gray-500">Kunci: <b class="text-green-700">{{ jawaban.jawaban_benar }}</b></span>
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </details>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="text-center py-12">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+              <i class="fa-solid fa-clipboard-question text-2xl text-gray-400"></i>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">Belum ada nilai evaluasi</h3>
+            <p class="text-gray-500 text-sm mt-1 mb-4">Selesaikan materi lalu kerjakan evaluasi akhir!</p>
+            <a href="{% url 'materi' %}"
+               class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">Mulai Belajar</a>
+          </div>
+        {% endif %}
+      </div>
+      <div id="tab-materi" class="tab-content hidden space-y-4">
+        {% if riwayat_materi %}
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="divide-y divide-gray-100">
+              {% for materi in riwayat_materi %}
+                <div class="p-4 hover:bg-gray-50 transition flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h4 class="font-bold text-gray-800">{{ materi.get_materi_display }}</h4>
+                    <p class="text-xs text-gray-500">Diselesaikan pada {{ materi.waktu_selesai|date:"d F Y, H:i" }}</p>
+                  </div>
+                  <div>
+                    <a href="{% url 'materi_detail' forloop.counter %}"
+                       class="text-xs font-bold text-blue-600 hover:text-blue-800 border border-blue-200 px-3 py-1 rounded-full hover:bg-blue-50 transition">
+                      Baca Lagi
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <div class="text-center py-12">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+              <i class="fa-solid fa-book-open text-2xl text-gray-400"></i>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">Belum ada materi selesai</h3>
+            <p class="text-gray-500 text-sm mt-1 mb-4">Ayo mulai petualangan belajarmu sekarang!</p>
+            <a href="{% url 'materi' %}"
+               class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">Lihat Materi</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <script>
+  function switchTab(tabId) {
+    // 1. Sembunyikan semua tab content
+    document.querySelectorAll('.tab-content').forEach(el => {
+      el.classList.add('hidden');
+    });
+
+    // 2. Reset semua tombol tab ke style inactive
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-blue-600', 'text-blue-600', 'font-bold');
+        btn.classList.add('border-transparent', 'text-gray-500', 'font-medium', 'hover:text-gray-700');
+    });
+
+    // 3. Tampilkan tab yang dipilih
+    document.getElementById(tabId).classList.remove('hidden');
+
+    // 4. Highlight tombol yang aktif
+    let activeBtnId = tabId === 'tab-evaluasi' ? 'btn-evaluasi' : 'btn-materi';
+    let activeBtn = document.getElementById(activeBtnId);
+    activeBtn.classList.remove('border-transparent', 'text-gray-500', 'font-medium', 'hover:text-gray-700');
+    activeBtn.classList.add('border-blue-600', 'text-blue-600', 'font-bold');
+  }
+  </script>
+{% endblock content %}

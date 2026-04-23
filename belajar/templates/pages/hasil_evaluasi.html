@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% block title %}Hasil Evaluasi Akhir - Bimbaka{% endblock %}
+{% block content %}
+  <div class="flex flex-col w-full py-4 px-4 sm:py-6 sm:px-6">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-purple-600 mb-2">📊 Hasil Evaluasi Akhir</h1>
+      <p class="text-gray-600">Ujian Komprehensif Semua Materi</p>
+      <p class="text-sm text-gray-500 mt-1">{{ evaluasi.created_at|date:'d F Y, H:i' }} WIB</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-xl p-8 mb-8 text-center max-w-md mx-auto">
+      <div class="mb-6">
+        <div class="text-6xl mb-4">
+          {% if grade == 'A' %}
+            🏆
+          {% elif grade == 'B' %}
+            🥈
+          {% elif grade == 'C' %}
+            🥉
+          {% elif grade == 'D' %}
+            📝
+          {% else %}
+            📚
+          {% endif %}
+        </div>
+        <div class="text-5xl font-bold mb-2"
+             style="color: {% if grade_color == 'green' %} #10b981 {% elif grade_color == 'blue' %} #3b82f6 {% elif grade_color == 'yellow' %} #f59e0b {% elif grade_color == 'orange' %} #f97316 {% else %} #ef4444 {% endif %}">
+          {{ percentage }}
+        </div>
+        <div class="text-gray-500 text-lg">dari 100</div>
+      </div>
+      <div class="bg-{{ grade_color }}-100 border border-{{ grade_color }}-200 rounded-lg p-4 mb-4">
+        <div class="text-2xl font-bold text-{{ grade_color }}-800 mb-2">Grade {{ grade }}</div>
+        <p class="text-{{ grade_color }}-700 text-sm">{{ message }}</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-xl p-6 mb-8 max-w-2xl mx-auto border-t-4 border-blue-500 relative overflow-hidden">
+      <div class="absolute top-0 right-0 -mt-4 -mr-4 text-blue-50 opacity-50">
+        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0 1 1 0 002 0zm-1 4a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1z" clip-rule="evenodd">
+          </path>
+        </svg>
+      </div>
+      <div class="text-center relative z-10">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <span class="text-3xl">🤖</span>
+          <h3 class="text-xl font-bold text-gray-800">Saran Belajar Cerdas AI</h3>
+        </div>
+        {% if evaluasi.rekomendasi_materi %}
+          <p class="text-gray-600 mb-3">
+            Halo <b>{{ request.user.first_name }}</b>! Berdasarkan analisis pola jawabanmu, sistem menyarankan:
+          </p>
+          <div class="bg-blue-50 text-blue-800 py-3 px-6 rounded-xl font-bold text-lg inline-block mb-4 border border-blue-200 shadow-sm">
+            Fokus Belajar: {{ evaluasi.rekomendasi_materi }}
+          </div>
+          <p class="text-sm text-gray-500 italic mb-5">
+            "Semangat! Coba pelajari materi ini lagi ya, analisis AI memprediksi nilaimu akan meningkat pesat jika menguasai ini! 🚀"
+          </p>
+          <a href="{% url 'materi' %}"
+             class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+            <span class="mr-2">📚</span> Buka Materi Belajar
+          </a>
+        {% else %}
+          <p class="text-gray-500 italic">
+            Belum ada rekomendasi khusus dari AI atau hasilmu sudah sangat seimbang. Pertahankan prestasimu! 🎉
+          </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+        <div class="text-3xl text-green-600 mb-2">✅</div>
+        <div class="text-2xl font-bold text-green-800">{{ benar }}</div>
+        <div class="text-green-600">Jawaban Benar</div>
+      </div>
+      <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+        <div class="text-3xl text-red-600 mb-2">❌</div>
+        <div class="text-2xl font-bold text-red-800">{{ salah }}</div>
+        <div class="text-red-600">Jawaban Salah</div>
+      </div>
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+        <div class="text-3xl text-blue-600 mb-2">📝</div>
+        <div class="text-2xl font-bold text-blue-800">{{ total }}</div>
+        <div class="text-blue-600">Total Soal</div>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6 mb-8">
+      <h3 class="text-lg font-bold text-gray-800 mb-4">📈 Breakdown Hasil</h3>
+      <div class="flex rounded-lg overflow-hidden h-8 mb-4">
+        <div class="bg-green-500 flex items-center justify-center text-white text-sm font-semibold"
+             style="width: {{ benar_width }}%">
+          {% if benar_width > 15 %}{{ benar }} Benar{% endif %}
+        </div>
+        <div class="bg-red-500 flex items-center justify-center text-white text-sm font-semibold"
+             style="width: {{ salah_width }}%">
+          {% if salah_width > 15 %}{{ salah }} Salah{% endif %}
+        </div>
+      </div>
+      <div class="flex justify-between text-sm text-gray-600">
+        <span>0%</span>
+        <span>{{ percentage }}%</span>
+        <span>100%</span>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6 mb-8">
+      <h3 class="text-lg font-bold text-gray-800 mb-6">📚 Analisis Per Materi</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for breakdown in breakdown_per_materi %}
+          <div class="border rounded-lg p-4 border-{{ breakdown.get_status_color }}-200 bg-{{ breakdown.get_status_color }}-50">
+            <div class="font-semibold text-gray-800 mb-2">{{ breakdown.get_materi_display|slice:':11' }}</div>
+            <div class="flex justify-between text-sm text-gray-600 mb-2">
+              <span>{{ breakdown.jumlah_benar }}/{{ breakdown.total_soal }}</span>
+              <span>{{ breakdown.nilai|floatformat:1 }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+              <div class="bg-{{ breakdown.get_status_color }}-500 h-2 rounded-full"
+                   style="width: {{ breakdown.nilai }}%"></div>
+            </div>
+            <div class="text-xs text-{{ breakdown.get_status_color }}-700 font-medium">{{ breakdown.get_performance_status }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if weak_materials %}
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
+        <h3 class="font-bold text-yellow-800 mb-3">💡 Rekomendasi Perbaikan:</h3>
+        <p class="text-yellow-700 mb-3">Materi yang perlu dipelajari lebih lanjut:</p>
+        <ul class="text-yellow-700 space-y-1">
+          {% for weak in weak_materials %}
+            <li class="flex justify-between border-b border-yellow-200 pb-1">
+              <span>• {{ weak.get_materi_display }}</span>
+              <span class="font-semibold text-red-600">
+                Kesalahan: {{ weak.tingkat_kesalahan|floatformat:1 }}%
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    <div class="bg-white rounded-lg shadow p-6 mb-8">
+      <h3 class="text-lg font-bold text-gray-800 mb-6">🔍 Review Jawaban Detail</h3>
+      <div class="space-y-6">
+        {% for jawaban in jawaban_detail %}
+          <div class="border rounded-lg p-4 {% if jawaban.is_correct %} border-green-200 bg-green-50 {% else %} border-red-200 bg-red-50 {% endif %}">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="font-semibold text-gray-800">Soal {{ jawaban.nomor_soal }}:</div>
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">{{ jawaban.materi_soal|capfirst|slice:'8:' }}</span>
+                </div>
+                <p class="text-gray-700 mb-3">{{ jawaban.soal_pertanyaan }}</p>
+              </div>
+              <div class="ml-4">
+                {% if jawaban.is_correct %}
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">✓ Benar</span>
+                {% else %}
+                  <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">✗ Salah</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <span class="font-semibold {% if jawaban.is_correct %} text-green-700 {% else %} text-red-700 {% endif %}">
+                  Jawaban Kamu:
+                </span>
+                <p class="{% if jawaban.is_correct %} text-green-600 {% else %} text-red-600 {% endif %}">
+                  {{ jawaban.jawaban_user|default:'Tidak dijawab' }}
+                </p>
+              </div>
+              <div>
+                <span class="font-semibold text-green-700">Jawaban Benar:</span>
+                <p class="text-green-600">{{ jawaban.jawaban_benar }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <a href="{% url 'evaluasi' %}"
+         class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-4 rounded-lg font-semibold transition-colors duration-200 text-center">🔄 Ulangi Evaluasi</a>
+      <a href="{% url 'materi' %}"
+         class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-4 rounded-lg font-semibold transition-colors duration-200 text-center">📚 Kembali ke Materi</a>
+    </div>
+    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+      <h3 class="font-bold text-yellow-800 mb-3">💡 Pesan Motivasi:</h3>
+      {% if percentage >= 80 %}
+        <p class="text-yellow-700">
+          Excellent! Kamu sudah menguasai semua materi dengan sangat baik. Selamat atas pencapaian yang luar biasa!
+        </p>
+      {% elif percentage >= 70 %}
+        <p class="text-yellow-700">Good job! Kamu berhasil lulus evaluasi akhir. Terus pertahankan semangat belajarmu!</p>
+      {% else %}
+        <p class="text-yellow-700">
+          Jangan menyerah! Review kembali materi yang masih kurang, lalu ulangi evaluasi. Fokus pada materi yang nilai per materinya masih rendah.
+        </p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
