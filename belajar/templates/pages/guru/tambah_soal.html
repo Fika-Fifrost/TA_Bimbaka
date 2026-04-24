@@ -99,11 +99,23 @@
                     {% endif %}
                     <p class="text-gray-800 font-medium line-clamp-2">{{ soal.pertanyaan }}</p>
                     <div class="mt-1 text-xs text-gray-500 grid grid-cols-2 gap-x-2">
-                      <span class="{% if soal.jawaban_benar == 'A' %}text-green-600 font-bold{% endif %}">A. {{ soal.opsi_a }}</span>
-                      <span class="{% if soal.jawaban_benar == 'B' %}text-green-600 font-bold{% endif %}">B. {{ soal.opsi_b }}</span>
-                      <span class="{% if soal.jawaban_benar == 'C' %}text-green-600 font-bold{% endif %}">C. {{ soal.opsi_c }}</span>
-                      <span class="{% if soal.jawaban_benar == 'D' %}text-green-600 font-bold{% endif %}">D. {{ soal.opsi_d }}</span>
-                    </div>
+                        <span class="{% if soal.jawaban_benar == 'A' %}text-green-600 font-bold{% endif %}">A. {{ soal.opsi_a }}</span>
+                        <span class="{% if soal.jawaban_benar == 'B' %}text-green-600 font-bold{% endif %}">B. {{ soal.opsi_b }}</span>
+                        <span class="{% if soal.jawaban_benar == 'C' %}text-green-600 font-bold{% endif %}">C. {{ soal.opsi_c }}</span>
+                        <span class="{% if soal.jawaban_benar == 'D' %}text-green-600 font-bold{% endif %}">D. {{ soal.opsi_d }}</span>
+                  </div>
+
+                  <div class="mt-3 flex justify-end space-x-2">
+                    <a href="{% url 'edit_soal' kuis.id soal.id %}"
+                       class="text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded hover:bg-yellow-200 transition">
+                      <i class="fa-solid fa-pen mr-1"></i> Edit
+                    </a>
+                    <a href="{% url 'hapus_soal' kuis.id soal.id %}"
+                       onclick="return confirm('Yakin ingin menghapus soal ini?')"
+                       class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200 transition">
+                      <i class="fa-solid fa-trash mr-1"></i> Hapus
+                    </a>
+                  </div>
                   </div>
                 </div>
               </div>

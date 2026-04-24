@@ -18,6 +18,8 @@ urlpatterns = [
     path("guru/kuis/<int:kuis_id>/soal/", views.tambah_soal, name="tambah_soal"),
     path("guru/kuis/<int:kuis_id>/hapus/", views.hapus_kuis, name="hapus_kuis"),
     path("kuis/<int:kuis_id>/kerjakan/", views.kerjakan_kuis, name="kerjakan_kuis"),
+    path("guru/kuis/<int:kuis_id>/soal/<int:soal_id>/edit/", views.edit_soal, name="edit_soal"),
+    path("guru/kuis/<int:kuis_id>/soal/<int:soal_id>/hapus/", views.hapus_soal, name="hapus_soal"),
     # --- EVALUASI ---
     path("evaluasi/", views.evaluasi, name="evaluasi"),
     path("hasil-evaluasi/", views.hasil_evaluasi, name="hasil_evaluasi"),

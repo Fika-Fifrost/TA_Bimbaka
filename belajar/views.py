@@ -690,6 +690,40 @@ def tambah_soal(request, kuis_id):
 
 @login_required
 @user_passes_test(is_guru, login_url="beranda")
+def edit_soal(request, kuis_id, soal_id):
+    """Halaman untuk mengedit soal kuis"""
+    kuis = get_object_or_404(Kuis, id=kuis_id, guru=request.user)
+    soal = get_object_or_404(SoalKuis, id=soal_id, kuis=kuis)
+    soal_list = kuis.daftar_soal.all()  # Opsional jika ingin tetap menampilkan daftar soal
+
+    if request.method == "POST":
+        form = SoalKuisForm(request.POST, request.FILES, instance=soal)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Soal berhasil diperbarui!")
+            # Setelah berhasil edit, kembali ke halaman tambah soal untuk melihat daftarnya
+            return redirect("tambah_soal", kuis_id=kuis.id)
+    else:
+        # Isi form dengan data soal yang sudah ada
+        form = SoalKuisForm(instance=soal)
+
+    context = {"kuis": kuis, "form": form, "soal": soal, "soal_list": soal_list}
+    return render(request, "pages/guru/edit_soal.html", context)
+
+
+@login_required
+@user_passes_test(is_guru, login_url="beranda")
+def hapus_soal(request, kuis_id, soal_id):
+    """Fungsi untuk menghapus soal kuis"""
+    kuis = get_object_or_404(Kuis, id=kuis_id, guru=request.user)
+    soal = get_object_or_404(SoalKuis, id=soal_id, kuis=kuis)
+
+    soal.delete()
+    messages.success(request, "Soal berhasil dihapus!")
+    return redirect("tambah_soal", kuis_id=kuis.id)
+
+@login_required
+@user_passes_test(is_guru, login_url="beranda")
 def hapus_kuis(request, kuis_id):
     kuis = get_object_or_404(Kuis, id=kuis_id, guru=request.user)
     kuis.delete()
