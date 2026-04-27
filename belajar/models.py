@@ -407,6 +407,10 @@ class Kuis(models.Model):
     def __str__(self):
         return f"{self.judul} ({self.get_kelas_target_display()})"
 
+    class Meta:
+        verbose_name = "Kuis"
+        verbose_name_plural = "Kuis"
+
 
 class SoalKuis(models.Model):
     JAWABAN_CHOICES = [
@@ -436,6 +440,10 @@ class SoalKuis(models.Model):
     def __str__(self):
         return f"Soal: {self.pertanyaan[:50]}..."
 
+    class Meta:
+        verbose_name = "Soal Kuis"
+        verbose_name_plural = "Soal Kuis"
+
 
 class RiwayatKuis(models.Model):
     kuis = models.ForeignKey(Kuis, on_delete=models.CASCADE)
@@ -449,3 +457,7 @@ class RiwayatKuis(models.Model):
 
     def __str__(self):
         return f"{self.siswa.username} - {self.kuis.judul} - {self.nilai}"
+
+    class Meta:
+        verbose_name = "Riwayat Kuis"
+        verbose_name_plural = "Riwayat Kuis"
