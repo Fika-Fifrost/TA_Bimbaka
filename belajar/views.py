@@ -13,6 +13,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.conf import settings
 from django.db.models import Avg, Count, Q
+from django.contrib.auth import update_session_auth_hash
 
 # --- IMPORT FORMS (Pastikan forms.py sudah diupdate) ---
 from .forms import UserUpdateForm, ProfileUpdateForm, KuisForm, SoalKuisForm
@@ -1365,26 +1366,27 @@ def riwayat_evaluasi(request):
 @login_required
 def edit_profile(request):
     if request.method == "POST":
-        # TAMBAH: user=request.user
         u_form = UserUpdateForm(request.POST, instance=request.user, user=request.user)
         profile, created = Profile.objects.get_or_create(user=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=profile)
 
         if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
+            user = u_form.save()
             p_form.save()
+
+            # Agar guru tidak perlu login ulang setelah ganti password
+            update_session_auth_hash(request, user)
+
             messages.success(request, "Profil berhasil diperbarui!")
             return redirect("edit_profile")
     else:
         profile, created = Profile.objects.get_or_create(user=request.user)
-        # TAMBAH: user=request.user
         u_form = UserUpdateForm(instance=request.user, user=request.user)
         p_form = ProfileUpdateForm(instance=profile)
 
     return render(
         request, "pages/auth/edit_profile.html", {"u_form": u_form, "p_form": p_form}
     )
-
 
 @login_required
 def hapus_foto_profil(request):

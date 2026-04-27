@@ -46,12 +46,33 @@
           {{ u_form.last_name }}
         </div>
       </div>
+
+      {% if u_form.username or u_form.password %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        {% if u_form.username %}
+        <div>
+          <label class="block text-gray-700 font-medium mb-2 text-sm">Username</label>
+          {{ u_form.username }}
+        </div>
+        {% endif %}
+
+        {% if u_form.password %}
+        <div>
+          <label class="block text-gray-700 font-medium mb-2 text-sm">Password Baru</label>
+          {{ u_form.password }}
+          <p class="text-xs text-gray-500 mt-1">Biarkan kosong jika tidak ingin mengubah password.</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
       {% if u_form.email %}
       <div class="mb-6">
         <label class="block text-gray-700 font-medium mb-2 text-sm">Alamat Email</label>
         {{ u_form.email }}
       </div>
       {% endif %}
+
       <h3 class="text-gray-800 font-semibold mb-3 border-l-4 border-purple-500 pl-2 mt-6">Personalisasi</h3>
       <div class="mb-4">
         <label class="block text-gray-700 font-medium mb-2 text-sm">Foto Profil</label>

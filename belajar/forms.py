@@ -6,11 +6,26 @@ from .models import Kuis, SoalKuis
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField(required=False)
+    # Tambahkan field password (tidak wajib diisi)
+    password = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500",
+                "placeholder": "Kosongkan jika tidak ingin diubah"
+            }
+        )
+    )
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email"]
+        fields = ["username", "first_name", "last_name", "email"]
         widgets = {
+            "username": forms.TextInput(
+                attrs={
+                    "class": "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                }
+            ),
             "first_name": forms.TextInput(
                 attrs={
                     "class": "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -32,10 +47,24 @@ class UserUpdateForm(forms.ModelForm):
         self.user = kwargs.pop('user', None)
         super(UserUpdateForm, self).__init__(*args, **kwargs)
 
-        # Jika user yang sedang login adalah Siswa, hapus field email dari form
+        # Jika user yang login adalah Siswa, sembunyikan email, username, dan password
         if self.user and self.user.groups.filter(name="Siswa").exists():
             if 'email' in self.fields:
                 del self.fields['email']
+            if 'username' in self.fields:
+                del self.fields['username']
+            if 'password' in self.fields:
+                del self.fields['password']
+
+    # Override save untuk update password jika diisi
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        password = self.cleaned_data.get('password')
+        if password:
+            user.set_password(password) # Enkripsi password baru
+        if commit:
+            user.save()
+        return user
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
