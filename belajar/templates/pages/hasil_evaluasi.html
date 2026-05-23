@@ -42,8 +42,8 @@
       </div>
       <div class="text-center relative z-10">
         <div class="flex items-center justify-center gap-2 mb-4">
-          <span class="text-3xl">🤖</span>
-          <h3 class="text-xl font-bold text-gray-800">Saran Belajar Cerdas AI</h3>
+            <span class="text-3xl">🌟</span>
+            <h3 class="text-xl font-bold text-gray-800">Saran Belajar Untuk Kamu</h3>
         </div>
         {% if evaluasi.rekomendasi_materi %}
           <p class="text-gray-600 mb-3">
@@ -53,7 +53,7 @@
             Fokus Belajar: {{ evaluasi.rekomendasi_materi }}
           </div>
           <p class="text-sm text-gray-500 italic mb-5">
-            "Semangat! Coba pelajari materi ini lagi ya, analisis AI memprediksi nilaimu akan meningkat pesat jika menguasai ini! 🚀"
+            "Semangat! Coba pelajari materi ini lagi ya"
           </p>
           <a href="{% url 'materi' %}"
              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
@@ -61,7 +61,7 @@
           </a>
         {% else %}
           <p class="text-gray-500 italic">
-            Belum ada rekomendasi khusus dari AI atau hasilmu sudah sangat seimbang. Pertahankan prestasimu! 🎉
+              Belum ada saran khusus untukmu saat ini karena hasil belajarmu sudah sangat seimbang. Pertahankan prestasimu! 🎉
           </p>
         {% endif %}
       </div>

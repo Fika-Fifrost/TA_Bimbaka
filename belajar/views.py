@@ -939,12 +939,18 @@ def finalize_evaluasi(request):
 
 
 @login_required
-def hasil_evaluasi(request):
-    evaluasi_id = request.session.get("evaluasi_id")
-    if not evaluasi_id:
-        messages.error(request, "Hasil evaluasi tidak ditemukan!")
-        return redirect("materi")
-    evaluasi = get_object_or_404(NilaiEvaluasi, id=evaluasi_id, user=request.user)
+def hasil_evaluasi(request, evaluasi_id=None):
+    if evaluasi_id:
+        evaluasi = get_object_or_404(NilaiEvaluasi, id=evaluasi_id, user=request.user)
+    else:
+        session_eval_id = request.session.get("evaluasi_id")
+        if session_eval_id:
+            evaluasi = get_object_or_404(NilaiEvaluasi, id=session_eval_id, user=request.user)
+        else:
+            evaluasi = NilaiEvaluasi.objects.filter(user=request.user).order_by("-created_at").first()
+            if not evaluasi:
+                messages.error(request, "Hasil evaluasi tidak ditemukan!")
+                return redirect("materi")
     jawaban_detail = JawabanEvaluasi.objects.filter(evaluasi=evaluasi).order_by(
         "nomor_soal"
     )

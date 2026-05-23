@@ -65,6 +65,22 @@
                   </div>
                 </div>
               {% endif %}
+                {% if evaluasi.rekomendasi_materi %}
+                <div class="bg-indigo-50 px-5 py-3 border-t border-indigo-100 flex items-start gap-3">
+                  <i class="fa-solid fa-robot text-indigo-500 mt-1"></i>
+                  <div>
+                    <h4 class="font-bold text-indigo-800 text-xs uppercase">Saran Belajar</h4>
+                    <p class="text-indigo-900 text-sm">
+                      Fokus pelajari lagi: <strong>{{ evaluasi.rekomendasi_materi }}</strong>
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+              <div class="bg-white px-5 py-3 border-t border-gray-100 flex justify-end">
+                  <a href="{% url 'hasil_evaluasi_detail' evaluasi.id %}" class="text-sm font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg transition inline-flex items-center">
+                      📊 Lihat Rapor Lengkap
+                  </a>
+              </div>
               <details class="group border-t border-gray-100">
                 <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 hover:bg-gray-100 transition text-gray-600">
                   <span class="text-xs font-bold uppercase tracking-wider flex items-center">

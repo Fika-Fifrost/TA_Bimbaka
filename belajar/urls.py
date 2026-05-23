@@ -23,6 +23,8 @@ urlpatterns = [
     # --- EVALUASI ---
     path("evaluasi/", views.evaluasi, name="evaluasi"),
     path("hasil-evaluasi/", views.hasil_evaluasi, name="hasil_evaluasi"),
+    path("hasil-evaluasi/<int:evaluasi_id>/", views.hasil_evaluasi, name="hasil_evaluasi_detail"),
+    path("riwayat-evaluasi/", views.riwayat_evaluasi, name="riwayat_evaluasi"),
     path("riwayat-evaluasi/", views.riwayat_evaluasi, name="riwayat_evaluasi"),
     path("export-nilai-excel/", views.export_nilai_excel, name="export_nilai_excel"),
     # --- FITUR GURU ---
