@@ -3,15 +3,15 @@
   <style>
     /* 1. Saat Radio Dipilih, Ubah Border & Background Kotak Luar */
     input[type="radio"]:checked + .radio-card {
-        border-color: #2563eb !important; /* Blue 600 */
-        background-color: #eff6ff !important; /* Blue 50 */
+        border-color: #2563eb !important;
+        background-color: #eff6ff !important;
     }
 
     /* 2. Saat Radio Dipilih, Ubah Lingkaran Jadi Biru Penuh */
     input[type="radio"]:checked + .radio-card .radio-circle {
-        background-color: #2563eb !important; /* Blue 600 */
+        background-color: #2563eb !important;
         border-color: #2563eb !important;
-        box-shadow: 0 0 0 2px #fff inset; /* Ring putih tipis di dalam */
+        box-shadow: 0 0 0 2px #fff inset;
     }
   </style>
   <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg">
@@ -98,31 +98,26 @@
     </form>
   </div>
   <script>
-    // --- KONFIGURASI TIMER ---
     const KUIS_ID = "{{ kuis.id }}";
     const USER_ID = "{{ user.id }}";
     const DURATION_MINUTES = {{ kuis.durasi_menit }};
-    // Key unik untuk menyimpan waktu di browser (agar tidak bentrok dengan kuis lain)
+    // agar tidak bentrok dengan kuis lain
     const STORAGE_KEY = `quiz_timer_${USER_ID}_${KUIS_ID}`;
 
     const timerElement = document.getElementById('timer');
     const timerBox = document.getElementById('timer-box');
     const form = document.getElementById('quizForm');
 
-    // 1. Cek apakah sudah ada waktu tersimpan di browser?
     let endTime = localStorage.getItem(STORAGE_KEY);
 
     if (!endTime) {
-        // Jika BELUM ada (pertama kali masuk), set waktu selesai = sekarang + durasi
         const now = new Date().getTime();
         endTime = now + (DURATION_MINUTES * 60 * 1000);
         localStorage.setItem(STORAGE_KEY, endTime);
     } else {
-        // Jika SUDAH ada (misal habis refresh), gunakan waktu yang tersimpan
         endTime = parseInt(endTime);
     }
 
-    // Fungsi Update Timer
     function updateTimer() {
         const now = new Date().getTime();
         const distance = endTime - now;
@@ -154,10 +149,8 @@
         }
     }
 
-    // Jalankan sekali di awal agar tidak delay 1 detik
     updateTimer();
 
-    // Jalankan interval setiap 1 detik
     const timerInterval = setInterval(updateTimer, 1000);
 
     // Jika tombol submit ditekan manual, hapus penyimpanan waktu agar bersih

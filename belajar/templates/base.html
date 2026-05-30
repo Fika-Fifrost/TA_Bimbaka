@@ -36,7 +36,6 @@
       }
     </script>
     <style type="text/tailwindcss">
-      /* Custom styles if needed */
       .nav-link {
         @apply px-3 py-2 text-gray-600 font-medium hover:text-blue-600 transition-colors relative;
       }
@@ -46,7 +45,7 @@
       .nav-link-active::after {
         content: '';
         position: absolute;
-        bottom: -1px; /* Adjust based on border thickness */
+        bottom: -1px;
         left: 0;
         right: 0;
         height: 3px;
@@ -174,7 +173,7 @@
 
         // Toggle Avatar Dropdown saat Klik
         $('#avatar-button').on('click', function(event) {
-          event.stopPropagation(); // Mencegah klik menyebar ke elemen lain
+          event.stopPropagation();
           $('#avatar-dropdown').toggleClass('hidden');
         });
 
@@ -182,7 +181,7 @@
         $(document).on('click', function(event) {
           // Cek apakah klik BUKAN pada tombol avatar DAN BUKAN di dalam dropdown
           if (!$(event.target).closest('#avatar-button').length && !$(event.target).closest('#avatar-dropdown').length) {
-            $('#avatar-dropdown').addClass('hidden'); // Sembunyikan dropdown
+            $('#avatar-dropdown').addClass('hidden');
           }
         });
       });

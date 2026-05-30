@@ -6,24 +6,17 @@ from .models import (
     KemajuanBelajar, Profile, Kuis, SoalKuis, RiwayatKuis
 )
 
-
 class SoalKuisInline(admin.StackedInline):
-    """Untuk input soal di dalam form Kuis"""
     model = SoalKuis
     extra = 1
     fields = ('pertanyaan', 'gambar', ('opsi_a', 'opsi_b'), ('opsi_c', 'opsi_d'), 'jawaban_benar')
 
 
 class NilaiPerMateriInline(admin.TabularInline):
-    """Rincian nilai materi (Hanya 6 baris, jadi tetap ringan)"""
     model = NilaiEvaluasiPerMateri
     extra = 0
     can_delete = False
     readonly_fields = ('materi', 'nilai', 'total_soal', 'jumlah_benar')
-
-
-
-# ADMIN CLASSES
 
 @admin.register(NilaiEvaluasi)
 class NilaiEvaluasiAdmin(admin.ModelAdmin):

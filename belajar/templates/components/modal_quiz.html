@@ -52,13 +52,12 @@
     }
     /* Style saat jawaban benar */
     .matched {
-        background-color: #00B4D8 !important; /* Biru Solid */
+        background-color: #00B4D8 !important;
         color: white !important;
         border-style: solid !important;
         border-color: #0077B6 !important;
         opacity: 1 !important;
     }
-    /* Animasi sukses */
     @keyframes pop {
         0% { transform: scale(1); }
         50% { transform: scale(1.2); }
@@ -66,7 +65,7 @@
     }
     .pop-anim { animation: pop 0.3s ease-in-out; }
 
-    /* Indikator item terpilih (untuk mode klik/tap) */
+    /* Indikator item terpilih */
     .selected-source {
         ring: 4px solid #0077B6;
         transform: scale(1.05);
@@ -81,7 +80,6 @@
   let matchesCount = 0;
   const totalPairs = {{ quiz_data.total_pairs|default:3 }};
 
-  // Variables for Click/Tap matching fallback
   let selectedSourceId = null;
 
   function openQuiz() {
@@ -101,43 +99,37 @@
     setTimeout(() => {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-      // Opsional: Reload page untuk reset game jika user menutup tanpa selesai
-      // window.location.reload();
     }, 300);
   }
 
-  // ==========================================
   // DRAG AND DROP LOGIC
-  // ==========================================
+
   const draggables = document.querySelectorAll('.draggable-source');
   const droppables = document.querySelectorAll('.droppable-target');
 
   draggables.forEach(draggable => {
-    // Event Drag Start
+    // Drag Start
     draggable.addEventListener('dragstart', (e) => {
         e.dataTransfer.setData('text/plain', draggable.getAttribute('data-id'));
         e.dataTransfer.effectAllowed = "move";
         setTimeout(() => draggable.classList.add('opacity-50'), 0);
     });
 
-    // Event Drag End
+    // Drag End
     draggable.addEventListener('dragend', () => {
         draggable.classList.remove('opacity-50');
     });
 
     // CLICK EVENT (Untuk Mobile/Tap Matching)
     draggable.addEventListener('click', () => {
-        // Reset seleksi sebelumnya
         draggables.forEach(d => d.classList.remove('selected-source', 'ring-4', 'ring-[#0077B6]'));
 
-        // Set seleksi baru
         selectedSourceId = draggable.getAttribute('data-id');
         draggable.classList.add('selected-source', 'ring-4', 'ring-[#0077B6]');
     });
   });
 
   droppables.forEach(droppable => {
-    // Allow Drop
     droppable.addEventListener('dragover', (e) => {
         e.preventDefault(); // Wajib agar bisa di-drop
         if(!droppable.classList.contains('matched')) {
@@ -145,12 +137,10 @@
         }
     });
 
-    // Leave Drop Zone
     droppable.addEventListener('dragleave', () => {
         droppable.classList.remove('drag-over');
     });
 
-    // Handle DROP
     droppable.addEventListener('drop', (e) => {
         e.preventDefault();
         droppable.classList.remove('drag-over');
@@ -158,7 +148,6 @@
         checkMatch(sourceId, droppable);
     });
 
-    // HANDLE CLICK on Target (Pasangan dari Click Source)
     droppable.addEventListener('click', () => {
         if(selectedSourceId && !droppable.classList.contains('matched')) {
             checkMatch(selectedSourceId, droppable);
@@ -173,10 +162,8 @@
     const targetId = targetElement.getAttribute('data-id');
 
     if (sourceId === targetId) {
-        // MATCH!
         handleCorrect(sourceId, targetElement);
     } else {
-        // WRONG!
         handleWrong(targetElement);
     }
   }
@@ -219,7 +206,6 @@
     }, 1500);
   }
 
-  // Tambahkan CSS shake manual lewat JS jika belum ada
   const styleSheet = document.createElement("style");
   styleSheet.innerText = `
     @keyframes shake {

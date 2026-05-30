@@ -14,11 +14,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.db.models import Avg, Count, Q
 from django.contrib.auth import update_session_auth_hash
-
-# --- IMPORT FORMS (Pastikan forms.py sudah diupdate) ---
 from .forms import UserUpdateForm, ProfileUpdateForm, KuisForm, SoalKuisForm
-
-# --- IMPORT MODELS (LENGKAP) ---
 from .models import (
     Profile,
     NilaiEvaluasi,
@@ -31,11 +27,9 @@ from .models import (
 )
 
 
-# --- FUNGSI HELPER ---
 def is_guru(user):
     """Cek apakah user ada di grup 'Guru'"""
     return user.is_authenticated and user.groups.filter(name="Guru").exists()
-
 
 def generate_soal_evaluasi_akhir(jumlah_soal=24, kelas="kelas_2"):
     """
@@ -99,7 +93,6 @@ def generate_soal_evaluasi_akhir(jumlah_soal=24, kelas="kelas_2"):
 
                 elif materi_id == 2:
                     # MATERI 2: Sifat Komutatif (a×b = b×a)
-                    # Fokus pada pertukaran angka
                     a = random.randint(3, 9)
                     b = random.randint(2, 8)
                     jawaban = a * b
@@ -297,7 +290,7 @@ def generate_soal_evaluasi_akhir(jumlah_soal=24, kelas="kelas_2"):
     return soal
 
 
-# --- HELPER MINI QUIZ (DRAG & DROP) ---
+# --- MINI QUIZ (DRAG & DROP) ---
 def get_mini_quiz(kelas, materi_id):
     pairs = []
     generated_answers = set()
@@ -394,7 +387,7 @@ def get_mini_quiz(kelas, materi_id):
 # --- VIEW BERANDA (GABUNGAN + KUIS) ---
 @login_required
 def beranda(request):
-    # 1. LOGIKA GURU
+    # 1. GURU
     if is_guru(request.user):
         try:
             guru_kelas = request.user.profile.kelas
@@ -464,7 +457,7 @@ def beranda(request):
         }
         return render(request, "pages/dasbor_guru.html", context)
 
-    # 2. LOGIKA SISWA
+    # 2. SISWA
     else:
         progress_summary = KemajuanBelajar.get_user_summary(request.user)
         ready_for_evaluation = KemajuanBelajar.user_ready_for_evaluation(request.user)
@@ -536,8 +529,6 @@ def beranda(request):
         }
         return render(request, "pages/beranda.html", context)
 
-
-# --- VIEW MATERI ---
 @login_required
 def materi(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
@@ -599,7 +590,6 @@ def materi(request):
         "progress_percentage": progress_percentage,
     }
     return render(request, "pages/materi.html", context)
-
 
 @login_required
 def materi_detail(request, materi_id):
@@ -692,10 +682,9 @@ def tambah_soal(request, kuis_id):
 @login_required
 @user_passes_test(is_guru, login_url="beranda")
 def edit_soal(request, kuis_id, soal_id):
-    """Halaman untuk mengedit soal kuis"""
     kuis = get_object_or_404(Kuis, id=kuis_id, guru=request.user)
     soal = get_object_or_404(SoalKuis, id=soal_id, kuis=kuis)
-    soal_list = kuis.daftar_soal.all()  # Opsional jika ingin tetap menampilkan daftar soal
+    soal_list = kuis.daftar_soal.all()
 
     if request.method == "POST":
         form = SoalKuisForm(request.POST, request.FILES, instance=soal)
@@ -705,7 +694,6 @@ def edit_soal(request, kuis_id, soal_id):
             # Setelah berhasil edit, kembali ke halaman tambah soal untuk melihat daftarnya
             return redirect("tambah_soal", kuis_id=kuis.id)
     else:
-        # Isi form dengan data soal yang sudah ada
         form = SoalKuisForm(instance=soal)
 
     context = {"kuis": kuis, "form": form, "soal": soal, "soal_list": soal_list}
@@ -735,10 +723,8 @@ def hapus_kuis(request, kuis_id):
 @login_required
 @user_passes_test(is_guru, login_url="beranda")
 def toggle_status_kuis(request, kuis_id):
-    """Mengubah status aktif/non-aktif kuis"""
     kuis = get_object_or_404(Kuis, id=kuis_id, guru=request.user)
 
-    # Balik statusnya (True jadi False, False jadi True)
     kuis.is_active = not kuis.is_active
     kuis.save()
 
@@ -746,14 +732,12 @@ def toggle_status_kuis(request, kuis_id):
     messages.success(request, f'Kuis "{kuis.judul}" berhasil {status_msg}.')
     return redirect("daftar_kuis_guru")
 
-
 @login_required
 @user_passes_test(is_guru, login_url="beranda")
 def lihat_nilai_kuis(request, kuis_id):
     """Halaman untuk melihat hasil pengerjaan siswa pada kuis tertentu"""
     kuis = get_object_or_404(Kuis, id=kuis_id, guru=request.user)
 
-    # Ambil semua riwayat pengerjaan untuk kuis ini
     riwayat_list = (
         RiwayatKuis.objects.filter(kuis=kuis).select_related("siswa").order_by("-nilai")
     )
@@ -1000,7 +984,6 @@ def hasil_evaluasi(request, evaluasi_id=None):
 
 
 # --- HALAMAN GURU ---
-
 @login_required
 @user_passes_test(is_guru, login_url="beranda")
 def tambah_siswa(request):
@@ -1039,9 +1022,6 @@ def tambah_siswa(request):
 
     return render(request, "pages/guru/tambah_siswa.html")
 
-
-# Tambahkan fungsi ini di bawah def tambah_siswa(request):
-
 @login_required
 @user_passes_test(is_guru, login_url="beranda")
 def edit_siswa(request, siswa_id):
@@ -1051,7 +1031,7 @@ def edit_siswa(request, siswa_id):
         messages.error(request, "Profil guru tidak ditemukan.")
         return redirect("beranda")
 
-    # Pastikan guru hanya bisa mengedit siswa di kelasnya
+    # memastikan guru hanya bisa mengedit siswa di kelasnya
     siswa = get_object_or_404(User, id=siswa_id, groups__name="Siswa", profile__kelas=guru_kelas)
 
     if request.method == "POST":
@@ -1087,7 +1067,7 @@ def hapus_siswa(request, siswa_id):
     except Profile.DoesNotExist:
         return redirect("beranda")
 
-    # Pastikan guru hanya bisa menghapus siswa di kelasnya
+    # memastikan guru hanya bisa menghapus siswa di kelasnya
     siswa = get_object_or_404(User, id=siswa_id, groups__name="Siswa", profile__kelas=guru_kelas)
     nama_siswa = siswa.get_full_name()
 

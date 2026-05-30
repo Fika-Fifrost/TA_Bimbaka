@@ -6,7 +6,6 @@ from .models import Kuis, SoalKuis
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField(required=False)
-    # Tambahkan field password (tidak wajib diisi)
     password = forms.CharField(
         required=False,
         widget=forms.PasswordInput(

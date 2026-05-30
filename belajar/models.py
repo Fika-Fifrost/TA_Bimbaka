@@ -3,11 +3,7 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
 
-# --- HAPUS CLASS PROFILE YANG PERTAMA DI SINI ---
-
-
 class NilaiEvaluasi(models.Model):
-    """Model untuk menyimpan nilai evaluasi akhir (keseluruhan materi)"""
 
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="nilai_evaluasi"
@@ -24,11 +20,11 @@ class NilaiEvaluasi(models.Model):
     jumlah_benar = models.IntegerField(
         default=0, validators=[MinValueValidator(0)], verbose_name="Jumlah Benar"
     )
-    # ADD: Durasi pengerjaan untuk analytics
+
     durasi_menit = models.PositiveIntegerField(
         null=True, blank=True, verbose_name="Durasi Pengerjaan (menit)"
     )
-    # ADD: Field untuk menyimpan hasil rekomendasi AI
+
     rekomendasi_materi = models.CharField(
         max_length=100, blank=True, null=True, verbose_name="Rekomendasi AI"
     )
@@ -47,7 +43,7 @@ class NilaiEvaluasi(models.Model):
         return f"{nama} - Evaluasi Akhir - {nilai_str}"
 
     def get_grade(self):
-        """Return letter grade based on score"""
+        """nilai huruf dari score"""
         if not self.nilai:
             return "N/A"
         if self.nilai >= 90:
@@ -62,7 +58,6 @@ class NilaiEvaluasi(models.Model):
             return "E"
 
     def get_grade_color(self):
-        """Return color for grade display"""
         grade = self.get_grade()
         colors = {
             "A": "green",
@@ -75,14 +70,12 @@ class NilaiEvaluasi(models.Model):
         return colors.get(grade, "gray")
 
     def is_passed(self):
-        """Check if evaluation is passed (>= 70)"""
         return self.nilai and self.nilai >= 70
 
     def calculate_material_breakdown(self):
-        """Calculate and save material breakdown after evaluation"""
+        """hitung dan simpan material setelah evaluasi"""
         from collections import defaultdict
 
-        # Group answers by material
         material_stats = defaultdict(lambda: {"benar": 0, "total": 0})
 
         for jawaban in self.jawaban_evaluasi.all():
@@ -90,7 +83,6 @@ class NilaiEvaluasi(models.Model):
             if jawaban.is_correct:
                 material_stats[jawaban.materi_soal]["benar"] += 1
 
-        # Create or update NilaiEvaluasiPerMateri records
         for materi, stats in material_stats.items():
             if stats["total"] > 0:
                 nilai_persen = (stats["benar"] / stats["total"]) * 100
@@ -120,7 +112,6 @@ class NilaiEvaluasiPerMateri(models.Model):
         ("materi_6", "Materi 6"),
     ]
 
-    # CHANGE: Link to main evaluation instead of user directly
     evaluasi_utama = models.ForeignKey(
         NilaiEvaluasi,
         on_delete=models.CASCADE,
@@ -153,7 +144,6 @@ class NilaiEvaluasiPerMateri(models.Model):
         verbose_name = "Breakdown Nilai Per Materi"
         verbose_name_plural = "Breakdown Nilai Per Materi"
         db_table = "nilai_evaluasi_per_materi"
-        # CHANGE: Unique together should include evaluasi_utama
         unique_together = ["evaluasi_utama", "materi"]
         ordering = ["evaluasi_utama", "materi"]
 
@@ -162,7 +152,6 @@ class NilaiEvaluasiPerMateri(models.Model):
         return f"Evaluasi {self.evaluasi_utama.id} - {self.get_materi_display()} - {nilai_str}"
 
     def get_performance_status(self):
-        """Get performance status for this material"""
         if not self.nilai:
             return "Belum Ada Data"
         elif self.nilai >= 80:
@@ -175,7 +164,6 @@ class NilaiEvaluasiPerMateri(models.Model):
             return "Perlu Perbaikan"
 
     def get_status_color(self):
-        """Get color for status display"""
         if not self.nilai:
             return "gray"
         elif self.nilai >= 80:
@@ -213,7 +201,6 @@ class JawabanEvaluasi(models.Model):
         help_text="Materi asal dari soal ini",
     )
     soal_pertanyaan = models.TextField(verbose_name="Soal Pertanyaan")
-    # ADD: Store answer choices for better review
     pilihan_jawaban = models.JSONField(
         default=list,
         verbose_name="Pilihan Jawaban",
@@ -242,7 +229,6 @@ class JawabanEvaluasi(models.Model):
         )
 
     def get_materi_display_short(self):
-        """Get short material name for display"""
         return (
             self.get_materi_soal_display().split(":")[0]
             if ":" in self.get_materi_soal_display()
@@ -286,14 +272,13 @@ class KemajuanBelajar(models.Model):
         ordering = ["user", "materi"]
 
     def mark_completed(self):
-        """Mark materi as completed"""
+        """tandai materi selesai"""
         self.is_selesai = True
         self.progress_persentase = 100.0
         self.waktu_selesai = timezone.now()
         self.save()
 
     def update_progress(self, persentase):
-        """Update progress percentage"""
         if 0 <= persentase <= 100:
             self.progress_persentase = persentase
             if persentase >= 100:
@@ -303,7 +288,7 @@ class KemajuanBelajar(models.Model):
 
     @classmethod
     def get_user_summary(cls, user):
-        """Get summary of user's learning progress"""
+        """Get ringkasan progres belajar"""
         total_materi = len(cls.MATERI_CHOICES)
         selesai = cls.objects.filter(user=user, is_selesai=True).count()
         avg_progress = (
@@ -322,17 +307,15 @@ class KemajuanBelajar(models.Model):
 
     @classmethod
     def user_ready_for_evaluation(cls, user):
-        """Check if user has completed all materials and ready for evaluation"""
+        """Memeriksa apakah pengguna telah menyelesaikan semua materi dan siap evaluasi"""
         total_materi = len(cls.MATERI_CHOICES)
         selesai = cls.objects.filter(user=user, is_selesai=True).count()
         return selesai >= total_materi
 
     @classmethod
     def get_weak_materials(cls, user):
-        """Get materials where user has low evaluation scores"""
         weak_materials = []
 
-        # Get latest evaluation breakdown
         latest_eval = (
             NilaiEvaluasi.objects.filter(user=user).order_by("-created_at").first()
         )
